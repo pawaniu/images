@@ -1,0 +1,52 @@
+{
+  "1": [],
+  "2": [
+    "EERE ee RSE SR ee: Eee ESSN ee ee See Eee a A\nEnhancement to Plant-Specific Batch Handling... 0... 0... eee\nEnhancements to Q-Inspection Product/Batch Whse-Internal (IOT5)...........0.00 00000 e ee eee\nEnhancements to the Recording of Partial Inspection Decisions... ........0 0000 e eee eee\nEnhancements\u2018to:Process:E-Commerce REtuUrS: ss cic r ie oe ain eG ee\nDeletion of Personal Datain SAP-EWM. .. 2... eee\n\nChange Documents: sisccmucawin cane eee ee EERE OH SES ME Ge ee\n\f"
+  ],
+  "3": [
+    "This feature enables SAP Extended Warehouse Management to support plant specific-batch handling introduced\nwith SAP S/4HANA Cloud 1802 as described in SAP Note 2564190 fr.\n\f",
+    "To enable this feature, see SAP Note 2604990 Pe.\n\f",
+    "For more information about batch management, see http://help.sap.com/ewm under |} Application Help > SAF\n\f",
+    "Extended Warehouse Management (SAP EWM) > Batch Management \u00a5.\n\f",
+    "Here are the release notes for SAP Extended Warehouse Management 9.5 FP02.\n\f",
+    "What's New in SAP Extended Warehouse Management 9.5 Feature Pack Oz\nWhat's New in SAP Extended Warehouse Management 9.5 FPO2\n\f"
+  ],
+  "4": [
+    "With this feature, you can create inspection rules for inspection object type (IOT) Q-/nspection Product/Batch\nWhse-Internal (IOT 5) that are specifically for recurring inspections and internal stock inspections so as to\ndistinguish between these inspection processes.\n\f",
+    "With this feature, you can do the following while recording partial inspection decisions for the partial quantities of\nan inspection lot:\n\f",
+    "With this feature, you can do the following while recording partial inspection decisions for the partial quantities of\n\f"
+  ],
+  "5": [
+    "With this app, you can process an unplanned customer return received without a warehouse request by identifying\nthe sales order number.\n\f",
+    "What's New in SAP Extended Warehouse Management 9.5 Feature Pack 0.\nWhat's New in SAP Extended Warehouse Management 9.5 FPO2\n\f"
+  ],
+  "6": [
+    "These functions enable you to use the SAP Information Lifecycle Management (ILM) component to support the\ndeletion of personal data and to control the deletion and blocking of business partner master data. Personal da\ncollected in business partner master data can be blocked as soon as business activities for which this data is\nneeded are completed and the residence time for this data has elapsed; after this time, only users who are\nassigned additional authorizations can access this data. After the retention period for data expires, personal da\ncan be destroyed completely so that it can no longer be retrieved. Retention periods must be defined in the\ncustomer system.\n\f",
+    "An end of purpose check determines whether data is still relevant for business activities based on the retention\nperiod defined for the data. The retention period of data consists of the following phases.\n\f",
+    "For example, processing of data is no longer required for the primary business purpose but to comply with legal\nrules for retention the data must still be available. In phase three, the relevant data is blocked.\n\f",
+    "As of Feature Pack 02 for SAP Extended Warehouse Management 9.5, functions are available that simplify the\nblocking and deletion of personal data by using SAP Information Lifecycle Management (ILM).\n\f",
+    "You can use the data destruction object EWM_DSAPP, which is mapped to the ILM object EwM_DSApp, to delete\nloading appointment data based on defined retention periods.\n\nYou can use the data destruction object EWM_TATT, which is mapped to the ILM object EwM_TATT, to delete\ntime and attendance data based on defined retention periods.\n\f",
+    "What's New in SAP Extended Warehouse Management 9.5 Feature Pack 02\nWhat's New in SAP Extended Warehouse Management 9.5 FP02\n\f",
+    "For more information, see https://help.sap.com/viewer/p/SAP_FIORI under |} More SAP Fiori Products for SAF\nBusiness Suite > SAP Fiori 1.0 for SAP Extended Warehouse Management > Process E-Commerce Returns 9.\n\f"
+  ],
+  "7": [
+    "Blocking of data can impact system behavior in the following ways:\n\f",
+    "Blocking of data prevents the business users of SAP applications from displaying and using data that may include\npersonal data and is no longer relevant for business activities.\n\f",
+    "Only users with special authorization can display blocked data; they are not authorized, however, to create,\nchange, or copy business objects with blocked data, or perform follow-on activities with these business objects.\n\f",
+    "e https://help.sap.com/viewer/p/SAP_INFORMATION_LIFECYCLE_MANAGEMENT\n\f",
+    "To use SAP Information Lifecycle Management (ILM) to simplify the deletion of application-specific personal data:\n\f",
+    "To use the new functions to simplify the blocking and deletion of customer and vendor master data:\n\f"
+  ],
+  "8": [
+    "Change documents are available for the following:\n\f",
+    "You activate change documents for employee performance documents, time and attendance records, and labo\n\f",
+    "You activate change documents for employee performance documents, time and attendance records, and labc\nmanagement-related processor data in Customizing for Extended Warehouse Management under | Labor\nManagement \u00bb Activate Change Documents J.\n\f",
+    "Management > Activate Change Documents 3.\n\f"
+  ],
+  "9": [
+    "Any software coding and/or code lines / strings (\"Code\") included in this documentation are only examples and are not intended to be used in a productive systerr\nenvironment. The Code is only intended to better explain and visualize the syntax and phrasing rules of certain coding. SAP does not warrant the correctness and\ncompleteness of the Code given herein, and SAP shall not be liable for errors or damages caused by the usage of the Code, unless damages were caused by SAP\nintentionally or by SAP's gross negligence.\n\f",
+    "The SAP documentation may contain hyperlinks to the Internet. These hyperlinks are intended to serve as a hint about where to find related information. SAP does not\nwarrant the availability and correctness of this related information or the ability of this information to serve a particular purpose. SAP shall not be liable for any damages\n\ncaused by the use of related information unless damages have been caused by SAP's gross negligence or willful misconduct. All links are categorized for transparency (see\nhttps://help.sap.com/viewer/disclaimer).\n\f",
+    "As far as possible, SAP documentation is gender neutral. Depending on the context, the reader is addressed directly with \"you\", or a gender-neutral noun (such as \"sales\nperson\u201d or \"working days\") is used. If when referring to members of both sexes, however, the third-person singular cannot be avoided or a gender-neutral noun does not\nexist, SAP reserves the right to use the masculline form of the noun and pronoun. This is to ensure that the documentation remains comprehensible.\n\f"
+  ],
+  "10": []
+}

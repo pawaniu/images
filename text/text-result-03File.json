@@ -1,0 +1,57 @@
+{
+  "1": [],
+  "2": [],
+  "3": [],
+  "4": [
+    "The area depicted in the screen shot is the Change Request UI Building Block (CRUIBB). It is already\nprepared to display further information. As an example, you are going to add the change request type.\norder to add the field, you are going to customize the configuration of the CRUIBB with the Floor Plan\nManager Configurator (FPM Configurator). For more information on FPM and its concepts | strongly\nrecommend reading note 1619534 (How to Create, Enhance and Adapt FPM Applications).\n\f",
+    "When you create or change any master data object with MDG, you do this with a change request. The\nchange request holds various pieces of information about the intended change, such as a description,\npriority, current status and many more. With enhancement package 6, the standard UI configuration of MD\nfor Material and for Supplier comes with a set of fields that are displayed in the change request area on th\nscreen. There are some more fields available that can easily be added to the UI by customization, without\nany coding and modification. This blog describes how you can do this with the UI technologies that are us\u00e9\nby the domain specific Web Dynpro applications for material and supplier. Please note that this procedure\ndoes not apply to the generic MDG Web Dynpro application (USMD_ENTITY_VALUE2), which is used for\nMDG for financial data or for custom defined objects.\n\f",
+    "The processes are workflow-driven and can include several approval and revision phases, and the\ncollaboration of all users participating in the master data maintenance.\n\f",
+    "MDG offers change request (CR)-based processing of master data with integrated workflow, staging,\napproval, activation, and distribution.\n\f",
+    "\u00a9 2023 SAP SE or an SAP affiliate company. All rights reserved. See Legal Notice on www.sap.com/legal-notice for use terms, disclaimers, disclosures, or restrictions related to SAP Materials for general audiences.\n\f",
+    "Material: New, DUMMY\n\f"
+  ],
+  "5": [
+    "Launch the Web Dynpro UI for creating a material. Now, with the FPM_CONFIG EXPERT=A parameter you\nhave 3 additional buttons in the top toolbar: Customize Page, Show Customizable Areas, and Application\nHierarchy.\n\f",
+    "Material: New, DUMMY\n\f",
+    "\u00a9 2023 SAP SE or an SAP a\n\n  \n\njate company. All rights reserved. See Legal Notice on www.sap.com/legal-notice for use terms, disclaimers, disclosures, or restrictions related to SAP Materials for general audiences\n\f",
+    "In order to get access to the FPM configurator for customization, add the parameter FPM_CONFIG_EXPERT\nwith value A (A = Administrator) to your user profile.\n\f"
+  ],
+  "6": [
+    "Click on the screw-wrench symbol in the top right corner of the CRUIBB. This will open the FPM Component\nConfigurator in customizing mode. You can easily recognize this mode from the words \u201cAdministration\nLayer\u2019, \u201cCustomizing\u201d, and the orange-yellow bar.\n\f",
+    "Select \u201cShow Customizable Areas\u201d.\n\f",
+    "In the table \u201cForm UIBB Schema\u2019, select the element after which the field should be displayed. Then select\n\u201cAdd Element\u201d > \u201cAdd Element at Current Level\u201d.\n\f",
+    "Component Customizing USMD_CR_GENERAL_DATA\n\f",
+    "Material: New, DUMMY\n\f",
+    "\u00a9 2023 SAP SE or an SAP affiliate company. All rights reserved. See Legal Notice on www.sap.com/legal-notice for use terms, disclaimers, disclosures, or restrictions related to SAP Materials for general audiences.\n\f"
+  ],
+  "7": [
+    "If the screen for creating the material is still open, cancel the request.\n\f",
+    "Then enter the screen again and you will see the changed CRUIBB\n\f",
+    "Attributes of Element: CRTYPE_TEXT\n\f",
+    "A new UI element is added, for which you should enter the \u201cChange Request Type\u201d as the label text. Now,\nsave the customization and select a customizing request as appropriate for your use case. Close the\nconfigurator.\n\f",
+    "\u00a9 2023 SAP SE or an SAP a\n\n \n\nliate company. All rights reserved. See Legal Notice on www.sap.com/legal-notice for use terms, disclaimers, disclosures, or restrictions related to SAP Materials for general audiences.\n\f"
+  ],
+  "8": [
+    "Floorplan Manager: Application Hierarchy Browser ~ Application: MDG_BS_MAT_OVP\n\f",
+    "Joorplan Manager: Application Hierarchy Browser - Application: MDG_BS_MAT_OVP\n\f",
+    "When you have FPM administrator mode enabled, you can use the button \u201cApplication Hierarchy\u201d to check,\nwhether a customization of the UI configuration has been created.\n\f",
+    "\u00a9 2023 SAP SE or an SAP aff\n\n \n\nite company. All rights reserved. See Legal Notice on www.sap.com/legal-notice for use terms, disclaimers, disclosures, or restrictions related to SAP Materials for general audiences.\n\f"
+  ],
+  "9": [
+    "From the respective tabs of the application hierarchy, you can easily navigate to the FPM configuration as\nwell as to the customization. When you open the customization again in FPM configurator, you can revert to\nthe original configuration by resetting the customization.\n\f",
+    "Component Configurator for the Administrator Layer\n\f",
+    "Floorplan Manager: Application Hierarchy Browser - Application: MDG_BS_MAT_OVP\n\f",
+    "Component Customizing USMD_CR_GENERAL_DATA\n\f",
+    "jloorplan Manager: Application Hierarchy Browser - Application: MDG_BS_MAT_OVP\n\f",
+    "www.sap.com.\n\f"
+  ],
+  "10": [
+    "In addition to the detailed explanations written in this document, please see the following SAP Notes for\nfurther important information.\n\f",
+    "\u00bb Learn more: Latest Release | Help Portal | How-to Information | Key Presentations\n\n \n\f",
+    "e@ Please see the roadmap for SAP Master Data Governance\n\n \n\f",
+    "e Learn more: Floorplan Manager for Web Dynpro ABAP | How to Adapt FPM | FPM Blog | How-to\nInformation | Service Mapping Tool | SAP S/4HANA Cookbook CVI\n\n \n\f"
+  ],
+  "11": [
+    " \n\n2023 SAP SE or an SAP affiliate company. All rights reserved. See Legal Notice on www.sap.com/legal-notice for use terms, disclaimers, disclosures, or restrictions related to SAP Materials for general audiences.\n\f"
+  ]
+}
