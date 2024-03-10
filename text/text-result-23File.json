@@ -1,0 +1,547 @@
+{
+  "1": [
+    "Generated on: 2024-02-11 07:01:35 GMT+0000\n\f",
+    "This document has been generated from the SAP Help Portal and is an incomplete version of the official SAP product\ndocumentation. The information included in custom documentation may not reflect the arrangement of topics in the SAP Help\nPortal, and may be missing important aspects and/or correlations to other topics. For this reason, it is not for productive use.\n\f",
+    "Original content: https://help.sap.com/docs/SAP_ERP/a428aae377ba4all199c3ecc8b7f5f33d?locale=en-\n\n \n\f",
+    "Original content: https://help.sap.com/docs/SAP_ERP/a428aae377ba4all99c3ecc8b7f5f33d?locale=en:\n\n \n\nUS&state=PRODUCTION&version=6.17.latest\n\n \n\f",
+    "For more information, please visit the https://help.sap.com/docs/disclaimer.\n\f",
+    "SAP ERP | 6.0 EHP7 Latest\n\f"
+  ],
+  "2": [
+    "Sales processing is based on the following basic structures:\n\f",
+    "In the SAP System you can use several structures to represent the legal and organizational structure of your company. You cat\nstructure from the point of view of accounting, materials management, and sales and distribution. It is possible to combine\nthese structures. The organizational structures form a framework in which all business transactions can be processed.\n\f",
+    "e The processing of business transactions in sales and distribution is based on the master data. In the SAP System,\nbusiness transaction are stored in the form of documents. These sales and distribution documents are structured\naccording to certain criteria so that all necessary information in the document is stored in a systematic way.\n\f",
+    "In the SAP System you can use several structures to represent the legal and organizational structure of your company.The\norganizational structures form a framework in which all business transactions can be processed.\n\f",
+    "e Insales and distribution, products are sold or sent to business partners or services are performed for them. Data about\nthe products and services as well as about the business partners is the basis for sales processing. Sales processing with\nthe SAP System requires that the master data has been stored in the system.\n\f",
+    "Purpose\n\f",
+    "You link the organizational structures in SD with those in Financial Accounting and Materials Management\n\f"
+  ],
+  "3": [
+    "A distribution chain can be active for several plants and the plants can be assigned to different company codes. If the sales\norganization and plant are assigned to different company codes, an internal billing document is sent between the company\ncodes before the sales transactions are entered for accounting purposes.\n\f",
+    "In sales organization 1000, sales and distribution transactions can be carried out through all distribution channels and for a\ndivisions. In the sales organization 2000, products of both division 01 and division O2 are sold only through distribution\nchannel 10. In sales organization 3000, only products of division 01 are sold and only through distribution channel 10.\n\f",
+    "Each sales organization is assigned exactly one company code for which you enter all accounting details of the sales\norganization.\n\f",
+    "The sales organization must be specified in all sales documents. It is therefore available for all basic functions of SD (sucha\npricing, availability, etc.).\n\f",
+    "A sales organization is responsible for the sale and distribution of goods and services.\n\f",
+    "A sales organization can be subdivided into several distribution chains which determine the responsibility for a distribution\nchannel.\n\f",
+    "The sales organization is an organizational unit within logistics, that structures the company according to its sales\nrequirements.\n\f",
+    "It represents the selling unit as a legal entity. It is responsible for product guarantees and other rights to recourse, for example.\nRegional subdividing of the market can also be carried out with the help of sales organizations. Each business transaction is\nprocessed within a sales organization.\n\f"
+  ],
+  "4": [
+    "The organization in Sales is represented by the elements sales office, sales group and salespersons. The following figure\ndisplays a sample organization in business development and sales.\n\f",
+    "Geographical aspects of the organization in business development and sales are defined using the term sales office. A sales\noffice can be considered as a subsidiary. A sales office establishes contact between the firm and the regional market.\n\f",
+    "Within a sales organization a customer can be supplied through several distribution channels. In addition, the material master\ndata relevant for sales, such as prices, minimum order quantity, minimum quantity to be delivered and delivering plant, can\ndiffer for each sales organization and distribution channel.\n\f",
+    "The branch of a firm in Hamburg, main street 1 can represent a sales office\n\f",
+    "For every division you can make customer-specific agreements on, for example, partial deliveries, pricing and terms of payment.\nWithin a division you can carry out statistical analyses or set up separate marketing procedures.\n\f",
+    "A single distribution channel can be assigned to one or more sales organizations.\n\f",
+    "In the SAP System you can define a division-specific sales organization. Product groups, i.e. divisions, can be defined for a wide-\nranging spectrum of products.\n\f"
+  ],
+  "5": [
+    "Independent organizational entities, such as shipping points, are responsible for scheduling and processing deliveries to\ncustomers, as well as replenishment deliveries to your own warehouses.\n\f",
+    "The sales groups are assigned to the sales offices.\n\f",
+    "The transportation planning point is an organizational unit in Logistics, responsible for planning and processing transportation\nactivities.\n\f",
+    "The following figure displays a possible organization in shipping.\n\f",
+    "You can also enter the system user name of the sales person. This allows mails to be sent to the salesperson (define the\npartner function for salespersonnel in the sales document).\n\f",
+    "Sales offices are assigned to sales areas. If you enter a sales order for a sales office within a certain sales area, the sales office\nmust be assigned to that area.\n\f",
+    "You can maintain personnel master records for sales representatives in your company. In the personnel master record, you\nassign the salesperson to the sales office and the sales group.\n\f",
+    "must be assigned to that area.\n\f"
+  ],
+  "6": [
+    "You can print the receiving point and department on picking lists and delivery notes. If this information was included in the sales\norder, then it will automatically be inserted in these other documents; otherwise, you can enter it manually. (However, picking\nlists and delivery notes are not split by receiving point or department.)\n\f",
+    "The receiving point and department are located on the Business Data Detail Shipment screen, either at the header or item\nlevel. If the header contains this information, this becomes the default for all items, but you can override it for individual items if\nyou wish. Items in a sales order may have different receiving points and/or departments.\n\f",
+    "A pallet load of merchandise is delivered to Bay 1 at a department store (unloading point). The shipment is broken down 2\ndelivered to one or more floors (internal receiving points). From there the packages are delivered to one or more\ndepartments, such as Housewares, Consumer Electronics, Health & Beauty Aids, or Women's Dresses.\n\f",
+    "Departments are assigned to receiving points, which in turn are assigned to unloading points. One receiving point may have\nseveral departments assigned to it, but each department is assigned to only one receiving point. By knowing a department, you\ncan therefore also determine the receiving point and the unloading point.\n\f",
+    "In Customizing for Retail ( |}Retail > C > entral coordination > Sales > Sales order processing > Maintain promotion/receivi\npoint determination per sales document type 9 ) you can specify for each type of document whether or not automatic\ndepartment and receiving point determination is to be done.\n\f",
+    "Departments are subdivisions of a ship-to party. These might be, for example, different departments in a store, bays ina\ndistribution center, or areas in a manufacturing plant.\n\f",
+    "Using departments and receiving points enables you to more finely specify the final destination for a shipment or portions of a\nshipment, thus reducing the time it takes for the goods to become available for the receiver's use or sale.\n\f"
+  ],
+  "7": [
+    "To monitor the stock of material it is necessary to be able to store in the system the locations at which materials are kept. You\ncan do this using the terms plant and storage location. A plant can either be a place of production or a single storage location,\nor a combination of closely situated storage locations where stock is kept.\n\f",
+    "A group can be represented in the system using the terms client and company code. Generally, a client represents a group,\nwhile a company code represents a company in the sense of an independent accounting unit. Company codes are independent\nfrom each other in the legal sense.\n\f",
+    "The following figure illustrates how the client is subdivided in company codes.\n\f",
+    "Every plant is assigned to a company code. This ensures that stocks and stock values can be managed separately in each\ncompany.\n\f",
+    "The system can automatically determine the appropriate department and receiving point for an article. To enable this you must\nfirst of all carry out the following:\n\f",
+    "When you enter an article on a sales order, for example, the system checks the merchandise category to which the article\nbelongs, then checks the merchandise category information for that site or customer. The system then locates the\ncorresponding department and receiving point for this article.\n\f",
+    "The following figure illustrates how the client is subdivided in plants and storage locations.\n\f",
+    "In either case, you then assign valid departments and receiving points to the customer or site, and a department to each\nmerchandise category. A merchandise category can only have one department.\n\f"
+  ],
+  "8": [
+    "By assigning sales organizations and plants you create a link between company codes and sales organizations. A plant, thougt\nalways linked to one company code, can be assigned to different sales organizations. Within a company code several sales\norganizations can be active. Business transactions can also be carried out between different company codes (for example,\nduring inter-company sales processing).\n\f",
+    "The plants allowed for sales are determined for each sales organization according to the distribution channel, so that a sales\norganization can sell goods from several plants. A plant can be assigned to different sales organizations. All of these sales\norganizations can sell from that plant.\n\f",
+    "You can differentiate further between the plants belonging to a sales organization from the sales view using the distribution\nchannel. For certain plants within a sales organization, the distribution channel \"sales from plant\" is allowed, but not for others\n\f",
+    "The following figure displays possible assignments of company codes, sales organizations and plants.\n\f",
+    "Plants 1, 2 and 3 belong to company code 1. Sales organization 1 uses plants 1 and 2. Sales organization 2 uses plants 2 and 3.\nSales organizations 1 and 2 can make cross-company sales for goods from plants 4 or 5.\n\f"
+  ],
+  "9": [
+    "A company deals with different natural and legal persons during business transactions: A customer orders goods from your\ncompany. A forwarding agent might deliver goods to the customer. An employee within the company processes the busines\ntransactions. All roles a natural or legal person can assume are represented by business partners in the SAP System.\n\f",
+    "The term \u201ccustomer\u201d is used to define all customers to whom the company has contact. The term \u201cvendor\u201d is used to di\nbusiness partners who carry out a delivery or a service for the company. A business partner can be a customer and a ver\nthe same time if, for example, your customer also supplies goods to you. In this case, both a customer master record an\nvendor master record must be created for the business partner. You can create a link between the master records by er\nthe vendor number in the customer master record and the customer number in the vendor master record.\n\f",
+    "Only the personnel department of your company is authorized to create a personnel master record, using Human Resources\n(HR). The personnel department of your company manages the personnel numbers of the employees. If HR is not used in your\ncompany, you can create a personnel master record yourself for employees in sales and distribution.\n\f",
+    "Data on employees of your own company, for example, sales personnel or clerical staff, is managed in the personnel master\nrecord. Data on each employee can be managed by his or her personnel number.\n\f",
+    "A company has contact with its business partners, who are customers and vendors. Data on each of these and on the\ncompany's personnel is stored in a separate master record.\n\f",
+    "Data on business partners who are vendors, for example, forwarding agents, is managed in the vendor master record. If a\nvendor is also a customer, a link can be created.\n\f"
+  ],
+  "10": [
+    "Financial Accounting and Logistics use business partner master data. As such, data relevant to both departments is stored as\ngeneral data in the business partner master data record. Likewise, general data does not depend on a company code, sales and\ndistribution organization, or purchasing organization. It includes:\n\f",
+    "The department that creates the business partner master record is responsible for entering the general data. For example, if\nFinancial Accounting creates the business partner master record, accounting must also enter general data, which is then visible\nto Logistics as they add the logistics data.\n\f",
+    "Master records for business partners who are customers or vendors have the following structures:\n\f",
+    "You enter data on business partners with whom your company has business relationships in master data records. Maintaini\nbusiness partner information in central records increases the speed with which your company can process business\ntransactions.\n\f",
+    "General data is not limited to information used by both Financial Accounting and Logistics. The unloading point, for example, |\nunique for a customer and is only relevant for Sales and Distribution. However, because it is not part of the sales and\ndistribution organization of your company, it is not sales and distribution data, it is general data.\n\f",
+    "Partner Determination in Sales and Distribution\n\n \n\f",
+    "Company code data only applies to one company code. This data is only relevant to Financial Accounting, and include:\n\f"
+  ],
+  "11": [
+    "In addition to data that is valid for the whole purchasing organization, you can enter information on the Purchasing data \u00ab\nPartner functions screens that is only valid for a particular site or vendor sub-range. This includes terms of payment or\nincoterms that differ from those valid for the purchasing organization. Such data is retained at the following levels:\n\f",
+    "The data for one customer can differ for each sales area. The sales area is a combination of sales organization, distribution\nchannel, and division. This data is only relevant to Sales and Distribution, and includes:\n\f",
+    "You negotiate better prices and conditions for a particular vendor sub-range than those valid for the purchasin;\norganization. You create a vendor sub-range and maintain the different terms of payment for it.\n\f",
+    "You can only process sales and distribution transactions, for example, a sales order, after entering the sales and distributio\ndata for a customer.\n\f",
+    "If you edit a customer master record, you must enter the customer number and the sales area to access screens containing\nsales and distribution data.\n\f"
+  ],
+  "12": [
+    "The number for a business partner master record can be assigned in one of the following ways\n\f",
+    "If you create a master record for the partner function ship-to party, for example, the system proposes an account group. You\ncan also use account groups to define all other partner function combinations (for example, if the ship-to party is also the payer\nfor the goods).\n\f",
+    "You assign the number. In this case, you can define a number range that allows for alphanumerical number assignment.\nThe system checks whether the number you enter is unique and within the number range defined by the account group.\n\f",
+    "Changing an Account Group\n\f",
+    "In Customizing, you define account groups available in the following activitie:\n\f",
+    "Logistics Basic Data: Business Partners\n\f",
+    "A unique number is assigned to each business partner master record. You can use this number to access the master record, or\nto refer to the business partner when processing business transactions.\n\f",
+    "\u00bb Accounts Receivable and Accounts Payable ( Financial Accounting)\n\f",
+    "e Whether there are any other data retention levels below the purchasing organization level (for example, site or vendor\nsub-range level) at which data can be retained in the vendor master, and if so, what these are\n\f"
+  ],
+  "13": [
+    "You first create a master record for your business partner in one sales area. You then create a second master record for the\nsame business partner in another sales area. In this case, the system identifies the business partner number and does not\ndisplay the existing general data from the first master record for maintenance. You can use the change and display functions\nto access the general data.\n\f",
+    "A number range can be valid for more than one account group.\n\f",
+    "Accounts Receivable and Accounts Payable\n\f",
+    "Logistics Basic Data: Business Partners\n\f",
+    "In the standard system, the account groups for the following customer partner functions are in the same number range si\nthe numbers for these customer master records are assigned consecutively:\n\f",
+    "You can use the number range to assign different numbers to a head office and subsidiaries.\n\f",
+    "A customer's number is unique for all sales areas and company codes. A vendor's number is unique for all purchasing\norganizations and company codes.\n\f",
+    "In Customizing you define the number ranges that are to be available. You do this in the following activities:\n\f"
+  ],
+  "14": [
+    "A subsidiary office can place an order and its head office can pay the invoice. In this case, you divide partner functions among\nthe different offices. You need a corresponding number of customer master records. In one master record you enter, for\nexample, the address of the sold-to party for correspondence, in the other, the address of the ship-to party for delivery. You\nestablish a link between the partner functions in the customer master record of the sold-to party by entering the customer\nnumber of the respective partner functions.\n\f",
+    "Contains data on billing schedules and bank details\n\f",
+    "The company or person who places an order can be the same company or person who receives the goods and the invoice and\npays. Because this customer assumes all partner functions, you create one master record for the customer. You create a\ncustomer master record for the sold-to party in which you enter data required for the other partner functions.\n\f",
+    "The following are examples of partner functions that are defined in the standard system:\n\f",
+    "e Partner functions for partner type customer\n\f",
+    "e Partner functions for partner type vendor\n\f",
+    "You can use this partner function, for example, to assign a buyer within your company to a vend\n\f",
+    "Use partner functions to define the rights and responsibilities of each business partner in a business transaction. You assign\npartner functions when you create a master record for a business partner.\n\f"
+  ],
+  "15": [
+    "Partner Determination in Sales and Distribution\n\n \n\f",
+    "To create consumer master data and to process sales, you require reference data known as the reference customer. You can\ncreate a maximum of one reference customer per client. When you create the reference customer, you must enter company\ncode data and sales area data. Company code data and sales area data is used with master records for consumers as follows:\n\f",
+    "When you create a master record for a consumer, the company code data for the consumer is copied from the reference\ncustomer. Once the master record is created, you can maintain the data for this company code and additional company codes\n\f",
+    "You create a master record for a consumer and you do not enter sales area data. During operative business transactions, for\nexample, when you create an order for a consumer, the sales area data is copied from the reference customer.\n\f",
+    "The partner determination procedure specifies the partner functions that are allowed or mandatory for processing a particular\nbusiness transaction, such as a sales or purchase order.\n\f",
+    "e Sales area data is maintained for a consumer.\n\f",
+    "When creating master records, you define the partner functions for business partners by assigning an account group. For\npartner types customer and vendor, you define which account group can be used for which partner function. You do this ir\nCustomizing in the following activities:\n\f",
+    "Reference Customer\n\f",
+    "Aconsumer is a natural, private business partner with whom you have a relationship involving the transfer of goods and\nservices. You create customer master records for business partners who are consumers.\n\f",
+    "In Customizing for Purchasing ( MM ) in the activity Define permissible partner roles per account group.\n\f"
+  ],
+  "16": [
+    "Processing Operative Business Transactions\n\f",
+    "You have not maintained sales area data for a consumer. During document entry, the sales area data is copied from the master\ndata of the reference customer.\n\f",
+    "The following partner functions are automatically assigned to the consumer who is ordering\n\f",
+    "The reference customer is used to determine other partner functions, for example\n\f",
+    "e You have not maintained sales area data for a consumer.\n\f",
+    "When you maintain consumer master data, you can switch between these options without leaving the transaction. As for\ncustomer master data maintenance, standard tabs appear as defaults or you can create your own tab layouts for both\nconsumer master data maintenance options.\n\f",
+    "You have the following options for maintaining consumer master data:\n\f",
+    "In customizing for Business Partners , you can create your own tab layouts for consumer master data maintenance. You do this\nin the activity Create Tab Layouts for Consumers .\n\f",
+    "When you create an order, for example, partner functions are determined as follows\n\f"
+  ],
+  "17": [
+    "Creating and Changing Business Partner Master Data\n\n \n\f",
+    "To call up the individual functions in the table, choose the following path from the initial screen: |}Logistics > Sales and\n\f",
+    "Partner Determination in Sales and Distribution (SD-BF-PD)\n\n \n\f",
+    "e You can use the button All sales areas ... to select one of the sales areas created in the systen\n\f",
+    "You often need to enter a valid sales area in the entry screen for customer master record maintenance. There are two\nbuttons to help you with this entry.\n\f"
+  ],
+  "18": [
+    "Displaying Additional Information for Customer Master Records\n\n \n\f",
+    "You create a customer master record when you start a business relationship with a new customer.\n\f",
+    "2. Enter a customer number in the customer field or leave it empty, depending on whether external or internal assignment\nis set for the account group.\n\f"
+  ],
+  "19": [
+    "Here you can enter the delivery and payment requirements.\n\f",
+    "Enter the data for pricing here.\n\f",
+    "1. To enter sales-specific data, choose Sales area data.\n\f",
+    "information under Displaying Additional Information on Customer Master Records.\n\f",
+    "Define the possible partner functions for this customer and the business partner, that should be automatically proposed ina\nsales document such as a sales order. These functions could be, for example, contact partners, sales executives, different\npayers and so on.\n\f",
+    "Enter the shipping priority and shipping requirement.\n\f",
+    "Enter a name in the field Search term which will later make it possible for you to retrieve the customer master record using a\nmatchcode.\n\f",
+    "Here you can enter data on the contact persons. You can use the buttons to enter additional data for each contact person, for\nexample, visiting times, etc.\n\f",
+    "Enter data for account control and control processing. If the customer comes from an EU country, you must enter a sales tax\nnumber.\n\f",
+    "You can display additional information, for example, on the account group, when processing the data. You can find further\ninformation under Displaying Additional Information on Customer Master Records .\n\f",
+    "The following message is displayed at the bottom of the screen:\n\f",
+    "You reach the Create Customer: Sales area data You can enter the following data on the tab pages:\n\f"
+  ],
+  "20": [
+    "If you only enter the customer number in the reference section, the system will only copy the general data into the new\ncustomer master record. If you also enter data on the sales area, the sales and distribution data will also be copied. Only\ndata, which can be identical for both master records, is copied. For example, address and unloading points are not copied,\n\nwhile country, language and account group are. You can change all copied data.\n\f",
+    "If you create a customer master record for a customer, for which a customer master record already exists in another sales\narea, then use the customer that has already been created as a reference. In this case you do not need to enter the genera\ndata for the second master record again.\n\f",
+    "Logistics - General : Business Partner Structure of the Master Data in the Business Partner Record\n\f",
+    "If you need special information on a customer master record, such as the name of the user who created the customer master\nrecord, or the sales areas, you can display these.\n\f",
+    "This display functions regardless of whether you are in the display or change screen.\n\f",
+    "Enter the number of the customer whose master record you wish to use as a reference in the Customer field in the\nReference screen area of the entry screen.\n\f",
+    "Function\n\f"
+  ],
+  "21": [
+    "You mark a customer master record for deletion if, for example, you no longer maintain business relationships with the\ncustomer. By using the deletion indicator you mark the customer master record, so that the corresponding reorganization\nprogram later recognizes this master record and deletes it from the file. The master record is only deleted after all dependen\ndata has been deleted.\n\f",
+    "You can cancel a block in a customer master record by removing the block indicators. To do this, proceed exactly as if you\nwanted to set a deletion indicator. As soon as you reach the data screen Mark for Deletion Customer: Details Screen, you ca\nremove the indicator and save the master record. You receive a message that the changes have been made. The deletion\nindicator has been removed.\n\f",
+    "To mark a customer master record of a sold-to party for deletion, use the following steps:\n\f",
+    "4. If you specify a sales area, you can mark the customer for deletion for selected sales areas on the next data screen. If\nyou do not specify a sales area, you can mark the customer generally for deletion, i.e. for all sales areas, on the next data\nscreen.\n\f",
+    "You can also set a deletion indicator when you are in the customer master record by selecting |}Extras > Deletion > indicators 9\nin the customer master record change mode and then entering the deletion indicator.\n\f"
+  ],
+  "22": [
+    "You can display all changes which have been made in a customer master record. You can display changes in the display mode\nand in the change mode. There are two ways of doing this:\n\f",
+    "1. In the SD Master Data Screen select, |}Business partners > Customer hierarchy > Block > . J\n\f",
+    "You can cancel a block in a customer master record by removing the block indicators. First use the same steps as for blocking,\nas described above. As soon as you access the data screen Block/Unblock Customer : Details screen, you can remove the\nexisting block indicator and save the master record. You receive a message that the changes have been made. The block is\ncanceled.\n\f",
+    "6. You reach the Block/Unblock Customer: Details screen.\n\f",
+    "To display changes to sales and distribution data in the customer master record for, for example a sold-to party, proceed as\nfollows:\n\f",
+    "4. lf you do not specify a sales area, you can set a general block for all sales areas on the following data screen. If you\nspecify a sales area, you can set the blocks for selected sales areas.\n\f",
+    "Displaying Changes to Sales and Distribution Data\n\f",
+    "You return to the initial screen Block/Unblock Customer: Initial Screen where the following message is displayed: Changes\nhave been made.\n\f",
+    "Unblocking Customer Master Records\n\f",
+    "2. You reach the Block/Unblock Customer: Initial Screen.\n\f",
+    "3. Enter the number of the sold-to party you would like to block.\n\f",
+    "1. In the SD Master Data Screen select, |}Business partners > Sold-to Party > Display changes > Display changes > . J\n\f",
+    "9. Save the changes using Save .\n\f",
+    "8. You can use predefined keys to indicate the reasons for block, and to determine the blocking type. It is possible, for\nexample, to block the processing of credit memo requests for a particular customer, perhaps until credit difficulties are\n\f"
+  ],
+  "23": [
+    "7. You reach the Customer Changes:Changed Fields screen. The system lists the changed fields.\n\f",
+    "3. Enter the range of customer names or numbers which you want to check. In addition, you can specify search terms such\nas the date from which you want to check for changes and the user who made the changes.\n\f",
+    "You can also use the Display changes function to display changes to customer master data for more than one customer. This is\ndone as follows:\n\f",
+    "2. You reach the Display of Customer Changes screen.\n\f",
+    "5. Indicate how you want the list to be sorted by entering the appropriate sort method in the Sorting field. If you want the\ntechnical names of the fields to be displayed in the compiled list., mark the Technical field names field.\n\f",
+    ">. You reach the screen Customer Changes: Changed Fields screen. The system lists the changed fields. You can perform\nthe functions described in the above section.\n\f",
+    "6. Select Back until you return to the initial screen.\n\f",
+    "You can search within the list for, for example, records changed on a ona particular date or for a particular customer by\nselecting |}Edit > Find. 9 A dialog box appears in which you can enter a search term which suits your purposes (the\ncreation date or customer name, for example).\n\f",
+    "You can display all changes made to a customer master record by selecting All changes . You reach the screen Custome!\nChanges: Overview where you see a list of the changed field entries, including the date, and the old and the new value.\n\f",
+    "2. You reach the Customer Account Changes: Initial Screen .\n\f",
+    "6. Select Back until you return to the initial screen.\n\f"
+  ],
+  "24": [
+    "If, for example, a customer who has always fulfilled the function of a payer then takes on the role of a sold-to party, you have to\nassign the new function to the customer. However, since screen and field selection in the customer master record are controlled\nby the account group, you can only assign the other function by changing the account group.\n\f",
+    "Changes to the account group and the accompanying partner functions can only be made from a lower level to a higher level.\nFor example, this means that a sold-to party cannot be assigned the function of a payer as fields which have already been\nmaintained for this sold-to party would have to be masked. However, you can assign the sold-to party function to a payer.\n\f",
+    "To change the account group of a payer, proceed as follows:\n\f",
+    "You can change the account group for the following partner functions:\n\f",
+    "6. You reach the Change Account Group Customer: Initial Screen dialog box which informs you of the account group of the\nprevious partner function. Here, you enter the account group of the new partner function you wish to assign to the payer.\n\f",
+    "The following topic explains how you change the account group for a payer.\n\f",
+    "3. Enter the number of the payer whose account group you wish to change and press ENTER.\n\f",
+    "7. Enter the required account group in the field New account group and press ENTER.\n\f",
+    "1. In the SD Master Data Screen, select |p>Business partners > Payer > Change account group > . J\n\f"
+  ],
+  "25": [
+    "Customer master records are created and maintained in Financial Accounting and in Sales and Distribution. In some cases, a\ncustomer master record may have been created for a customer in SD but not in Fl and vice versa. There is a program which\ndetermines which customer records have been maintained in one of these applications but not in the other.\n\f",
+    "You have now completed the maintenance of the new fields in the customer master for the first company code/sales area. If the\ncustomer has been created for several company codes/sales areas, maintain the fields for the remaining company codes/sales\nareas as well. The company codes/sales areas for the customer are displayed in the dialog box Company Codes/Sales Areas by\nCustomer (see Step 3).\n\f",
+    "It may make sense to block the customer until all the necessary data has been maintained.\n\f",
+    "15. Select yes and press ENTER to save your data.\n\f",
+    "To perform this function for the sold-to party, for example, proceed as follows:\n\f",
+    "2. You reach the selection screen.\n\f",
+    "If the customer has been created for several company codes/sales areas, master record maintenance is carried out here\nfor the company code/sales area which was displayed first in the dialog box Company Code/Sales Areas by Customer .\n\f",
+    "13. Maintain all the screens in the customer master record which you feel are important. Maintain all the mandatory fields\nat least.\n\f",
+    "You return to the Change Customer Account Group: Initial Screen and you receive a message informing you that the changes\nhave been saved.\n\f",
+    "You only branch directly to customer master record maintenance if you have the authorization to change master\nrecords. Otherwise, these fields must be maintained at a later point in time by someone who has the authorization to do\n\f"
+  ],
+  "26": [
+    "With customer hierarchies you can now create flexible hierarchies to reflect the structure of customer organizations. For\nexample, if your customer base includes multi-level buying groups, cooperatives, or chains of retail outlets, you can create\nhierarchies to reflect the structure of these groups. You use customer hierarchies in order and billing document processing\npartner and pricing determination (including rebate determination) and for creating statistics.\n\f",
+    "You can use customer hierarchies to assign price conditions and rebate agreements to one of the customer\u2019s subordinate\nlevels, to ensure that all subordinate levels are valid for the customer. For each node that you indicate as relevant for pricing,\n\nyou can create condition records for pricing. If one or more nodes in a hierarchy path for a sales order contain pricing data, this\nis automatically taken into account in pricing.\n\f",
+    "Note that the hierarchy assignment is statistical. If you change the customer hierarchy, you may need to change the\nhierarchy level manually in the customer master record in the Hierarchy assignment field.\n\f",
+    "You can search within the list for, for example, records created on a particular date or for a particular customer by\nselecting |}Edit > Find. 3 A dialog box appears in which you can enter a search term which suits your purposes (the\ncreation date or customer name, for example).\n\f",
+    "To evaluate customer hierarchies with the sales information system and in the profitability analysis, you can maintain the field\nHierarchy assignment on the Marketing tab page in the customer master record for a hierarchy customer. Here you can\n\nmaintain 10 features for hierarchy customers (HIEZUO1 to HIEZU10). You can use these to evaluate hierarchies statistically wit\nup to 10 levels. (Field catalogue VHIE)\n\f",
+    "A customer hierarchy is a flexible structure consisting of customers . Each customer - with the exception of the uppermost\ncustomer - refers to another customer at a higher level in the hierarchy (known as a higher-level customer ). Customers that\n\f",
+    "10. Select Back until you return to the initial screen.\n\f",
+    "You can also use customer hierarchies for evaluations in profitability analysis (CO-PA) and in the Sales Information System\n(SIS):\n\f",
+    "8. Select |}Program > Execute. J\n\f"
+  ],
+  "27": [
+    "You can use the customer hierarchy type to determine the following:\n\f",
+    "The sales area data can differ.\n\f",
+    "When you create or maintain a hierarchy node, you must enter organizational data. Just as with customer master records, you\nspecify the sales area: sales organization, distribution channel and division.\n\f",
+    "Customer hierarchy type A is provided in the standard system (standard hierarchy). You can define your own hierarchy types in\nCustomizing for sales and distribution under |}>Master data > Business partner > Customer > Customer hierarchy > Define\nhierarchy tvnes.\n\f",
+    "When you maintain a hierarchy, enter the corresponding hierarchy type.\n\f",
+    "As all nodes in a hierarchy are time-dependent, you can adapt the customer hierarchy to changes in the structure of a custome!\nat any time.\n\f",
+    "Customers maintained for different divisions may be assigned to the same higher-level node\n\f"
+  ],
+  "28": [
+    "You use customer hierarchy nodes as customers in a customer hierarchy, if you require an element to which data can be defined\nspecifically for the customer hierarchy (for example, pricing or rebate relevance) but which does not take on an active role in\norder processing such as for example, a goods recipient.\n\f",
+    "In Customizing for sales and distribution you specify,\n\f",
+    "For customer hierarchies there is also an individual account group available: the account group Customer hierarchy nodes\n(0012). In a master record for this account group you can specify specific data that is only required for one node in a custome\nhierarchy, that does not take on any active role in order processing such as sold-to party, goods recipient etc.\n\f",
+    "For example, you can exclude the possibility of defining ship-to parties as higher-level nodes, since ship-to parties play no role\nin pricing.\n\f",
+    "If required, you can change the account group for a customer in the customer hierarchy, for example, you can assign the\naccount group Sold-to party to a customer with account group Customer hierarchy nodes , that cannot issue orders, so that |\ncan issue orders. For further information, see Changing An Account Group\n\f",
+    "The master records in the customer hierarchy are controlled by their account groups. You can use the same account groups for\ncustomer hierarchies as those used for partner determination in sales and distribution.\n\f",
+    "You can define restricted, customer hierarchy specific data in the master record of a customer hierarchy node, but no data that\nis necessary for overall sales and distribution processing or for accounting.\n\f"
+  ],
+  "29": [
+    "You maintain the hierarchy, changing the assignment of nodes as necessary and entering the valid-from date that corresponds\nto the change at the customer. Until that time the existing node assignments continue to function as before. In addition, you\ncan also specify a valid-to date for a node. If you leave the valid-to date blank, the system automatically proposes 12/31/9999.\n\f",
+    "When creating or changing a hierarchy node, enter a valid-from date. For example, a customer advises you that the buying\nstructure of his organization will change, effective the beginning of next year. You want to restructure the customer hierarchy in\nadvance.\n\f",
+    "In the sales and distribution view, enter on the\n\f",
+    "If required, name and other data to contact persons\n\f",
+    "Whether the node is relevant for pricing and rebate processing\n\f",
+    "Name and address data\n\f",
+    "Assignment to the sales information system (SIS) and profitability analysis (CO-PA)\n\f",
+    "To create a master record for a customer hierarchy node, proceed as follows:\n\f",
+    "1. In the SD Master data screen, select, |}Business partners > Hierarchy nodes > Create J.\n\f"
+  ],
+  "30": [
+    "To be able to use customers for customer hierarchies, you must have defined the following in Customizing for Sales and\nDistribution:\n\f",
+    "5. You can maintain the hierarchy at a later date, as follows:\n\f",
+    "In the customer master record you can indicate whether the customer is relevant for pricing, rebate processing,\nprofitability analysis (CO-PA) or evaluations in the sales information system (SIS).\n\f",
+    "Prerequisites\n\f",
+    "3. You create a hierarchy by assigning customers to the relevant higher level.\n\f",
+    "See also:\n\f",
+    "1. You create master records for each customer that you want to use in the hierarchy.\n\f",
+    "4. Normally the sold-to party or goods recipient are assigned to the lowest hierarchy level. You can, however, also assign 2\nsold-to party to a node, that is at a higher level. For example, you could assign a particularly large branch of a chain of\nretail outlets to the regional office instead of to the local office.\n\f",
+    "|pYou create a third, limited change to the assignment: 4712 > 4000. The system automatically redetermines all three\nvalidity periods. The resulting validity data looks like this: J\n\f",
+    "|)4712 > 4711 (01.01.1993 - 30.06.1994) > > 4712 > 4000 (01.07.1994 - 31.12.1994) > > 4712 > 5000 (01.01.1995 -\n31.12.9999) 3\n\f"
+  ],
+  "31": [
+    "Customer Hierarchy, Organizational Data, and Pricing Relevance\n\f",
+    "In the following example, the customer hierarchy represents the Smith nation-wide buying group. The central office (that is,\nSmith Central) is defined as the top node in the hierarchy. The regional offices for the buying group (that is, Smith South, Sm\nNorth, Smith Midtown, and Smith North East) are defined as nodes, whereby Smith North is a higher-level node to Smith\nMidtown and Smith North East.\n\f",
+    "Creating Customer Master Records\n\f",
+    "Account Groups in Customer Hierarchies\n\f",
+    "Some nodes, for example, Smith North, are indicated as relevant for pricing (that is, conditions that are valid for them are also\nvalid for the customers assigned to them).\n\f",
+    "You can create special conditions or agreements for higher-level customers in the hierarchy. During order processing, the\nsystem uses the current customer hierarchy and chooses the valid conditions.\n\f",
+    "If you assign a customer in the hierarchy, the system creates a time-dependent assignment for this customer to the high\nlevel customer. When processing the customer hierarchy, you can change these assignments. You cannot change the\ncustomer master data. Changes in the customer master record are made in customer master record maintenance.\n\f"
+  ],
+  "32": [
+    "3. You must enter the following data in the selection screen:\n\f",
+    "The following points are recommended:\n\f",
+    "2. The selection screen for displaying the customer hierarchy appears.\n\f",
+    "e acustomer number, which is assigned to the hierarchy\n\f",
+    "If you do not enter a sales and distribution area, the system determines one automatically.\n\f",
+    "The customer entered in the selection screen appears with all higher-level and lower-level nodes, that are valid at a given point.\nCustomers on the same hierarchy level as the customer entered and customers on a different level, that are not directly\nconnected to the originally entered customer are not displayed.\n\f",
+    "In the right-hand side of the screen you can see detailed information on the customer selected such as the sub-ordinate\ncustomers assigned to it and the validity period.\n\f",
+    "1. From the Sales and distribution - Master Data menu, choose |}Business partners } Customer hierarchy > Edit. 9\n\f",
+    "The screen Maintain customer hierarchy screen.\n\f",
+    "In the right lower part of the screen you can see the application log in which the system messages are collected and displayed\nduring processing of the customer hierarchy.\n\f",
+    "e There is a search help which automatically takes into account the hierarchy type and the validity date entered. It only\ndisplays customers that are valid at a given time for the hierarchy type.\n\f"
+  ],
+  "33": [
+    "The system shows the customer at the corresponding point in the hierarchy.\n\f",
+    "The system shows the customer at the highest point in the hierarchy.\n\f",
+    "Creating Customer Master Records or Account groups in Customer Hierarchies .\n\n \n\f",
+    "If you want to create a new customer hierarchy, the area of the screen in which the overview tree is normally shown, is empty.\nProceed as follows:\n\f",
+    "1. Repeat these steps for each customer that you would like to assign in the hierarch\n\f",
+    "1. In the customer area in the right-hand side of the Assignment screen, enter the number and the sales area of the\ncustomer, that should display the uppermost nodes for the customer hierarchy.\n\f",
+    "3. Enter a validity period for the uppermost hierarchy node.\n\f",
+    "Customer hierarchies are flexible and time-dependent, as organizations are constantly undergoing changes.\n\f",
+    "You reach Customer Hierarchy Maintenance .\n\f",
+    "1. Enter in the area below the number and the sales area of the customer, that you want to assign. A validity period is\nproposed that you can overwrite.\n\f"
+  ],
+  "34": [
+    "For further information, see Creating a Customer Hierarchy.\n\f",
+    "You reach Customer Hierarchy Maintenance .\n\f",
+    "2. Enter a new validity period in the right-hand side of the screen and choose Copy.\n\f",
+    "The customer appears in the new place in the hierarchy from today\u2019s date onwards.\n\f",
+    "For further information, see Removing Customers from the Hierarchy.\n\f",
+    "1. Select a customer and choose |>Customer > Assignment > Change Validity. 9\n\f",
+    "You can use this function to display future changes to the customer hierarchy\n\f",
+    "1. Select the customer that you want to reassign and choose |}Customer > Ressign. 9\n\f",
+    "If other customers are assigned to the reassigned customer, these are automatically reassigned as well.\n\f",
+    "You can reassign a customer using drag & drop.\n\f",
+    "The indicators you enter to show whether the customer is relevant for pricing, rebates or statistics, only apply automatically for\nnewly assigned customers.\n\f",
+    "The customer is assigned to the higher-level customer from the new valid-to date to the new valid-from date.\n\f"
+  ],
+  "35": [
+    "You can delete assignments in a hierarchy. When you make a deletion, the system reacts differently, depending on the validity\nperiod of the assignment. For example, other assignments may automatically be changed as a result of the deletion. The\nfollowing scenarios describe possible system reactions:\n\f",
+    "You reach Customer Hierarchy Maintenance .\n\f",
+    "The customer no longer appears in the hierarchy.\n\f",
+    "If a customer leaves your customer organization, remove this customer from the hierarchy.\n\f",
+    "The system physically deletes the assignment.\n\f",
+    "The system updates the assignment and sets the valid-to date to yesterday's date.\n\f",
+    "e The valid-from date is today's date or lies in the future.\n\f",
+    "As from today's date, the customer is no longer part of the hierarchy.\n\f",
+    "1. Select the customer that you wish to remove from the hierarchy.\n\f",
+    "Assignment of the customer is deleted from today\u2019s date, the customer master record, however, still exists. If you\ndelete a customer master record, you must do this in maintenance of the sales master data.\n\f"
+  ],
+  "36": [
+    "If you delete the second assignment on 02/02/1994, the system changes the valid-to date of the first assignment to\n12/31/9999. However, if you delete the second assignment on 02/02/1995, the system changes the valid-to date of this\nassignment to 02/01/1995. If you delete the first assignment on 02/02/1994, the system advises you that a future valid\n\nfor this assignment exists.\n\f",
+    "The system informs you about errors occurring in the customer hierarchy maintenance. The system uses the application I\nwhich lists the errors, warnings and success messages.\n\f",
+    "If you change data in a customer master record (for example, the pricing indicator) that is already assigned as part of a\ncustomer hierarchy, the system does not automatically update the data in the hierarchy assignments. You must update the\ncustomer hierarchy in the next call up.\n\f",
+    "1. Select the highest customer whose data you would like to update.\n\f",
+    "You reach Customer Hierarchy Maintenance .\n\f",
+    "Updating of part of a hierarchy is quicker and puts less strain on the system.\n\f",
+    "When updating the whole hierarchy, all valid customers in the customer hierarchy on one date are updated. The customer datz\nthat cannot be displayed on the screen during processing, as there is less space for displaying on the entry screen, is also\nupdated.\n\f",
+    "For further information, see Application Log.\n\f",
+    "e Update the subhierarchy\n\f"
+  ],
+  "37": [
+    "The system then uses partner determination to find higher-level partner functions, until it has determined the complete\nhierarchy path for the sales order. The standard version of the SAP System includes four standard partner functions for this\npurpose: 1A - 1D. You can add as many additional partner functions as you require, up to a maximum of 26 levels.\n\f",
+    "During sales order processing, the system automatically determines special partner functions in the partner data of the\ndocument. The system uses these partner functions for the following purposes:\n\f",
+    "Customer hierarchies are used to determine pricing and rebates in sales documents and billing documents. When you process\nan order for a customer that is assigned to a customer hierarchy, the system determines the relevant hierarchy path\nautomatically.\n\f",
+    "To determine the hierarchy path and store it in the document\n\f",
+    "The system confirms that all assignments were updated.\n\f",
+    "You have maintained the partner functions for the customer hierarchy (1A to 1..) in Customizing and assigned them to the\npartner determination procedure for the corresponding order type.\n\f",
+    "To make it possible to display sales orders or invoices by node\n\f",
+    "To store hierarchy data per item (the pricing of individual items in the order may relate to different hierarchy nodes)\n\f",
+    "2. Choose |PHierarchy > Update > All. J\n\f",
+    "1. Set the cursor in the overview tree.\n\f"
+  ],
+  "38": [
+    "The system defines the partner data from the hierarchy path determined in the order.\n\f",
+    "Partner functions per hierarchy level\n\f",
+    "The partner function 1A is defined in Customizing as the default partner function. The customer has the partner function AG\n(sold-to party).\n\f"
+  ],
+  "39": [
+    "You must create a pricing procedure in Customizing for sales and distribution for the condition types used in customer\nhierarchies. The standard version of the SAP System includes the following condition types for creating condition records in\ncustomer hierarchies:\n\f",
+    "1. Choose in the order |}Goto > Header Jor |}Item > Partner. J\n\f",
+    "e All partners without the higher-level hierarchy partner\n\f",
+    "3. In the Scope of display field on the above tab page, you have the following options:\n\f",
+    "Customer hierarchies enable you to apply pricing and rebate agreements that are determined at a higher level than the\ncustomer. For each customer or node that you indicate as relevant for pricing, you can create condition records for pricing.\n\f",
+    "The higher-level hierarchy partners are hidden.\n\f",
+    "These condition types have an exclusive indicator in the standard system, which means that if the same condition rec\ndefined at different levels, the first valid record at the lowest level is chosen for these condition types.\n\f",
+    "2. You reach the Partners tab page.\n\f",
+    "Moreover, by using exclusion groupsyou can specify that if similar condition records exist at different levels of the hierarchy, the\nsystem takes the most favorable price or discount for the customer (regardless of which level in the hierarchy the pricing data\ncomes from). For further information, see Condition Exclusion.\n\f",
+    "All partners involved in the order are displayed including the higher-level hierarchy partner.\n\f",
+    "All higher-level hierarchy partners are displayed.\n\f"
+  ],
+  "40": [
+    "1. During negotiations, you establish a pricing agreement for a particular product line. You offer a national discount,\navailable for all Smith stores. In addition, you offer a special promotional discount for Smith North.\n\f",
+    "Customer 2743 receives the promotional discount and the regional discount.\n\f",
+    "The system ignores the Smith Midtown node, as it is not relevant for pricing. There is a promotional discount in the\nmaster record for the Smith North node. Afterwards, the system determines the national discount at Smith Central.\n\f",
+    "2. You create the corresponding condition records for the Smith Central and Smith North nodes.\n\f",
+    "Customer 2742 only receives the regional discount.\n\f",
+    "5. The system determines the price for the order. It takes into account all of the valid conditions in the hierarchy path.\n\f"
+  ],
+  "41": [
+    "Material types in the SAP standard version are, for example, raw materials, trading goods, semi-finished products, finished\nproducts, or services. The material type represents certain features of materials in the system, and has important control\nfunctions: the material type is used, among other things, to group field selection functions for a material, or to define the scr\nsequence, the type of number assignment and number ranges during material master record maintenance. Depending on th\nmaterial type, company areas maintain different data screens. This screen selection applying specifically to an application is\ncalled a \"view\".\n\f",
+    "Different company areas and SAP modules access the material master records, which therefore must meet a wide variety of\nrequirements. During sales processing, the system repeatedly accesses the material master records. It is one of the basic\nsources of data for sales processing. The material master record is accessed, for example, in the inquiry, in the quotation and i\nthe sales order. Data in the material master record is also of great importance for shipping and billing. However, the data\nrequired for shipping, for example, is not the same as that required for sales or billing.\n\f",
+    "Trading goods are movable goods intended for commercial exchange. Examples of trading goods are market goods,\nconsumption goods and durable goods. Trading goods are always bought and re-sold by your company. The material ma:\n\nrecord for trading goods therefore always contains purchasing data and sales data. Trading goods are managed in the S\nSystem using the key HAWA.\n\f",
+    "Services are represented and managed in the SAP System as materials. Services are immaterial goods that differ from other\ngoods, particularly in that their production and consumption coincide. Services are generally regarded as non-transportable and\nnon-stockable. Typical services are commercial services, transport services, bank and insurance services, goods from cultural\norganizations and the mass media, as well as services provided by the public security forces or the education and health\nsectors.\n\f",
+    "Non-stock material includes materials that are not managed on an inventory basis (for example, small parts such as nails)\nthough physically in stock. Non-stock materials are managed in the SAP System using the key NLAG.\n\f",
+    "The following are examples of possible material types in the SAP standard version:\n\f"
+  ],
+  "42": [
+    "Materials which cannot be assigned to any of the standard material types, can be maintained, as \"Other material\". Thus,\nbesides standard material types (trading goods, finished products, services etc.) you can also create additional material types.\nWhen creating such a material, note that a material type must be entered on the first data screen. For standard material types,\n\nthis entry is not necessary because the material type is selected in the menu.\n\f",
+    "Like the material type, the industry key also has important control functions. It determines, for example, the selection of data\nfields on screens or the screen sequence. The subdivision into different industry sectors is necessary because, for example, a\nmaterial in the chemical industry, such as a chemical solution, differs from a material in mechanical engineering in its basic\n\f",
+    "This material type includes all materials needed for packaging. For example, boxes or crates. Packaging materials are managed\nin the SAP System with the key VERP.\n\f",
+    "Each company has a specific structure and a typical organization. This is represented in the SAP System as an organizationz\nstructure. A certain part of the organizational structure is relevant for every company area.\n\f",
+    "Industry sectors indicate the assignment of a material to a certain branch of industry (for example, plant engineering and\nconstruction, chemical industry, mechanical engineering, and pharmaceuticals industry).\n\f",
+    "An organizational structure consists of several organizational levels. These are used by different company areas. The\norganizational levels sales organization and distribution channel are, for example, used exclusively by sales and distribution\nwhile plant and storage location are shared by sales and distribution and materials management.\n\f",
+    "In the standard version of the SAP System, the following industry sectors have been defined for the material master record:\n\f"
+  ],
+  "43": [
+    "General data in a material master record is identical for every sales organization, plant and storage location. General data,\nwhich is of importance for all departments, is always entered by the department which creates the first part or view of the\nmaster record. General data contains, for example, the material number that identifies it, the material description, units of\nmeasure, value, weight, volume and divisions.\n\f",
+    "If a material which is available both in plant 1 and plant 2 is to be changed in plant 1, enter only that plant number. You then\nonly get the plant data for this material in plant 1. If you only enter the sales organization and the distribution channel, then\nyou get the sales-specific data without plant data.\n\f",
+    "Every material master record has a maintenance status that indicates the department-specific view from which a master\nrecord is maintained.\n\f",
+    "Sales and distribution data in a material master record is defined for a specific sales organization and distribution channel. The\n\ndelivering plant, the assignment to the sales group, grouping terms for price agreements and sales texts, for example, are\nincluded in sales and distribution data. The fact that a material is linked to a distribution channel allows the material to be sold\n\nwith different conditions through the various distribution channels.\n\f",
+    "All data and information entered for a material is stored in the data structure of the material master record. For sales al\ndistribution, general data and sales and distribution data in the material master record are relevant.\n\f",
+    "This data applies to a plant and all its storage locations. Examples of plant data are MRP data, such as the safety stock quantity,\nthe reorder level, or the shipping processing time.\n\f",
+    "Using the organizational level distribution channel , you can, for example, sell materials with different conditions. The prices\nagreed for distribution channel wholesale trade , for example, are not the same as those for distribution channel retail sales .\n\f",
+    "Sales and distribution data is divided into data that depends on the sales organization and data that depends on the plant:\n\f"
+  ],
+  "44": [
+    "Four screens in the material master record are relevant for sales and distribution:\n\f",
+    "Materials can be grouped according to different criteria. This allows for easier management and better evaluation of materials\nwith similar features. The standard version of the SAP Standard System does not provide exact criteria to differentiate\nbetween individual groupings. These result from company-specific applications. The materials can therefore be grouped by the\ncompany to meet their specific demands. The groupings are determined and defined by the system administrator. Contact him,\nif you have questions concerning the existing groupings.\n\f",
+    "The following overview includes a short description of the individual sales and distribution screens, and lists the important data\nfields found on these screens.\n\f",
+    "As soon as a material master record, is maintained, for example, by sales and distribution, the indicator in the maintenance\nstatus is automatically set to V. If it is also maintained by purchasing, the system adds E to the maintenance status indicator.\nThe same material master record can be maintained, for example, by sales and distribution and by purchasing, but not by\naccounting. The master record then would have the maintenance status V and E but not B (accounting).\n\f",
+    "Maintaining a Material Master Record.\n\f",
+    "Sales and distribution screens\n\f"
+  ],
+  "45": [
+    "A material can be stored, transported and sold in various units of measure. In the SAP System, you can therefore define various\nunits of measure which are maintained in the sales and distribution screens. However, you only need to maintain the fields of\nthe units of measure if they deviate from the base unit of measure. If no other fields with units of measure are maintained, the\n\f",
+    "In this case, a dishwasher can be described by product hierarchy 00010000200000002. This series of characters states that\ndishwashers belong to the category electrical appliances (series of characters 00001, position 1-5), and also to wet appliances\n(series of characters 00002, position 6-10) and, finally, to dishwashers (series of characters O0O000002, position 11-18).\n\f",
+    "The product hierarchy is used to group materials by combining different features. It is used for analyses and pricing. A product\nhierarchy can consist of up to eighteen characters. Its features can be combined in various ways. The following figure gives an\nexample of how materials can be grouped using product hierarchies.\n\f",
+    "The material group is defined by a nine-digit, alphanumeric key. It is not primarily of importance for sales and distribution, but is\nused mainly in materials management.\n\f",
+    "A further option for grouping materials is represented by the material pricing group. This can be used both for pricing as well as\nfor evaluation and analysis. The material pricing group is defined by a two-digit, numeric key.\n\f",
+    "Units of Measure\n\f"
+  ],
+  "46": [
+    "As soon as units of measures other than the base unit of measure are used in a material master record, the system prompts\nyou in a dialog box to enter a calculation factor to the base unit of measure, the so-called alternative unit of measure. The\nalternative unit of measure does not refer to an entry field in one of the sales and distribution screens. It is either requested ina\ndialog box or entered on a secondary screen, which you can access by pressing F5 (Unit of measure) . Several alternative units\nof measure can be defined.\n\f",
+    "Two different quantity specifications are used:\n\f",
+    "The minimum delivery quantity refers to the minimum quantity you must deliver to the customer. The minimum delivery\nquantity is automatically checked during delivery processing. A warning message appears during delivery processing if you ente\na delivery quantity lower than the minimum delivery quantity. The delivery can be created in spite of this warning message.\n\f",
+    "The unit of measure in which materials are sold is referred to as a sales unit (for example, piece or bottle). The value you define\nin the material master record is proposed during business transactions relevant for sales, such as the sales order. You can\nreplace them with other alternative units of measure in the sales order.\n\f",
+    "The minimum order quantity refers to the minimum quantity the customer must order. A warning message appears if the\nminimum order quantity is not reached during order entry. The order can be entered in spite of the warning message.\n\f",
+    "The delivery unit refers to the unit in which materials can be delivered. Only exact multiples of the delivery unit can be delivered.\nFor example, with a delivery unit of 30 bottles, 30, 60 or 90 bottles can be delivered, but not 100 bottles.\n\f",
+    "If, for example, a product is managed in the base unit of measure \"Piece\" but is sold in the sales unit \"Box\", you must define the\nconversion factor. The alternative unit of measure can define, for example, that 1 box of this material contains 12 pieces.\n\f",
+    "Stocks of a material are managed in the base unit of measure. All quantity movements in other units of measure are converted\nautomatically by the system into the base unit of measure.\n\f"
+  ],
+  "47": [
+    "There are two ways of creating a material master record:\n\f",
+    "The item category group determines how a material is processed in the sales order. It defines, for example, that pricing does\nnot take place for a free of charge item, such as a business gift; or that inventory management is not carried out for a service\nWhen processing sales and distribution documents, the system uses the item category group to determine the item categor\nThe system determines the item category based on the item category group of the material and the current business\ntransaction, and proposes it in the respective document.\n\f",
+    "The material number can either be entered externally by the user, or assigned internally by the system. Both internal and\nexternal number assignment is possible. If you do not enter a material number when creating a material master record, the\nsystem automatically carries out internal number assignment.\n\f",
+    "This documentation describes the material master record exclusively from the sales view. Therefore, the following description\nrefers to adding new views to already existing material master records.\n\f",
+    "When creating the material types non-stock material and services , DIEN is proposed in both cases for the item category group,\nbecause the order processing for both material types is identical: for example, pricing is carried out for both, but no availability\ncheck.\n\f",
+    "The delivering plant refers to the plant from which the goods are to be delivered to the customer, within a specific sales\norganization and distribution channel. The plant can be automatically proposed by the system when processing a sales order,\nit has been maintained in one of the master records. It can be derived from:\n\f",
+    "\u00bb Anew material master record is created with or without reference. It is mainly the responsibility of materials\nmanagement to create new material master records in the system.\n\f"
+  ],
+  "48": [
+    "A material may have to be marked for deletion, if it is no longer offered as a product. If a material has been marked for d\nan error message appears during order entry or delivery processing, which blocks these transactions.\n\f",
+    "Material already maintained for this transaction/event.\n\f",
+    "13. Press ENTER to reach step by step the data screen you want to edit.\n\f",
+    "You can mark a material of the material type \"trading goods\" for deletion by using the following steps:\n\f",
+    "14. Edit these data screens. You must at least enter data in the required fields.\n\f",
+    "Material <Material number> created.\n\f",
+    "5. The system issues a message telling you that the industry sector has automatically been transferred from the master\nrecord.\n\f",
+    "2. The Create Material: Initial Screen.\n\f",
+    "4. Press ENTER.\n\f",
+    "3. Enter the number of the material whose sales and distribution screens you want to maintair\n\f",
+    "Sales prices are determined by conditions. You will find a detailed description of how material prices and sales prices are\ncalculated in the SD Guide to Pricing and Conditions . In the material master record you can access the price condition\nscreen by selecting |pExtras > Sales Details > Price > in the menu and maintain the material price. J\n\f",
+    "8. Select the sales views you want to maintain.\n\f"
+  ],
+  "49": [
+    "f a material has technical defects or is to be discontinued, you can block the material.\n\f",
+    "11. You reach the Change Material: Sales (1) screen.\n\f",
+    "If you set a block, orders, deliveries and invoices containing this material cannot be created at all, or only with a warning\nmessage. The system reactions to a blocked material depends on the type of block set.\n\f",
+    "12. Enter a blocking reason in the Sales status field.\n\f",
+    "8. Another dialog box appears in which you must define the organizational level\n\f",
+    "9. Enter a valid combination of plant, sales organization and distribution channel.\n\f",
+    "The material is marked for deletion.\n\f",
+    "6. Select view Sales 1\n\f",
+    "A deletion flag cannot be cancelled. However, a material is only deleted during archiving, if all business transactions depending\non it have been concluded.\n\f",
+    "6. You reach another Display screen.\n\f",
+    "1. In the SD Master Data Screen select, |}Products > Material > Trading goods > Change > . J\n\f",
+    "3. In the menu bar, select |}Material > Set deletion flag > Immediately. J\n\f",
+    "3. Enter the trading goods you want to block.\n\f",
+    "2. You reach the Change Material: Initial Screen.\n\f",
+    "4. You reach the screen Flag Material for Deletion: Initial Screen, in which you enter the material, as well as the data on the\norganizational level.\n\f"
+  ],
+  "50": [
+    "You can use the function Maintain material to add new views to an existing material master record. In contrast to changing a\n\nmaterial master record, you add new views to the data records when maintaining. The main difference between maintaining a\nmaterial master record and creating it, in the sense of adding another view, is that, when maintaining, more selection criteria\nare available to you. These selection criteria are not available for the function Change and Create .\n\f",
+    "You return to the initial menu where you see the system message\n\f",
+    "Arrangements which are defined in the system by the customer.\n\f",
+    "The maintenance status tells you which department has already maintained the material master record. For more\ninformation on the maintenance status of a material master record, see Maintenance Status in the Material Master Reco\n\n \n\f",
+    "1. In the SD Master Data Screen select, |}Products > Material > Maintain material > . J\n\f",
+    "Use the following steps to maintain a material master record:\n\f",
+    "5. You receive a list of all materials which have not yet been maintained from the view entered (i.e. sales).\n\f",
+    "6. Select the material you want to edit, by marking it at the left screen border.\n\f",
+    "3. Enter the sales organization for whose materials you want to maintain certain views.\n\f"
+  ],
+  "51": [
+    "Data ona material defined for one specific customer is stored in the customer-material information records. This includes the\nfollowing:\n\f",
+    "Customer Material Information\n\f",
+    "During order entry, items can be entered by specifying the material number used by the customer. You also enter a customer\nmaterial number in the order view of the sales order. You can then use both material numbers during the order entry, the\nmaterial number your company uses or the one defined by the customer, because the system can carry out allocation\nautomatically.\n\f",
+    "SAP Note 626931 wy\n\f",
+    "lf, for example, one of your customers uses a number for a material, which differs from the number your company uses t\nidentify it, you can store the material number used by the customer in the customer-material information record.\n\f",
+    "You can also store a text in the customer material information record. It is copied to the relevant SD document items during\ntext determination. In Customizing, the text type Customer Material Text is provided for this.\n\f",
+    "Rebate Agreements\n\f",
+    "Data on the delivery and the individual delivery tolerances agreed upon with the customer for the material in question can also\nbe checked and transferred to the sales order item.\n\f"
+  ],
+  "52": [
+    "The order entry can be processed more efficiently using item proposals. Item proposals can be transferred into a sales order\ndocument or be selected from a selection list, for example. Data from the current material master is always taken into account.\n\f",
+    "Frequently occurring material combinations and common delivery quantities can be stored as item proposals. When creating an\norder, you can take items from the item proposal. You can also use a search help. An item proposal can consist of materials of\ndifferent material types.\n\f",
+    "If a customer manages a material with a number that differs from the one your company uses, a customer-material information\nrecord is created.\n\f",
+    "11. You reach the Text screen, where you can enter your text.\n\f",
+    "5. You reach the Create Customer-Material Info Record: Overview screen.\n\f",
+    "2. You reach the Create Customer-Material Info Record screen.\n\f",
+    "9. The system adds the material description used in your company.\n\f",
+    "10. If you want to maintain a text, select |}/Goto > Texts Jin the Overview screen.\n\f",
+    "6. Edit the data screen by entering data in the following fields:\n\f",
+    "o Inthe field Material enter the number which identifies the material in your company.\n\f",
+    "Use the following steps to create a customer-material information record:\n\f",
+    "3. Enter the customer number, the sales organization and a distribution channel. Thus, you can specify to which part of your\norganization the information record applies.\n\f",
+    "14. Save the data record.\n\f",
+    "1. In the SD Master Data Screen select, |}>Agreements > Cust.-material info > Create > . 9.\n\f",
+    "4. Press ENTER.\n\f",
+    "13. Save your text after maintaining it in the SAPscript editor. You return to the Text screen of the sales information reco\nusing |>Goto > Back >. 3\n\n \n\f"
+  ],
+  "53": [
+    "If you want to create an item proposal for a bill of material, enter the header material without the component. When the\nitem proposal is transferred to the sales document, the bill of material is then exploded or configured. Make sure that an\nitem category is determined in the sales order that allow bill of material explosion or configuration. This is controlled in\nCustomizing for the item category in the Structure scope field.\n\f",
+    "Item proposals are created, if certain material combinations are often ordered and delivered in certain quantities. When\ncreating item proposals, different materials with proposed quantities can be entered.\n\f",
+    "Use the following steps to create an item proposal:\n\f",
+    "You can also adopt bills of material (e.g., configurable materials) into an item proposal. However, it is NOT possible to explode,\nor configure a bill of material in an item proposal. You can only carry this out when you are copying it into a sales order.\n\f",
+    "2. You reach the Create Item Proposal: Initial Screen.\n\f",
+    "1. In the SD Master Data Screen select, |}Products > Item proposal > Create > .\n\f"
+  ]
+}

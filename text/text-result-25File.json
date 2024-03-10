@@ -1,0 +1,671 @@
+{
+  "1": [],
+  "2": [],
+  "3": [
+    "You must read these SAP Notes before you start the installation or upgrade. These SAP Notes contain the mo:\necent information on the upgrade, as well as corrections to the upgrade documentation. Make sure that you\nnave the up-to-date version of each SAP Note, which you can find on SAP Support Portal at support.sap.com.\n\f",
+    "This Master Guide is the central starting point for the technical implementation of business processes for SAP\nMaster Data Governance 9.2.\n\f",
+    "This Master Guide provides an overview of processes in SAP Master Data Governance and related software\nunits from a technical perspective. You can use this guide as a planning tool to help you design your system\nlandscape.\n\f",
+    "Content\n\f",
+    "ERP EhP8 Master Guide\n\f"
+  ],
+  "4": [],
+  "5": [
+    "Before you activate the MDG business functions, ensure that you have the administration authorization\n\nfor MDG. The required authorization objects are delivered with the authorization role SAP_MDG_ADMIN. In\ntransaction PFCG, we recommend creating a copy of this role and assigning the relevant authorization value:\nFor the authorization object USMD_Dm Data Model you need to assign the values for the authorization field\nUSMD_MODEL Data Model (for example MM, BP, or 0G) and the values for the authorization activity ACTVT\nActivity (for example O1:Create or generate, or 02: Change).\n\f",
+    "This business function allows you to activate a number of BADIs to override the standard mapping with\ncustomer specific mapping of the supplier and customer replication services. The BAdIs are available for\nMaster Data Governance for Supplier and Master Data Governance for Customer.\n\n   \n\f",
+    "This business function provides features for decentralized customer master data governance. It enables\nyou to search and compare corresponding data on the hub system, before creating or changing customer\nmaster data on a client system. If the customer data is not already available on the client you can copy the\ncustomer master data from the hub system to the client system. This data afterwards can be edited in the\nclient system. Though there is no technical dependency, the business function Master Data Governance\nfor Customer on Client (ERP) i is intendeded to be used i in combination with the business function Master\n\f",
+    "Master Udld GOVETNMAanCe lOr FinlalCtals OF MUD UVILDG_FINAINGIAL O_O)\nThis business function provides features to establish a governance process for financial master data.\nNew features include Importing Company Data, SOA Services for Consolidation Systems, Integration with\n\f"
+  ],
+  "6": [
+    "If you want to use MDG-C and MDG-S at the same time, you must upgrade both applications to EhP6. This\nmeans you must activate the following business functions:\n\f",
+    "The following business functions are available with SAP Master Data Governance 6.1:\n\f",
+    "The following graphic shows the dependencies for MDG business functions between EHP4 of SAP ERP 6.0\nEHP5 of SAP ERP 6.0, and EHP6 of SAP ERP 6.0:\n\f",
+    "Dependencies for MDG business functions between EHP4, EHP5 and EHP6\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "7": [
+    "Dependencies for MDG business functions between EHP6 and MDG 6.1\n\f",
+    "The following graphic shows the dependencies for MDG business functions between EHP6 of SAP ERP 6.0 and\nSAP Master Data Governance 6.1:\n\f",
+    "@ SAP AG 2010. Al rights reserved. / Page 1\n\f",
+    "The following business functions are available with SAP Master Data Governance 7.0:\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "8": [],
+  "9": [
+    "Dependencies for MDG business functions between MDG 6.1 and MDG 7.0\n\f",
+    "The following business functions and additional features are available with SAP Master Data Governance 7.0\nFeature Pack:\n\f",
+    "The following graphic shows the dependencies for MDG business functions between SAP Master Data\nGovernance 6.1 and SAP Master Data Governance 7.0:\n\f",
+    "The following business functions and additional features are available with SAP Master Data Governance 7.0\n\f"
+  ],
+  "10": [
+    "With SAP MDG enablement for SAP Smart Business you can configure an analytical dashboard for\n\nthe governance process. This enables you to monitor key performance indicators (KPIs), service level\nagreements (SLAs), and alerts to identify deviations in processes with corresponding follow-up actions\nto solve issues. With Master Data Governance 7.0 Feature Pack, SAP delivers a report to generate the\nrequired views for SAP HANA which can be used for SAP Smart Business and other BI clients. For\ninformation on the configuration of MDG process analytics and on the generation of SAP HANA conten\n\f"
+  ],
+  "11": [
+    "Dependencies for MDG business functions between MDG 7.0 and MDG 7.0 Feature Pack\n\f",
+    "The following graphic shows the dependencies for MDG business functions between SAP Master Data\nGovernance 7.0 and SAP Master Data Governance 7.0 Feature Pack:\n\f",
+    "The following business functions and additional features are available with SAP Master Data Governance 8.0:\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "12": [],
+  "13": [
+    "Dependencies for MDG business functions between MDG 7.0 Feature Pack and MDG 8.0\n\f",
+    "The following business functions and additional features are available with SAP Master Data Governance 9.0:\n\f",
+    "This business function offers mass processing, filter and remove, upper threshold, using services to\ntrigger processes, using BRF+ rules in process steps, best record calculation review, system messages\nadapt configuration within process, retention time, replace values and clear fields, audit trail, remove\nrecords from process, key mapping and value mapping, action control supporting the dual-control\n\nprinciple, display data changes in details UI, run MDG, central governance checks, and show all data\nfram related tahlac\n\f",
+    "This business function offers mass processing, filter and remove, upper threshold, using services to\ntrigger processes, using BRF+ rules in process steps, best record calculation review, system messages\nadapt configuration within process, retention time, replace values and clear fields, audit trail, remove\nrecords from process, key mapping and value mapping, action control supporting the dual-control\nprinciple, display data changes in details Ul, run MDG, central governance checks, and show all data\n\f",
+    "The following graphic shows the dependencies for MDG business functions between SAP Master Data\nGovernance 7.0 Feature Pack and SAP Master Data Governance 8.0:\n\f",
+    " \n\nSAP Master Data Governance Master & Upgrade Master Guide for MDG 9.\nSAP Master Data Governance: Installation and Upgrade Overview\n\n \n\f"
+  ],
+  "14": [
+    "This business function offers standardization, matching, best record calculation, validation, activation,\nmass processing, filter and remove, upper threshold, using services to trigger processes, using BRF+\nrules in process steps, best record calculation review, system messages, adapt configuration within\nprocess, retention time, replace values and clear fields, audit trail, remove records from process, key\nmapping and value mapping, action control supporting the dual-control principle, display data changes\nin details Ul, run MDG, central governance checks, and show all data from related tables.\n\f",
+    "This business function offers standardization, matching, best record calculation, validation, activation,\nmass processing, filter and remove, upper threshold, using services to trigger processes, using BRF+\nrules in process steps, best record calculation review, system messages, adapt configuration within\nprocess, retention time, replace values and clear fields, audit trail, remove records from process, key\nmapping and value mapping, action control supporting the dual-control principle, display data change:\nin details Ul, run MDG, central governance checks, and show all data from related tables.\n\f"
+  ],
+  "15": [
+    "Dependencies for MDG business functions between MDG 8.0 and MDG 9.0\n\f"
+  ],
+  "16": [
+    "The following business functions and additional features are available with SAP Master Data Governance 9.1:\n\f"
+  ],
+  "17": [
+    "The following business functions and additional features are available with SAP Master Data Governance 9.2:\n\f",
+    "MDG 9.1 Business Function Dependencies\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "18": [
+    "*1. BF MDG_FINANCIALS_8 has an additional dependency to BF MDG_FINANCIALS_7 which is not depicted in the slide because it was created in MDG 9.0.\n\f",
+    "MDG 9.2 Business Function Dependencies\n\f"
+  ],
+  "19": [
+    "As the final step the Activation moves the consolidated master data from the process data to the active data.\nDepending on the type and state of a master data record, activation can be done directly, can be done using\nchange requests, if you use SAP MDG, central governance in parallel, or can be prohibited.\n\f",
+    "Best record calculation, results in a record containing the cumulated, most valuable data for each match group\nthat is identified by the matching. This calculation follows a well defined process based on certain rules.\n\f",
+    "The process step filter and remove enables you to remove a selection of records from the current consolidatior\nprocess. According to your settings this selection of records then is moved to a new consolidation process\nor \u2014 incase of records with errors out of a validation process \u2014 further options can be applied. The process\n\f",
+    "Validation checks whether the quality of a record is sufficient to meet the requirements defined in the back-end\nsystem. If the quality requirements are met data can be saved, if not corrections and data enrichment might be\nrequired.\n\f",
+    "Standardization normalizes and enriches data.\n\f",
+    "Matching checks data from various source systems and the active data for duplicates. Part of the matching is\nthe match review to check possible duplicates.\n\f",
+    "With Master Data Governance for Customer, Consolidation and Mass Processing you can consolidate your\ncustomer master data and update multiple customer master data records at a time using a sequence\n\nof process steps adapted to your requirements. Each individual step can be configured to meet your\nrequirements.\n\f"
+  ],
+  "20": [
+    "Within the process step matching you use the match review to rate possible matches. The upper threshold\nfeature enables you to specify a value as of which two records are rated automatically as a match without\nhaving to be checked in the match review process.\n\f",
+    "Within a consolidation process, most customizing settings, that are specified in the process template can be\nadapted to the specific needs of a current consolidation process.\n\f",
+    "These adjustments are only valid for the consolidation process you are working with and do not persistently\nchange the Customizing settings.\n\f",
+    "The Review Best Records screen gives you an overview on the results of the best record calculation. It show:\nyou in detail how the best records were calculated. In addition you can manually edit the best record.\n\f",
+    "You can specify a period of time in which the KPls and processed data persist to be displayed. In this case the\ndeletion of all relevant data at the end of the process step activation is postponed:\n\f",
+    "System Messages such as Errors and Exceptions are displayed for individual process steps. If errors o1\nexceptions occurred this is visualized by the color of the process step icon:\n\f",
+    "Using BRFplus rules in process steps\n\f",
+    "step filter and remove runs in the background without user interaction and can be used as successor of the\nfollowing process steps:\n\f",
+    "You can use services for data replication as a vehicle to trigger consolidation and mass processes for the\ncorresponding records.\n\f",
+    "You can make use of BRFplus rules to adapt your data on table and field level within the following process steps:\n\f"
+  ],
+  "21": [
+    "The audit trail lists all events that take place within a process, such as starting and finishing a process\nstep or changing process parameters. It displays an abstract for each event in a time line. The abstracts\n\ncontain information such as user name, timestamp, short description of the event. The audit trail pane can bi\ndisplayed or hidden.\n\f",
+    "This feature enables you to run checks for the process steps validation and activation based on rules you have\nspecified in MDG, central governance. The feature is only offered if you have activated the business functions\nfor MDG, central governance.\n\f",
+    "Certain process steps of the consolidation process allow you to manually replace values of fields or to clear the\nfields' content completely. This function is not offered for the process steps best record calculation, matching,\nand activation.\n\f",
+    "Additional adapters for the process step standardization support key and value mapping. If you run the process\nstep standardization with the adapters for key mapping or value mapping, all relevant fields of a business\npartner or material key mapping or value mapping are read and replaced by the retrieved values.\n\f",
+    "This feature enables you to split a consolidation process so that a certain set of records can be transferred to |\nfollow up process while the main process can be finalized with the remaining set of records:\n\f",
+    "This feature offers you details to the processed records. The Show Result link offers all records displayed on an\nOverview tab and on an individual tab for each table.\n\f",
+    "This feature enables you in certain process steps to compare data before and after the process step. Changed\nvalues are highlighted with a link that opens a box showing both, the new and the old value of the field.\n\f",
+    "This feature enables you to restrict the amount of processors for a certain process steps: You can specify a\nselection of users that may continue with the next process step:\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "22": [
+    "The app Export Master Data enables you to export business partner and business partner relationship master\ndata into a spreadsheet format for offline changes and upload into a mass process.\n\f",
+    "After manual changes of date in the Validation step, a revalidation is offered.\n\f",
+    "You can now run consolidation processes based on the active data you already have in the system rather than\njust data you are loading into in the system.\n\f",
+    "With this feature you can:\n\f",
+    "You can use consolidation for business partner relationships. You can do this as a combined process with the\nbusiness partners and their relationships, or as a simple process with only the relationships of the business\npartners that are already in the system.\n\f",
+    "This feature enables you to use mass processing for business partner relationships. You can do this with the\nrelationships of business partners that are already in the system.\n\f",
+    "This feature enables you to:\n\f",
+    "In the Best Record Calculation View, you can manually delete superfluous rows.\n\f",
+    "This feature enables you to consolidate classification data for customer\n\f",
+    "The app Track Mass Changes enables you to search and display changes of active record\n\f",
+    "The app Import Data for Consolidation supports the classification data for customer.\n\f",
+    "Consolidating active records\n\f",
+    "Source Data Management for Consolidation\n\f"
+  ],
+  "23": [
+    "The process step filter and remove enables you to remove a selection of records from the current consolidatio\nprocess. According to your settings this selection of records then is moved to a new consolidation process\n\nor \u2014 incase of records with errors out of a validation process \u2014 further options can be applied. The process\nstep filter and remove runs in the background without user interaction and can be used as successor of the\nfollowing process steps:\n\f",
+    "The process step best record calculation, calculates a record containing the cumulated, most valuable data\nfor each match group that is identified by the process step matching. This calculation follows a well defined\nprocess based on certain rules.\n\f",
+    "As the final step of the Consolidation the Activation moves the consolidated master data from the process data\nto the active data. Depending on the type and state of a master data record, activation can be done directly,\ncan be done using change requests, if you use SAP Master Data Governance in parallel, or can be prohibited.\n\f",
+    "Within the process step validation the consolidation checks whether the quality of a record is sufficient to meet\nthe requirements defined in the back-end system. If the quality requirements are met the data can be saved, if\nnot corrections and data enrichment might be required.\n\f",
+    "Matching checks data from various source systems and the active data for duplicates. You can specify\nthresholds as of what accordance sets of data are considered to a match group. Part of the matching is the\nmatch review to check possible duplicates.\n\f",
+    "With Master Data Governance for Supplier, Consolidation and Mass Processing, you can consolidate your\nsupplier master data and update multiple supplier master data records at a time, using a sequence of process\nsteps adapted to your requirements. Each individual step can be configured to meet your requirements.\n\f",
+    "Standardization normalizes and enriches data.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "24": [
+    "Certain process steps of the consolidation process allow you to manually replace values of fields or to clear the\nfields' content completely. This function is not offered for the process steps best record calculation, matching,\nand activation.\n\f",
+    "Within the process step matching you use the match review to rate possible matches. The upper threshold\nfeature enables you to specify a value as of which two records are rated automatically as a match without\nhaving to be checked in the match review process.\n\f",
+    "The Review Best Records screen gives you an overview on the results of the best record calculation. It shows\nyou in detail how the best records were calculated. In addition you can manually edit the best record\n\f",
+    "These adjustments are only valid for the consolidation process you are working with and do not persistently\nchange the Customizing settings.\n\f",
+    "Within a consolidation process, most customizing settings, that are specified in the process template can be\nadapted to the specific needs of a current consolidation process.\n\f",
+    "You can specify a period of time in which the KPls and processed data persist to be displayed. In this case the\ndeletion of all relevant data at the end of the process step activation is postponed:\n\f",
+    "System Messages such as Errors and Exceptions are displayed for individual process steps. If errors or\nexceptions occurred this is visualized by the color of the process step icon:\n\f",
+    "You can use services for data replication as a vehicle to trigger consolidation and mass processes for the\ncorresponding records.\n\f",
+    "You can configure the retention time in the Customizing and you can adapt it in the UI.\n\f"
+  ],
+  "25": [
+    "This feature enables you to split a consolidation process so that a certain set of records can be transferred to a\nfollow up process while the main process can be finalized with the remaining set of records:\n\f",
+    "Additional adapters for the process step standardization support key and value mapping. If you run the process\nstep standardization with the adapters for key mapping or value mapping, all relevant fields of a business\npartner key mapping or value mapping are read and replaced by the retrieved values.\n\f",
+    "You can use consolidation for business partner relationships. You can do this as a combined process with the\nbusiness partners and their relationships, or as a simple process with only the relationships of the business\npartners that are already in the system.\n\f",
+    "This feature offers you details to the processed records. The Show Result link offers all records displayed on an\nOverview tab and on an individual tab for each table.\n\f",
+    "This feature enables you to restrict the amount of processors for a certain process steps: You can specify a\nselection of users that may continue with the next process step:\n\f",
+    "The audit trail lists all events that take place within a process, such as starting and finishing a process\n\nstep or changing process parameters. It displays an abstract for each event in a time line. The abstracts\ncontain information such as user name, timestamp, short description of the event. The audit trail pane can\ndisplayed or hidden.\n\f",
+    "This feature enables you to run checks for the process steps validation and activation based on rules you have\nspecified in MDG, central governance. The feature is only offered if you have activated the business functions\nfor MDG, central governance.\n\f",
+    "This feature enables you to use mass processing for business partner relationships. You can do this with the\nrelationships of business partners that are already in the system.\n\f",
+    "This feature enables you in certain process steps to compare data before and after the process step. Changed\nvalues are highlighted with a link that opens a box showing both, the new and the old value of the field.\n\f",
+    "Processing of classification data of master data objects\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "26": [
+    "With Master Data Governance for Material, Consolidation and Mass Processing, you can consolidate material\nmaster data and update multiple material master data records at a time, using a sequence of process steps\nadapted to your requirements. Each individual step can be configured to meet your requirements.\n\f",
+    "The app Export Master Data enables you to export business partner and business partner relationship master\ndata into a spreadsheet format for offline changes and upload into a mass process.\n\f",
+    "After manual changes of date in the Validation step, a revalidation is offered.\n\f",
+    "In the Best Record Calculation View, you can manually delete superfluous rows\n\f",
+    "With this feature you can:\n\f",
+    "This feature enables you to:\n\f",
+    "You can now run consolidation processes based on the active data you already have in the system rather than\njust data you are loading into in the system.\n\f",
+    "The app Track Mass Changes enables you to search and display changes of active records.\n\f",
+    "The app Import Data for Consolidation supports the classification data for supplier.\n\f",
+    "This feature enables you to consolidate classification data for supplier.\n\f",
+    "Source Data Management for Consolidation\n\f"
+  ],
+  "27": [
+    "The process step filter and remove enables you to remove a selection of records from the current consolidatio\nprocess. According to your settings this selection of records then is moved to a new consolidation process\n\nor \u2014 incase of records with errors out of a validation process \u2014 further options can be applied. The process\nstep filter and remove runs in the background without user interaction and can be used as successor of the\nfollowing process steps:\n\f",
+    "est record calculation, results in a record containing the cumulated, most valuable data for each match group\niat is identified by the matching. This calculation follows a well defined process based on certain rules.\n\f",
+    "Within the process step matching you use the match review to rate possible matches. The upper threshold\nfeature enables you to specify a value as of which two records are rated automatically as a match without\nhaving to be checked in the match review process.\n\f",
+    "As the final step of the consolidation the activation moves the consolidated master data from the process data\nto the active data. Depending on the type and state of a master data record, activation can be done directly,\ncan be done using change requests, if you use SAP MDG, central governance, in parallel, or can be prohibited.\n\f",
+    "Standardization normalizes and enriches data.\n\f",
+    "Validation checks whether the quality of a record is sufficient to meet the requirements defined in the back-end\nsystem. If the quality requirements are met data can be saved, if not corrections and data enrichment might be\nrequired.\n\f",
+    "Matching checks data from various source systems and the active data for duplicates. Part of the matching is\nthe match review to check possible duplicates.\n\f",
+    "You can make use of BRFplus rules to adapt your data on table and field level within the following process ste\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "28": [
+    "The audit trail lists all events that take place within a process, such as starting and finishing a process\nstep or changing process parameters. It displays an abstract for each event in a time line. The abstracts\n\ncontain information such as user name, timestamp, short description of the event. The audit trail pane can b\ndisplayed or hidden.\n\f",
+    "Certain process steps of the consolidation process allow you to manually replace values of fields or to clear the\nfields' content completely. This function is not offered for the process steps best record calculation, matching,\nand activation.\n\f",
+    "You can specify a period of time in which the KPIs and processed data persist to be displayed. In this case the\ndeletion of all relevant data at the end of the process step activation is postponed:\n\f",
+    "This feature enables you to split a consolidation process so that a certain set of records can be transferred to\nfollow up process while the main process can be finalized with the remaining set of records:\n\f",
+    "system Messages such as Errors and Exceptions are displayed for individual process steps. If errors or\n\u00bbxceptions occurred this is visualized by the color of the process step icon:\n\f",
+    "Within a consolidation process, most customizing settings, that are specified in the process template can be\nadapted to the specific needs of a current consolidation process.\n\f",
+    "The Review Best Records screen gives you an overview on the results of the best record calculation. It shows\nyou in detail how the best records were calculated. In addition you can manually edit the best record.\n\f",
+    "These adjustments are only valid for the consolidation process you are working with and do not persistently\nchange the Customizing settings.\n\f",
+    "You can configure the retention time in the Customizing and you can adapt it in the UI.\n\f"
+  ],
+  "29": [
+    "This feature enables you to run checks for the process steps validation and activation based on rules you have\nspecified in MDG, central governance. The feature is only offered if you have activated the business functions\nfor MDG, central governance.\n\f",
+    "You can now run consolidation processes based on the active data you already have in the system rather than\njust data you are loading into in the system.\n\f",
+    "This feature offers you details to the processed records. The Show Result link offers all records displayed on an\nOverview tab and on an individual tab for each table.\n\f",
+    "This feature enables you to restrict the amount of processors for a certain process steps: You can specify a\nselection of users that may continue with the next process step:\n\f",
+    "Additional adapters for the process step standardization support key and value mapping. If you run the process\nstep standardization with the adapters for key mapping or value mapping, all relevant fields of a business\npartner or material key mapping or value mapping are read and replaced by the retrieved values.\n\f",
+    "This feature enables you to consolidate classification data for material.\n\f",
+    "The app Track Mass Changes enables you to search and display changes of active records\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "With this feature you can:\n\f",
+    "Processing of classification data of master data objects\n\f",
+    "This feature enables you to:\n\f",
+    "Source Data Management for Consolidation\n\f"
+  ],
+  "30": [
+    "With Master Data Governance for Custom Objects, Consolidation and Mass Processing, you can consolidate\ncustom object master data and update multiple master data records at a time, using a sequence of process\nsteps adapted to your requirements. Each individual step can be configured to meet your requirements.\n\f",
+    "The app Export Master Data enables you to export material master data into a spreadsheet format for offline\nchanges and upload into a mass process.\n\f",
+    "Best record calculation, results in a record containing the cumulated, most valuable data for each match group\nthat is identified by the matching. This calculation follows a well defined process based on certain rules.\n\f",
+    "Validation checks whether the quality of a record is sufficient to meet the requirements defined in the back-end\nsystem. If the quality requirements are met data can be saved, if not corrections and data enrichment might be\nrequired.\n\f",
+    "The app Import Data for Consolidation supports the classification data for material.\n\f",
+    "Standardization normalizes and enriches data.\n\f",
+    "Matching checks data from various source systems and the active data for duplicates. Part of the matching is\nthe match review to check possible duplicates.\n\f",
+    "In the Best Record Calculation View, you can manually delete superfluous rows.\n\f",
+    "The process step Edit in mass processing supports the maintenance of classification data for materia\n\f"
+  ],
+  "31": [
+    "The process step filter and remove enables you to remove a selection of records from the current consolidatiot\nprocess. According to your settings this selection of records then is moved to a new consolidation process\n\nor \u2014 in case of records with errors out of a validation process \u2014 further options can be applied. The process\nstep filter and remove runs in the background without user interaction and can be used as successor of the\nfollowing process steps:\n\f",
+    "The Review Best Records screen gives you an overview on the results of the best record calculation. It shows\nyou in detail how the best records were calculated. In addition you can manually edit the best record.\n\f",
+    "Within the process step matching you use the match review to rate possible matches. The upper threshold\nfeature enables you to specify a value as of which two records are rated automatically as a match without\nhaving to be checked in the match review process.\n\f",
+    "Within a consolidation process, most customizing settings, that are specified in the process template can be\nadapted to the specific needs of a current consolidation process.\n\f",
+    "System Messages such as Errors and Exceptions are displayed for individual process steps. If errors or\nexceptions occurred this is visualized by the color of the process step icon:\n\f",
+    "As the final step of the consolidation the activation moves the consolidated master data from the process data\nto the active data. Depending on the type and state of a master data record, activation can be done directly,\ncan be done using change requests, if you use SAP MDG, central governance, in parallel, or can be prohibited.\n\f",
+    "; Filter and remove is a background step executed by the system without user interaction.\n\f",
+    "You can make use of BRFplus rules to adapt your data on table and field level within the following process steps:\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "32": [
+    "The audit trail lists all events that take place within a process, such as starting and finishing a process\nstep or changing process parameters. It displays an abstract for each event in a time line. The abstracts\n\ncontain information such as user name, timestamp, short description of the event. The audit trail pane can b\ndisplayed or hidden.\n\f",
+    "Additional adapters for the process step standardization support key and value mapping. If you run the process\nstep standardization with the adapters for key mapping or value mapping, all relevant fields are read and\nreplaced by the retrieved values.\n\f",
+    "You can specify a period of time in which the KPIs and processed data persist to be displayed. In this case the\ndeletion of all relevant data at the end of the process step activation is postponed:\n\f",
+    "Certain process steps of the consolidation process allow you to manually replace values of fields or to clear the\nfields' content completely. This function is not offered for the process steps best record calculation, matching,\nand activation.\n\f",
+    "This feature enables you to split a consolidation process so that a certain set of records can be transferred to \u00ab\nfollow up process while the main process can be finalized with the remaining set of records:\n\f",
+    "This feature enables you in certain process steps to compare data before and after the process step. Change\nvalues are highlighted with a link that opens a box showing both, the new and the old value of the field.\n\f",
+    "This feature enables you to restrict the amount of processors for a certain process steps: You can specify a\nselection of users that may continue with the next process step:\n\f",
+    "You can configure the retention time in the Customizing and you can adapt it in the UI.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "These adjustments are only valid for the consolidation process you are working with and do not persistently\nchange the Customizing settings.\n\f"
+  ],
+  "33": [
+    "The following features are available for governance of financial master data:\n\f",
+    "This feature enables you to run checks for the process steps validation and activation based on rules you have\nspecified in MDG, central governance. The feature is only offered if you have activated the business functions\nfor MDG, central governance.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "34": [
+    "With MDG 8.0 additional features become available when you activate the business function Master Dat:\nGovernance, Generic Functions 8.0 (MDG_FOUNDATION_6):\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "35": [
+    "You can improve the governance process for your material master data. MDGM includes a more flexible user\ninterface, support for the classic workflow template, support for long material numbers, change management\nfor classification data, an enhanced data model, additional UI building blocks (UIBB), and enterprise services.\n\f",
+    "With MDG 9.2 this feature enables a centralized end-to-end governance process of Internal Orders (statistical\nand overhead) that allows users to load, create, complete, or change Internal Orders in a distributed step-by-\nstep process before making the record available to connected business applications.\n\f",
+    "In addition you can now change material types. SAP recommends to use the option of changing material type\nbefore replication.\n\f",
+    "Additional features become available when you activate the business function Master Data Governance,\nGeneric Functions 9.2 (MDG_FOUNDATION_9).\n\f",
+    "When you upgrade from EHP5 of SAP ERP 6.0 or from EHP6 of SAP ERP 6.0 to MDG 6.1, check the information\nregarding data model enhancements in the upgrade chapter of this document.\n\f",
+    "All Uls used for creating material and changing material have been replaced by new Uls with increased\nflexibility. You may need to re-implement features you implemented using the Ul BAd| USMD_UI_EVENT2 in\nEHP5.\n\f",
+    "When you upgrade from EHP5 of SAP ERP 6.0 to the updated UI, you must perform all extensions previously\nmade to the user interface again.\n\f",
+    "Additional features become available when you activate the business function Master Data Governance,\nGeneric Functions 9.0 (MDG_FOUNDATION_7).\n\f",
+    "Feature highlights:\n\f"
+  ],
+  "36": [
+    "With Master Data Governance for Customer you can control the governance of customer master data ona\ncentral hub. Within the governance process change requests are used to control the creation and change\n\nof acustomer. While the customer data is stored temporarily in the staging area, the change requests are\nforwarded automatically to a master data specialist for a revision. As soon as the change request is approve\nthe new customer master data is stored in the existing ERP master data tables. The governance process\n\f",
+    "With MDG 8.0 the application Master Data Governance for Material offers the following features\n\f",
+    "With MDG 9.1 the application Master Data Governance for Material offers the following features:\n\f",
+    "With MDG 7.0 the application Master Data Governance for Material offers the following features:\n\f"
+  ],
+  "37": [
+    "On the central hub you can:\n\f",
+    "includes a duplicate check using SAP BusinessObjects Data Services or third party tools to avoid the creation\nof duplicates and also supports data enrichment and data validation.\n\f",
+    "Customer data can also be maintained on an ERP client system. There you can\n\f",
+    "With MDG 7.0 the application Master Data Governance for Customer offers the following features:\n\f",
+    "The CRM integration enables you to distribute a wider range of data into CRM client systems. As of Master\nData Governance for Customer 7.0 you can distribute ERP customer specific attributes such as sales area\nand partner functions. The data is mapped to the corresponding data structure provided by CRM.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "Create or change customers on the client system. These changes are directly stored in the client tables\nso that business processes can continue with this data. Additionally the customer data is replicated to the\nhub and a governance process for this customer is automatically started. After approval this customer is\nreplicated to all relevant client systems.\n\f"
+  ],
+  "38": [
+    "You can now maintain validity dates for Business Partner relationships. You can define time restrictions and the\ncardinality for each relationship type.\n\f",
+    "You can now enter explanatory texts for ERP customers on general level, and on company code and sales area\nlevel.\n\f",
+    "The Multiple-Record Processing function enables you to edit a number of customer data records at the same\ntime. Multiple-Record Processing offers a streamlined process, with a UI that enables you to create change\nrequests for multiple records with greater efficiency. The function offers the following advantages:\n\f",
+    "You can now enter several versions of a contact person's workplace address in different character sets, e.g.\nChinese or Cyrillic. This function has already been available for organizations and persons, and is now also\n\f",
+    "Nith MDG 9.0 the application Master Data Governance for Customer offers the following features:\n\f"
+  ],
+  "39": [
+    "You can use the address screening and investigation capabilities of SAP Business Partner Screening in SAP\nMaster Data Governance. Specifically, you can do address screening of the business partners in master data\nchange requests for compliance problems. You can prevent violations of national or international regulations by\ndetecting such persons and organizations, and you can demonstrate your compliance with such regulations.\n\f",
+    "As an enhancement of the Highlight Changes feature, the Highlight Deletions feature is now available. It\nenables you to highlight deleted values, including deleted rows, that are shown in lists, and to restore the\nlatest active version of the deleted record. The system highlights the relevant rows and displays deleted\nvalues as strikethrough, supporting you in quickly identifying items marked for deletion when checking cha\n\nrequests, and offering a new, easy way to restore data. This feature was made available with SAP Master Da\nGovernance 8.0 SP02.\n\f",
+    "The required Customizing activities can be found in the SAP Customizing Implementation Guide under Cross-\nApplication Components - Processes and Tools for Enterprise Applications - Master Data Governance \u2014\nCentral Governance \u2014 Master Data Governance for Business Partner - SAP Business Partner Screening. For\nhelp in configuring the integration scenario, see Set Up Address Screening.\n\f",
+    "The following table lists further useful links in the SAP Community.\n\f",
+    "You can assign Business Partners to hierarchies during the creation or change process. The UI also offers a\nvalue help for an easy identification of the relevant parent node.\n\f",
+    "You can enter tax numbers with a length of up to 60 characters. This feature has now been made available for\nSAP Master Data Governance 7.0 and higher.\n\f",
+    "TER Me SNA Te NR! Ass RES ROR Eee Se See SI ANN eh ORO OR ST RS AE Re ee Re NR, = Iwan Sear een Se Rn eRe eee\n|) Master Data Governance, Central Governance \u00bb General Settings > Value Mapping J. If you want to use value\n\nmapping during data replication, see SAP Note 2221398 to see if the relevant fields for field mapping have a\nglobal data type assigned.\n\f",
+    "Nith MDG 9.0 SPO2, the application Master Data Governance for Customer offers the following features:\n\f",
+    "Location on SAP Community\n\f",
+    "SAP Master Data Governance Community\n\f"
+  ],
+  "40": [
+    "It is now also possible for all additional customer assignments to select one of the addresses defined for the\nbusiness partner. The standard assignment still uses the standard business partner address. Replication via\nservice (in addition to ALE) is now also possible, which means that all business partners including assigned\n\ncustomers and vendors can now be replicated using just one SOA message.\n\f",
+    "Payment cards can now be maintained within the governance process. The replication of payment cards\n\nis supported by SOA and with ALE. You can make security settings for payment cards, determining the\nrelevant settings for encryption, masking, and access logs. The security settings include three security level\n(No Additional Security Measures, Masked Display, Masked Display & Encrypted When Saved). Note that an\nencryption software must be installed as a prerequisite for the third of these settings.\n\f",
+    "Unloading points can now be maintained in the governance process. You can enter details of the unloading\npoint: you can select two sets of default values for the Goods Receiving Hours, and you can edit these defaul\nvalues or enter custom ones. In addition, the cleansing case UI has been enhanced for unloading points.\n\f",
+    "New fields are available for extended withholding tax for customer assignments. The extended withholding tax\nfor customers has been enhanced with the following fields for table KNBw: Exemption certificate number, rate,\nreason, and start and end dates.\n\f",
+    "Classification can now be maintained for customer assignments. The replication of the classification can be\nconfigured for SOA and for ALE. Cleansing of classification is not supported.\n\f",
+    "You can assign document links that already exist in the system, and you can upload new documents on the Edit\nPage, and display details for documents. The replication of the document links can be configured for ALE and\nfor SOA.\n\f",
+    "The User Interface (UI) was enhanced, and the following new features are now available based on this\nenhancement:\n\f",
+    "The new FI Contract Account component enables you to monitor and control the creation and editing of\ncontract account master data.\n\f",
+    "With MDG 9.1, the application Master Data Governance for Customer offers the features described below.\n\f",
+    "The User Interface (UI) was enhanced, and the following new features are now available based on this\n\f",
+    "For data replication purposes, you need to provide classes and characteristics with the same name for both\nthe source system and the target system. The classification for MDG for Customer does not support key\nmapping and value mapping for class names, characteristic names, and characteristic values.\n\f",
+    "For more information on classification for MDG, see SAP note 2479869P er.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "41": [
+    "With Master Data Governance for Supplier you can control the governance of supplier master data on a centra\nhub and on decentralized systems. The system uses change requests to control the creation and change of\n\na supplier and the supplier data is stored temporarily. The change requests are forwarded automatically to a\nmaster data specialist. As soon as the change request is approved the new supplier master data is stored in th\nexisting ERP master data tables. The quality of your data is improved through a structured governance proces:\nthat prevents duplicate records. The workflow keeps the users informed of updates or changes to supplier\nmaster data. The requestor UI enables the user to request the creation or change of a supplier containing nam\n\f",
+    "A new Contact Persons User Interface Building Block (UIBB) with a list of all contact persons and a combined\noverview page that contains the most important data of the person, the relationship, and the workplace\naddress make the creation of contact persons together with the workplace address data easier. You can also\ncreate relationships and contact persons. You can add new contact persons from an existing business partner\nand new contact persons that do not yet exist as a business partner. This feature is available for change\nrequests handling business partner organizations.\n\f",
+    "With MDG 9.2, you can enrich your existing business partner (only organization) master records by importing\nverified data from external data providers. This eliminates the risk of errors in manual data creation. This\nfeature is available for Master Data Governance for Business Partner, Master Data Governance for Customer,\nand Master Data Governance for Supplier. You can use the data enrichment feature in the central governance\nprocess.\n\f",
+    "With the new transactional SAP Fiori lean request App Request Customer Change, you can request a change to\nan existing customer for an organization or person. This app contains basic identifying data about the business\npartner and is easily accessible for a business user with limited knowledge of master data governance.\n\f",
+    "All SAP MDG Fiori Apps available in the Business Suite are now also available in SAP Fiori Cloud. SAP\n\nFiori Cloud provides a modern, simple and responsive user experience for your existing SAP Business Suite\nsystems. You can connect to the MDG backend directly from SAP Fiori Cloud using the SAP HANA Cloud\nConnector. For more information on SAP Fiori Cloud, see https://cloudplatform.sap.com/capabilities/ux/\n\nfiori.htm| he.\n\f",
+    "With the flexible grouping and numbering, you can now select customer/vendor account groups and IDs\nindependently of the selected business partner grouping during the creation process. This is now also\npossible for standard-assigned customers and vendors. The account group assigned to the BP grouping in\nCVI customizing is a default value only and can be changed.\n\f",
+    "You can now select the industries using a hierarchical display similar to transaction BP in the backend.\n\f",
+    "Hierarchical Value Help for Industries\n\f"
+  ],
+  "42": [
+    "On the central hub you can govern supplier master data and replicate the supplier master data to different\nbusiness systems such as ERP, SRM, or non-SAP systems. You can also use mass data load to extract data\nfrom a client system and upload this data into the master data hub. The system supports the extraction of\nsupplier, vendor and business partner data from SRM and ERP systems throughout different releases \u2014 in the\ncase of previous releases by using the existing functions.\n\f",
+    "With MDG 8.0 the application Master Data Governance for Supplier offers the following features:\n\f",
+    "and address without having authority for additional activities. The Supplier Governance work center enables\naccess to the functions via the SAP NetWeaver Business Client and the SAP Enterprise Portal.\n\f",
+    "With MDG 7.0 the application Master Data Governance for Supplier offers the following features:\n\f"
+  ],
+  "43": [
+    "You can now enter tax numbers with a length of up to 60 characters. This feature has now been made available\nfor SAP Master Data Governance 7.0 and higher.\n\f",
+    "You can now enter several versions of a contact person's workplace address in different character sets, e.g.\nChinese or Cyrillic. This function has already been available for organizations and persons, and is now also\navailable for workplace addresses. Additional fields are visible on the Fiori Lean Request UI of the Fiori App\nRequest Supplier (MDG).\n\f",
+    "You can now maintain validity dates for Business Partner relationships. You can define time restrictions and the\ncardinality for each relationship type.\n\f",
+    "The Multiple-Record Processing function enables you to edit a number of supplier data records at the same\ntime. Multiple-Record Processing offers a streamlined process, with a UI that enables you to create change\nrequests for multiple records with greater efficiency. The function offers the following advantages:\n\f",
+    "You can now enter explanatory texts for ERP vendors on general level, and on company code and purchasing\norganization level.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "With MDG 9.0 the application Master Data Governance for Supplier offers the following features\n\f",
+    "Request Supplier (MDG).\n\f",
+    "\u00a2 Direct deletion of certain individual values and an option to discard changes\n\f"
+  ],
+  "44": [
+    "The following table lists further useful links in the SAP Community.\n\f",
+    "As an enhancement of the Highlight Changes feature, the Highlight Deletions feature is now available. It\nenables you to highlight deleted values, including deleted rows, that are shown in lists, and to restore the\nlatest active version of the deleted record. The system highlights the relevant rows and displays deleted\nvalues as strikethrough, supporting you in quickly identifying items marked for deletion when checking chat\n\nrequests, and offering a new, easy way to restore data. This feature was made available with SAP Master Dat\nGovernance 8.0 SP0O2.\n\f",
+    "You can use the address screening and investigation capabilities of SAP Business Partner Screening in SAP\nMaster Data Governance. Specifically, you can do address screening of the business partners in master data\nchange requests for compliance problems. You can prevent violations of national or international regulations by)\ndetecting such persons and organizations, and you can demonstrate your compliance with such regulations.\n\f",
+    "The required Customizing activities can be found in the SAP Customizing Implementation Guide under Cross-\nApplication Components - Processes and Tools for Enterprise Applications - Master Data Governance \u2014\nCentral Governance \u2014 Master Data Governance for Business Partner - SAP Business Partner Screening. For\nhelp in configuring the integration scenario, see Set Up Address Screening.\n\f",
+    "You can now assign Business Partners to hierarchies during the creation or change process. The UI also offers a\nvalue help for an easy identification of the relevant parent node.\n\f",
+    "There are new entries for the Global Data Type available in the Maintain Value Mapping Customizing under\n\n|) Master Data Governance, Central Governance \u00bb General Settings > Value Mapping }. If you want to use value\nmapping during data replication, see SAP Note 2221398 to see if the relevant fields for field mapping have a\nglobal data type assigned.\n\f",
+    "SAP Master Data Governance Community\n\f",
+    "Replication of supplier contact persons using ALE is now possible. As a prerequisite, EnP7 SP5 needs to be\ninstalled.\n\f",
+    "Multiple Address Assignments\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "45": [
+    "A new Contact Persons User Interface Building Block (UIBB) with a list of all contact persons and a combinec\noverview page that contains the most important data of the person, the relationship, and the workplace\naddress make the creation of contact persons together with the workplace address data easier. You can also\ncreate relationships and contact persons. You can add new contact persons from an existing business partne\nand new contact persons that do not yet exist as a business partner. This feature is available for change\nrequests handling business partner organizations.\n\f",
+    "It is now also possible for all additional supplier assignments to select one of the addresses defined for the\nbusiness partner. The standard assignment still uses the standard business partner address. Replication via\nservice (in addition to ALE) is now also possible, which means that all business partners including assigned\ncustomers and vendors can now be replicated using just one SOA message.\n\f",
+    "Classification can now be maintained for supplier assignments. The replication of the classification can be\nconfigured for SOA and for ALE. Cleansing of classification is not supported.\n\f",
+    "With the flexible grouping and numbering, you can now select customer/vendor account groups and IDs\nindependently of the selected business partner grouping during the creation process. This is now also\npossible for standard-assigned customers and vendors. The account group assigned to the BP grouping in\nCVI customizing is a default value only and can be changed.\n\f",
+    "You can assign document links that already exist in the system, and you can upload new documents on the Edit\nPage, and display details for documents. The replication of the document links can be configured for ALE and\nfor SOA.\n\f",
+    "The User Interface (UI) was enhanced, and the following new features are now available based on this\nenhancement:\n\f",
+    "The new FI Contract Account component enables you to monitor and control the creation and editing of\ncontract account master data.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "For more information on classification for MDG, see SAP note 2479869F Re.\n\f"
+  ],
+  "46": [
+    "With MDG 9.2, you can enrich your existing business partner (only organization) master records by importin;\nverified data from external data providers. This eliminates the risk of errors in manual data creation. This\nfeature is available for Master Data Governance for Business Partner, Master Data Governance for Customer\nand Master Data Governance for Supplier. You can use the data enrichment feature in the central governance\nprocess.\n\f",
+    "With MDG 7.0 SAP offers the application Master Data Governance for Business Partner with the following\nfeatures:\n\f",
+    "All SAP MDG Fiori Apps available in the Business Suite are now also available in SAP Fiori Cloud. SAP\n\nFiori Cloud provides a modern, simple and responsive user experience for your existing SAP Business Suite\nsystems. You can connect to the MDG backend directly from SAP Fiori Cloud using the SAP HANA Cloud\nConnector. For more information on SAP Fiori Cloud, see https://cloudplatform.sap.com/capabilities/ux/\n\nBi Ci\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "Potential duplicates can be found using the search or the duplicate check. If similar master data records are\nconsidered to be duplicates, a cleansing case can be created. A master data specialist can then investigate\nwhether these business partner data records are duplicates and if so, merge the best data of all records\ninto one single master data record.\n\f"
+  ],
+  "47": [
+    "You can now enter several versions of a contact person's workplace address in different character sets, e.g.\nChinese or Cyrillic. This function has already been available for organizations and persons, and is now also\navailable for workplace addresses. Additional fields are visible on the Fiori Lean Request UI of the SAP Fiori App\nRequest Business Partner (MDG).\n\f",
+    "You can now maintain validity dates for Business Partner relationships. You can define time restrictions and the\ncardinality for each relationship type.\n\f",
+    "You can now enter tax numbers with a length of up to 60 characters. This feature has now been made available\nfor SAP Master Data Governance 7.0 and higher.\n\f",
+    "Time-Dependent Business Partner Relationships\n\f",
+    "Assignment of Business Partners to Hierarchies from Single-Object Processing UI\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "48": [
+    "You can use the address screening and investigation capabilities of SAP Business Partner Screening in SAP\nMaster Data Governance. Specifically, you can do address screening of the business partners in master data\nchange requests for compliance problems. You can prevent violations of national or international regulations b\ndetecting such persons and organizations, and you can demonstrate your compliance with such regulations.\n\f",
+    "As an enhancement of the Highlight Changes feature, the Highlight Deletions feature is now available. It\nenables you to highlight deleted values, including deleted rows, that are shown in lists, and to restore the\nlatest active version of the deleted record. The system highlights the relevant rows and displays deleted\nvalues as strikethrough, supporting you in quickly identifying items marked for deletion when checking chan\n\nrequests, and offering a new, easy way to restore data. This feature was made available with SAP Master Dat\nGovernance 8.0 SPO2.\n\f",
+    "The following table lists further useful links in the SAP Community.\n\f",
+    "The required Customizing activities can be found in the SAP Customizing Implementation Guide under Cross-\nApplication Components - Processes and Tools for Enterprise Applications - Master Data Governance \u2014\nCentral Governance \u2014 Master Data Governance for Business Partner - SAP Business Partner Screening. For\nhelp in configuring the integration scenario, see Set Up Address Screening.\n\f",
+    "SAP Master Data Governance Community\n\f",
+    "There are new entries for the Global Data Type available in the Maintain Value Mapping Customizing under\n\n|} Master Data Governance, Central Governance \u00bb General Settings > Value Mapping . If you want to use value\nmapping during data replication, see SAP Note 2221398 to see if the relevant fields for field mapping have a\nglobal data type assigned.\n\f",
+    "You can now assign Business Partners to hierarchies during the creation or change process. The UI also offers a\nvalue help for an easy identification of the relevant parent node.\n\f",
+    "With MDG 9.1, the application Master Data Governance for Business Partner offers the features described\nbelow.\n\f",
+    "With MDG 9.0 SPO2, the application Master Data Governance for Business Partner offers the following\nfeatures:\n\f",
+    "This business function provides the BC set CA-MDG-APP-BP_CR_ODATA_05 that is required to use SAP Fior\n\f"
+  ],
+  "49": [
+    "You can use the Validity functionality to schedule additional changes for future dates, delete planned changes,\nand to compare the values of two different validity dates, e.g. the current and a future date. Scheduled change\nwill automatically become effective at the relevant date (for this, a corresponding background job has to be se\nup in the backend system).\n\f",
+    "A new Contact Persons User Interface Building Block (UIBB) with a list of all contact persons and a combine\noverview page that contains the most important data of the person, the relationship, and the workplace\naddress make the creation of contact persons together with the workplace address data easier. You can also\ncreate relationships and contact persons. You can add new contact persons from an existing business partn\nand new contact persons that do not yet exist as a business partner. This feature is available for change\nrequests handling business partner organizations.\n\f",
+    "Data replication of Financial Contract Accounts via SOA Service for the replication of Contract Account data as\nwell as sending confirmation messages is available. For the replication to S/4HANA systems, the same service\nis required on the S/4HANA system, which is available as of S/4HANA 1511 via Support Package.\n\f",
+    "Payment cards can now be maintained within the governance process. The replication of payment cards\nis supported by SOA and with ALE. You can make security settings for payment cards, determining the\nrelevant settings for encryption, masking, and access logs. The security settings include three security le\\\n(No Additional Security Measures, Masked Display, Masked Display & Encrypted When Saved). Note that a\nencryption software must be installed as a prerequisite for the third of these settings.\n\f",
+    "When creating or changing a contract account, you can now also schedule future changes using just one\nchange request. To add changes that become active at a certain date in the future, you can use the Validity\nfunctionality to enter the date on which the changes should be activated.\n\f",
+    "Data load to the MDG Staging Area as well as Client Maintenance capabilities are now also available.\n\f",
+    "All SAP MDG Fiori Apps available in the Business Suite are now also available in SAP Fiori Cloud. SAP\n\nFiori Cloud provides a modern, simple and responsive user experience for your existing SAP Business Suite\nsystems. You can connect to the MDG backend directly from SAP Fiori Cloud using theSAP HANA Cloud\nConnector. For more information on SAP Fiori Cloud, see https://cloudplatform.sap.com/capabilities/ux/\n\nfiori.htm |r.\n\f",
+    "The new FI Contract Account component enables you to monitor and control the creation and editing of\ncontract account master data.\n\f",
+    "With MDG 9.2, the application Master Data Governance for Business Partner offers the features described\nbelow.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "You can now select the industries using a hierarchical display similar to transaction BP in the backend.\n\f"
+  ],
+  "50": [
+    "In a data model, you can define entity types with multiple key fields without the need to create additional\nleading or qualifying relationships. You also can define multiple relationships between a check table and\na different entity type, as well as multiple relationships between the same entity types. You can edit data\nmodels in a configuration workbench. EhP6 includes an example for Master Data Governance of Custom\nObjects. You can use this example to become familiar with some of the possibilities of SAP Master Data\nGovernance with its functions and configuration options. With Custom Objects in the Customer-Specific\nReuse Active Area you can now specify that the system should store custom objects, which you define\nyourself. in existing tables.\n\f",
+    "With Master Data Governance for Custom Objects you can set up governance processes for your specific\nmaster data objects.\n\f",
+    "Data Exchange now covers Data Replication (process-driven, usually message-based replication of data\nfrom the MDG Hub to the Clients) and Data Transfer (mass transfer, usually file-based export and import)\nData Replication has been enhanced with the Replication by Object Selection. This can be used to quickly\nreplicate business object data from an MDG hub to target systems. Users typically use this application\n\nto respond to one-off requests for the replication of specific business objects. Possible tasks include the\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "51": [
+    "You can use the enhanced edition management to improve the flexibility in how you manage editions and\nschedule changes to edition-based business objects.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "52": [
+    "Enhanced and Simplified Hierarchy Management\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "* Support for analytical reporting by a simplified generation of model-specific Datasources for master data\nand by the provision of the Datasource for key mapping\n\f"
+  ],
+  "53": [
+    "You can use data cleansing and merging for the following MDG applications:\n\f",
+    "You can enrich your existing business partner (only organization) master records by importing verified data\nfrom external data providers. This eliminates the risk of errors in manual data creation.\n\f",
+    "You can use the flight data model to quickly explore the main capabilities of SAP Master Data Governance.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "For more information about the flight data model, see SAP Solution Manager for Master Data Governance for\nCustom Objects: Example Scenario Configuration Description under |} Organizational Area > Corporate Support\n\nand Services > Business Processes \u00bb Master Data Governance for Custom Objects 3.\n\f",
+    "You can use the archiving object USMD_cR to archive change requests that are in a final state and where the\nfinalized date falls before the number of days given as a residence time. This helps to improve the system\nperformance. Users can access archived change requests from the NwBC menu item Display Change\nRequests and activating the indicator Include Archived Change Requests.\n\f",
+    "For more information about the flight data model, see SAP Solution Manager for Master Data Governance for\n\f"
+  ],
+  "54": [
+    "To update the status of the cleansing case you need to do the following:\n\f",
+    "The integration of SAP Fraud Management enables authorized users in change request processing in SAP MDG,\ncentral governance to perform the screening of a person or organization by SAP Fraud Management.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "SAP has provided event type linkages in the Customizing activity Activate Type Linkage under | Master Data\n\nGovernance \u00bb General Settings > Process Modeling > Workflow 9 to update the status of the cleansing case\nafter the corresponding change request has been approved or rejected.\n\f"
+  ],
+  "55": [
+    "For information on SAP Fraud Management in general and on how to install and upgrade it, see the SAP Help\nPortal under http://help.sap.com/fra@ir .\n\f",
+    "If you plan to use access groups to limit the set of alerts to which an MDG approver has access, then\nyou should use the named-user approach to setting up the RFC communications. In this case, your\nnamed-users for approvers can have the access group authorizations that each approver requires. An\nauthorization error is returned to MDG as an RFC error with accompanying message.\n\f"
+  ],
+  "56": [
+    "You can use Master Data Governance for Financials (MDGF) and Master Data Governance for Custom Objects\n(MDGCO) together with all industry solutions.\n\f",
+    "You must not use Master Data Governance for Material (MDGM), Master Data Governance for Supplier\n(MDGS), Master Data Governance for Customer (MDGC), and Master Data Governance for Business Pai\n(MDGBP) with SAP industry solutions on the same system (co-deployment) apart from the exceptions\nmentioned in SAP note 1690202#r.\n\f",
+    "Jevertheless, the overall MDG, Consolidation process does not need to be finalized before the upgrade\n\f",
+    "Because of corrections from SAP it is possible that the active version and the inactive version of the same\ndata model may differ.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "2.5.1 Introduction\n\f"
+  ],
+  "57": [
+    "In Master Data Governance 9.2, we updated the following MDG software components.\n\f",
+    "For information on the upgrade path to the SAP ERP enhancement package EHP\u00a78, see the upgrade section of\nthe Master Guides for EHP8. The Master Guides for EHP6 and EHP7 are available under | SAP Help Portal\nSS SAP Mactear Nata Rovernance Y\n\f",
+    "Back-End Software Components\n\f",
+    "Software Component Description\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "Activate all relevant services to be activated for Web Dynpro applications after having upgraded to MDG 9.1\nor higher versions of MDG. For more information, see Services to be Activated for Web Dynpro Applications at\n\nhttps://help.sap.com/#r under |)\u00bb SAP Master Data Governance \u00bb Configuration of Master Data Governance\n\f"
+  ],
+  "58": [
+    "With EhP6, the data models mm in Master Data Governance for Material (MDGM) and BP in Master Data\nGovernance for Supplier (MDGS) have been enhanced. With MDG 6.1, the data model BP in Master Data\nGovernance for Customer (MDGC) has been enhanced also. Activating the MDG 7.0 business functions and\nswitches for MDGM, MDGS, and MDGC, the data models mM and BP are changed and all open change reques\nof the two applications are locked. To unlock these change requests and to adapt the change request data tc\nthe enhanced data models you should run the report USMD_ADJUST_ STAGING. This report runs in all clients\n\nwhere MNC ic active and ie availahle in Ciuictamizine for Nacter Data Covernance tinder | Canara! Sattinocs\n\f",
+    "If you had created your own program with the class CL_USMD_CR_API in EHP5, you need to set the context\nwith the class CL_USMD_API_CONTEXT to continue to use your own program in EHP6.\n\f",
+    "As soon as the change request ID in your MDG application is fixed, you need to initialize the context with the\nmethod INIT_CONTEXT. When you have finalized the processing of the change request, you need to delete\nthe context with the method DISCARD_CONTEXT. After this you need to initialize the context again in order to\nprocess another change request in your MDG application.\n\f",
+    "Drafts are created when a user saves a change request without starting the workflow. In EhP5 drafts were only\nvisible for the creator. In EhP6, drafts are also visible to colleagues with the appropriate authorization.\n\f",
+    "In EhP6 you can save one draft per change request. Drafts are stored in change request database tables. All\ndependent objects are locked until the change request is approved.\n\f",
+    "Drafts that you have created in EhP5 will be lost when you upgrade to EhP6. Therefore you should finalize all\nopen EhP5 drafts before activating EnP6. MDG offers the report USMD_GOV_API_DRAFT DELETE. You can rul\nthis prior to upgrading to create a list of all open EhP5 drafts.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "where MDG is active and is available in Customizing for Master Data Governance under | General Settings\n\f",
+    "where MDG Is active and Is available In Customizing for Master Data Governance under |\u00bb General Settings\n> Data Modeling > Edit Data Model J.\n\f",
+    "> Data Modeling > Edit Data Model 9.\n\f"
+  ],
+  "59": [
+    "Entities belonging to an object list of a change request that has been created in EHP 6 and that is still in proc\nafter the upgrade to MDG 6.1 can lead to inconsistencies when using the block list function. The block list\nfunction has no impact, if a change request that has been created after the upgrade to MDG 6.1 provides a\nblock value for an entity that is also part of the object list of another change request that has been created\nbefore that upgrade.\n\f",
+    "As of SAP enhancement package 6 for SAP ERP 6.0 (SAP_APPL 606) the access class\nCL_MDG_BS_ECC_ACCESS is required for Master Data Governance for Supplier. If you activate the business\nfunction Master Data Governance for Supplier on Hub (ERP) (MDG_ERP_SUPPLIER_2), the switch BC set c\nMDG-APP-BP_V_MDG _BS_BP_ACC_01 provides the access class CL_MDG_BS_ECC_ACCESS. No further act\nis required in this regard.\n\f",
+    "If you have created your own data model using the reuse active area before MDG 6.1, you need to finalize all\nyour change requests to ensure a correct processing of the block list function.\n\f",
+    "With MDG 7.0 SAP delivers an enhanced edition management adding flexible scheduling capabilities. When\nupgrading to MDG 7.0, you need to consider the following:\n\f",
+    "However it is possible to upgrade from EhP5 to EhP6 without activating the business function Master\nData Governance for Supplier on Hub (ERP). lf you do not activate the business function Master\n\nData Governance for Supplier on Hub (ERP), you have to activate the switch BC set CA-MDG-APP-\nBP_V_MDG_BS_BP_ACC_V manually again. This switch BC set has been adapted and will provide the acces\nclass CL_MDG_BS_ECC_ACCESS.\n\f",
+    "For more information, see release note MDG_606_SUP_ACC_CLAS.\n\f",
+    "For more information, see the documentation of the class CL_USMD_API_CONTEXT and the interface\nIF_USMD API CONTEXT.\n\f",
+    "User Interfaces\n\f"
+  ],
+  "60": [
+    "Before upgrading from ERP EHP5 to a higher release of MDG, you must create the authorization object\nUSMD_DM to be able to activate data models, because this authorization object is not yet available in ERP EHPS.\nThe authorization object needs to be assigned to the upgrade user.\n\f",
+    "lf you want to use loose interlocking for hierarchy nodes, make sure that you have released all change requests\nbefore upgrading to MDG 9.1 or higher versions of MDG.\n\f",
+    "For more information, see SAP note 2008595 Pe.\n\f",
+    "> Application Help 3. Take into account the effects of the after-switch method.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "* Generic Single-Object Processing (USMD_OVP_GEN) and Generic Search (USMD_SEARCH)\nThe WebDynpro applications USMD_OVP_GEN and USMD_SEARCH are a prerequisite for applications\nthat use the capabilities of the flexible edition management delivered with MDG 7.0. If you have\nenhanced the WebDynpro application USMD_ENTITY_VALUE2 on a release lower than MDG 7.0 you\nneed to adapt the WebDynpro application USMD_OVP_GEN accordingly.\n\f"
+  ],
+  "61": [
+    "If you want to upgrade to MDG 9.1 or higher versions of MDG and you want to use ZDO, consider the\ninformation provided in the SAP note 2163060 fi including the document that is attached to this SAP note\n\f",
+    "The following restrictions apply for the use of Master Data Governance together with a HANA database in the\nBridge phase during the upgrade process:\n\f"
+  ],
+  "62": [
+    "With EhP6, the Business Add-In previously available to adjust the user interface for single processing of\nmaterial is no longer available. Instead, a new UI provides greater flexibility while retaining and refining the\nfunctionality provided with EhP5. Below is the full list of the functions previously available through the single\nprocessing UI by implementing the BAdI in EhP5, that are now provided under the EhP6 UI paradigm:\n\f",
+    "After having upgraded to MDG, Consolidation and Mass Processing 9.0 or higher versions of MDG, process\nsteps on the process overview UI cannot be executed. To change this, you need to assign to your users\n\nthe activity Confirm of the authorization object MDc_PROOT delivered with MDG, Consolidation and Mass\nProcessing 9.0 or higher versions of MDG.\n\f",
+    "For more information on the authorization object MDC_PROOT, see the authorization object chapter\nMDC_PROOT in the MDG 9.2 Security Guide.\n\f",
+    "For more information, see SAP Note 1606341.\n\f",
+    "2.7.2.2.1.1 Introduction\n\f"
+  ],
+  "63": [
+    "SAP delivers roles for the menu structure and for authorizations.\n\f",
+    "With MDG 7.0 Feature Pack, the following roles are available:\n\f",
+    "You need the role SAP_MDGM_MENU in order to use the new menu entries and the new UI.\n\f",
+    "> SAP_MDGM MENU, Master Data Governance for Material: Menu\n\f"
+  ],
+  "64": [
+    "As of SAP Enhancement Package 6 for SAP ERP 6.0 (EhP6), SAP delivers new step types. Now you can use\nCustomizing to create your own step types with two or more associated actions. The pre-delivered content\nfor the change request types MATO1, MATO2, MATO6, MATOA, MATOB in the Customizing activity Configure\nRule-Based Workflow has been updated to include the new step types, actions, and statuses. If you import thi:\nnew content from client 000, the old values are overwritten.\n\f",
+    "SAP recommends copying these roles and adapting them to your needs. Re-implement features you\nimplemented using the UI BAdI usMD_UI_EVENT2 in the SAP Enhancement Package 5 for SAP ERP 6.0.\n\f",
+    "For more information on roles of Master Data Governance for Material, see the following:\n\f",
+    "For more information, see Configuring Master Data Governance for Material at https://help.sap.com#@ under\n|\u00bb SAP Master Data Governance \u00bb SAP Master Data Governance 9.2 > Configuration of Master Data Governance\n> Configuration of SAP MDG, Central Governance 9\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "If you want to keep the old content, do not import the files.\n\f",
+    "* SAP_MDGM_STEW_06, Master Data Governance for Material: Data Steward\n\f"
+  ],
+  "65": [
+    "If you have extended the enterprise search for Master Data Governance for Material with customer (Z) fiel\nin SAP Enhancement Package 5 for SAP ERP 6.0, consider adapting your implementation according to the\nrevised SAP Enhancement Package 6 for SAP ERP 6.0 or higher extensibility guidelines.\n\f",
+    "As of SAP Master Data Governance 6.1 SAP delivers an enhanced data model mm\n\f",
+    "The Enterprise search templates for MATERIAL and MDG MATERIAL are different between EHPO5 and EHPO6.\nThe change becomes active as soon as you install SAP Enhancement Package 6 for SAP ERP 6.0 (EhP6) or\nhigher releases of MDG. This happens before you activate any business functions. You have to create a new\nsoftware component and link the software components EA_APPL/PLMWUI and MDG APPL to it.\n\f",
+    "Check, if your extension of the data model mm delivered with SAP ERP EHP5 or SAP ERP EHP6 is covered with\nthe enhanced data model m delivered with SAP Master Data Governance 6.1 or higher releases of MDG. To\nconvert your extension of the data model mm delivered with SAP ERP EHP5 or SAP ERP EHP6 to the enhanced\ndata model mm delivered with SAP Master Data Governance 6.1 or higher releases of MDG you need to do the\nfollowing:\n\f",
+    "The advantages are the following:\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "For more information, see Configuring Master Data Governance for Material at https://help.sap.com@ under\n|> SAP Master Data Governance > SAP Master Data Governance 9.2 > Configuration of Master Data Governance\n> Configuration of SAP MDG, Central Governance 3.\n\f"
+  ],
+  "66": [
+    "* SAP also recommends to keep the Service Mapping Too! (SMT) extension of your data model\nextension for the same reason.\n\f",
+    "Convert the data model MM as follows:\n\f",
+    "If you cannot finalize existing change requests before the conversion, the conversion process is the following:\n\f"
+  ],
+  "67": [
+    "To use the functions of the enhanced data model MM and the changes of the UI configuration delivered with\nSAP Master Data Governance 9.1 or higher versions of MDG, you need to process the following steps:\n\f",
+    "For more information, see the extensibility guide Extend MDG-M Data Model by a New Entity Type (Reuse\nOption) at http://scn.sap.com/docs/DOC-70743 Me.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "Exchange your copies of roles to the roles of SAP Master Data Governance 9.1 or higher versions of MDG:\n\f"
+  ],
+  "68": [
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "69": [
+    "You should use this report after extending the data model to make sure that the metadata is consistent with\nthe MDG customizing and UI configuration.\n\f",
+    "SAP provides the following Ul-related buffers:\n\f",
+    "If you made extensions of copies of the application configuration, you need to implement the same\nextensions in the copies of the application configurations BS_MAT OVP_07andBS_ MAT OVP_07H\ndelivered with SAP Master Data Governance 9.1 or higher versions of MDG. Some of the UIBBs\nhave been enhanced. The technical names of these UIBBs have been enhanced with a suffix.\n\nIn case you have extended one of these UIBBs, for example the component configuration\n\nMDG _BS MAT MATERIAL FORM delivered with SAP ERP EHP6, then you first need to copy\n\nthe corresponding component configuration MDG_BS MAT MATERIAL FORM 04 before you\nimplement your extension again. Implement a report and run this report to convert the existing\nchange requests to the new data model as described in the chapter Enhanced Data Model MM\n\nin this document. Then you have to copy your extensions to the enhanced entities and fields\ndelivered with SAP Master Data Governance 9.1 or higher versions of MDG. Exchange your roles as\ndescribed above.\n\f",
+    "This Customizing activity executes a report that clears the following buffers in this sequence:\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "70": [
+    "To show the user interface building blocks (UIBB) for the entities delivered with the business function Master\nData Governance for Supplier 6.1 proceed as follows:\n\f",
+    "If you want to include this feature in your pre-delivered change request types MATO1, MATO2, MATO6, MATOA,\nand MATOB, then you need to execute the Customizing activity Import Predefined Change Request Types under\n\n|} Master Data Governance \u00bb Master Data Governance for Material J or you can add the entity type DRADBASIC\nin your change request type using the Customizing activity Create Change Request Type under |)\u00bb Master Data\nGovernance > Process Modeling > Change Requests J.\n\f",
+    ". Inthe Create Customizing dialog box enter a description and choose OK.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "Governance > Process Modeling > Change Requests \u00a5.\n\f",
+    "Depending on whether you use the supplier UI or the vendor UI carry out the corresponding procedure.\n\f",
+    "Show specific UIBBs for the supplier UI\n\f",
+    "The authorization objects S_DEVELOP and S_WDR_P13N are assigned to your user.\n\f"
+  ],
+  "71": [
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "72": [
+    "These reports add the missing data to the staging area and you can then continue to process all change\nrequests that had missing business partner GUIDs, missing address GUID, or missing match code fields\n\f",
+    "If you want to continue to process a supplier without business partner GUID, address GUID, or match code\nfields that have been created in an EhP5 system and are still part of a change request, you need to execute tt\nfollowing reports:\n\f",
+    "With MDG releases higher than EhP5 a business partner GUID, an address GUID, and match code fields are\nrequired to process master data objects stored in the staging area.\n\f",
+    "For more information, see the SAP Notes 1672462, 1550109#l, and 15679814.\n\f",
+    "As a final step on the Search Vendor screen choose oy and on the Personalize dialog box choose Reset tc\n\f"
+  ],
+  "73": [
+    "With EhP6, the Business Add-In previously available to adjust the user interface for single processing of\nSuppliers is no longer available. Instead, a new UI provides greater flexibility while retaining and refining the\nfunctionality provided with EhP5. Below is the full list of the functions previously available through the single\nprocessing UI by implementing the BAdI in EhP5, that are now provided under the EhP6 UI paradigm:\n\f",
+    "Company code data and purchasing organization data of suppliers that have been created in an SAP ERP EHP\nsystem and that are still part of open change requests might get lost when upgrading to a higher MDG release\nand activating business function MDG_ERP_SUPPLIER_2. If you want to continue to process these suppliers\nyou need to execute the report MDG_BS_ECC_SUPPL_UPGRADE after having activated all business functions\nnecessary for the MDG release you have upgraded to and after having implemented the correction instructions\nfrom SAP note 1938397.\n\f",
+    "With SAP Enhancement Package 6 for SAP ERP 6.0, SAP delivers roles for the menu structure and for\nauthorizations.\n\f",
+    "For more information see SAP Note 1606341.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "For more information, see SAP note 1938397#ie.\n\f"
+  ],
+  "74": [
+    "SAP recommends to copy these roles, adapt them to your needs. Re-implement features you implemented\nusing the UI BAd| USMD_UI_EVENT2 in the SAP Enhancement Package 5 for SAP ERP 6.0.\n\f",
+    "With MDG 9.1 and higher versions of MDG, the following roles are available:\n\f",
+    "The following role becomes obsolete with SAP Enhancement Package 6 for SAP ERP 6.0:\n\f",
+    "You need the role SAP_MDGS_MENU in order to use the new menu entries and the new UI.\n\f",
+    "The following roles for authorizations of users are available for Master Data Governance for Suppli\u00a2\n\f",
+    "The following role for the menu structure is available for Master Data Governance for Supplier:\n\f"
+  ],
+  "75": [
+    "The data model BP has changed. In EhP5 it was possible to allocate only one ERP Vendor. With EhP6 it is\npossible to assign multiple ERP Vendors to one MDG supplier.\n\f",
+    "lf you want to use the web dynpro application BS_OVP_BP delivered with EhP6 of SAP ERP 6.0 instead of the\nweb dynpro configuration already available in EnP5 of SAP ERP 6.0, you cannot derive attributes of the type-4\nentity type BP_CENTRL as part of the type-l entity type BP_ HEADER with cardinality 1:1 anymore.\n\f",
+    "For more information on roles of Master Data Governance for Supplier, see the following:\n\f",
+    "If you follow this approach using the web dynpro application BS_OVP_BP, you then need to create a function\ncalled DERIVE_BP_CENTRL in BRFplus in the Customizing-Activity Define Validation and Derivation Rules\n\f"
+  ],
+  "76": [],
+  "77": [
+    "To show the user interface building blocks (UIBB) for the entities delivered with the business function Master\nData Governance for Customer 6.1 proceed as follows:\n\f",
+    "If you enhance entity types BP_VENGEN, BP_COMPNY, and BP_PORG, it may be necessary to adapt your\nenhancements.\n\f",
+    "The system automatically adapts change request data when you activate Business Function BF\nMDG_ERP_ SUPPLIER 2.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "* In transaction SUOI on the Parameters tab the Set/Get parameter FPM_CONFIG_ EXPERT is set to the value\n\f",
+    "* In transaction SUOI on the Parameters tab the Set/Get parameter FPM_CONFIG_ EXPERT is set to the value\nA.\n\f",
+    "Prerequisites:\n\f"
+  ],
+  "78": [
+    "With MDG 8.0, the Business Add-|n (BAdI) previously available to adjust the user interface for single processing\nof financial master data is no longer available. Instead, a new user interface provides greater flexibility while\nretaining and refining the functionality provided with MDG 6.1. Below is the complete list of the functions\npreviously available through the single processing UI by implementing the BAdI in MDG 6.1, that are now\nprovided under the MDG 8.0 UI paradigm:\n\f",
+    "Upgrading from EHP5, EHP6, EHP7, and MDG 6.1 to MDG 8.0 or higher\n\f"
+  ],
+  "79": [
+    "For EHP8, the SAP ERP Enhancement Package and SAP Solution Manager are mandatory components. Since\nMDG 9.2 is a product of the SAP Business Suite, it is mandatory to use SAP Solution Manager, as constitutional\npart of the SAP Business Suite reference architecture, for the software lifecycle management and the product\nversion management.\n\f",
+    "MDG is designed for low TCO. It runs on a single ABAP stack. You must install SAP ERP in order to use the MDG\napplications.\n\f",
+    "For Master Data Governance for Material 9.2, TREX/Enterprise Search is optional if an SAP HANA database\nhas been installed or another search provider has been implemented.\n\f",
+    "For MDG 9.2, you need to install EHP8.\n\f",
+    "All other components are optional.\n\f",
+    "Upgrading from EHP5, EHP6, EHP7, MDG 6.1, and MDG 7.0 to MDG 8.0 or higher\n\f",
+    "After having upgraded to Master Data Governance for Financials 8.0 you need to start the report\nRGZZGLUXx before starting to use the user interfaces delivered with Master Data Governance for Financials\n\f",
+    "MDG is designed for low TCO. It runs on a single ABAP stack. You must install SAP ERP in order to use the MDG\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "80": [
+    "System Landscape for MDG 9.2\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "81": [
+    "Software Component Structure based on ERP\n\f",
+    "The following optional components are available for enhancing:\n\f"
+  ],
+  "82": [
+    "If for MDG, consolidation and mass processing you want to use the standardization adapters and the matching\nadapters of SAP HANA Enterprise Information Management (SAP HANA EIM) SPO9, you need to implement\nSAP HANA EIM SPO9 or higher.\n\f",
+    "The following tables describe the installation options for MDG 9.1 or higher versions of MDG based on SAP ERP\nEHP8.\n\f",
+    "The following modeling information you find in the Product and Production Management System (PPMS):\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "83": [
+    "The SAP HANA database must be on support package 06. We recommend to install the highest available\nversion of the SAP HANA database.\n\f",
+    "If you need SLT mapping for the MDG HANA search because you are using SAP HANA ina side-by-side\nenvironment and are not using SAP HANA as the primary database, you need to install the component\nDMIS. Do not use DMIS versions lower than DMIS 2011_1_700 SP04 or according to SPs of other compone\nversions. If you do not use the MDG HANA search or you use HANA as the primary database, you do not he\nto install the component DMIS.\n\f",
+    "Since MDG 9.0 is based on NetWeaver 7.50, you do not need to install the Gateway component SAP_GWEN\nbecause it is part of NetWeaver 7.50.\n\f",
+    "For more information on the MDG, consolidation and mass processing specific settings, see Customizing\nactivity Specify Adapters under Master Data Governance, Consolidation and Mass Processing.\n\f",
+    "For more information on the installation and configuration of SAP HANA EIM SPO9 regarding extract, transfer,\nand load (ETL) functions, standardization, and matching, see the following documents available at http://\n\f",
+    "Governance \u00bb Configuring SAP HANA-Based Search for MDG J.\n\f",
+    "SAP recommends the dual system deployment scenario, where back-end system and Gateway hub are\ndeployed on different systems.\n\f",
+    "For more information on the drill-down search, see Configuring Drill-Down Search (Optional) at https://\nhelp.sap.com/&r under |)\u00bb SAP Master Data Governance > SAP Master Data Governance 9.1 > Application Hel\n> Configuration of Master Data Governance \u00bb Configuration of SAP MDG, Central Governance \u00bb Configuring\nMaster Data Governance for Custom Objects >\u00bb Data Quality and Search > Search Providers for Master Data\nGovernance \u00bb Configuring SAP HANA-Based Search for MDG 3.\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "84": [
+    "You can find ESR Content in the software component versions XI CONTENT MDG APPLICATIONS 622 and XI\nCONTENT MDG FOUNDATION 752 for the following applications of Master Data Governance 9.2:\n\f",
+    "Mandatory/Optional\n\f",
+    "Mandatory/Optiona\n\f",
+    "Install or upgrade to MDG 9.2 Mandatory\n\f",
+    "Action\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f"
+  ],
+  "85": [
+    "Mandatory/Optional\n\f",
+    "Action\n\f",
+    "MDG 9.2 supports the following releases for the enhanced integration for SAP CRM:\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "* SAP CRM as aclient: SAP CRM 7.0 EHPO2 and higher\n\f",
+    "Install or upgrade to MDG 9.2 Mandatory\n\f"
+  ],
+  "86": [
+    "The communication between an SAP CRM system and the MDG hub system takes always place using SOA\nservices. The communication between an SAP ERP system and the MDG hub system takes either place using\nSOA services or using |Docs of type DEBMAS (valid for older SAP ERP releases). If you want to replicate\nusing ALE between the MDG hub and the ERP client you need to create a new implementation of BAdI\n\nIDOC_DATA_MAPPER. A further BAdI implementation is necessary if the release of your CRM system is lower\nthan CRM 7.0 EHPO3.\n\f",
+    "Mandatory/Optional\n\f",
+    "You can use the distribution lock for business transactions and the restart of business transactions in SAP\nCRM.\n\f",
+    "Distribution Lock and Restart of Business Transactions in SAP CRM\n\f",
+    "Action\n\f"
+  ],
+  "87": [
+    "Mandatory/Optional\n\f",
+    "Mandatory/Optional\n\f",
+    "Action\n\f",
+    "SAP Master Data Governance Master & Upgrade Master Guide for MDG 9.2\nSAP Master Data Governance: Installation and Upgrade Overview\n\f",
+    "Action\n\f",
+    "Remarks\n\f"
+  ],
+  "88": [],
+  "89": [
+    "Experimental features are not part of the officially delivered scope that SAP guarantees for future releases. This means that experimental features may be changed by\nSAP at any time for any reason without notice. Experimental features are not for productive use. You may not demonstrate, test, examine, evaluate or otherwise use\nthe experimental features in a live operating environment or with data that has not been sufficiently backed up.\n\nThe purpose of experimental features is to get feedback early on, allowing customers and partners to influence the future product accordingly. By providing your\nfeedback (eg. in the SAP Community), you accept that intellectual property rights of the contributions or derivative works shall remain the exclusive property of SAP.\n\f",
+    "Any software coding and/or code snippets are examples. They are not for productive use. The example code is only intended to better explain and visualize the syntax\nand phrasing rules. SAP does not warrant the correctness and completeness of the example code. SAP shall not be liable for errors or damages caused by the use of\nexample code unless damages have been caused by SAP's gross negligence or willful misconduct.\n\f",
+    "Some links are classified by an icon and/or a mouseover text. These links provide additional information.\nAbout the icons:\n\f",
+    "Some videos may point to third-party video hosting platforms. SAP cannot guarantee the future availability of videos stored on these platforms. Furthermore, any\nadvertisements or other content hosted on these platforms (for example, suggested videos or by navigating to other videos hosted on the same site), are not withir\nthe control or responsibility of SAP.\n\f",
+    "SAP supports a culture of diversity and inclusion. Whenever possible, we use unbiased language in our documentation to refer to people of all cultures, ethnicities,\ngenders, and abilities.\n\f"
+  ],
+  "90": [
+    "These materials are provided by SAP SE or an SAP affiliate company for\ninformational purposes only, without representation or warranty of any\nkind, and SAP or its affiliated companies shall not be liable for errors or\nomissions with respect to the materials. The only warranties for SAP or\nSAP affiliate company products and services are those that are set forth\nin the express warranty statements accompanying such products and\nservices, if any. Nothing herein should be construed as constituting an\nadditional warranty.\n\f",
+    "SAP and other SAP products and services mentioned herein as well as\ntheir respective logos are trademarks or registered trademarks of SAP\nSE (or an SAP affiliate company) in Germany and other countries. All\nother product and service names mentioned are the trademarks of their\nrespective companies.\n\f",
+    "eee te eee ee ee ee ee ee ee ee\nadditional trademark information and notices.\n\f"
+  ]
+}

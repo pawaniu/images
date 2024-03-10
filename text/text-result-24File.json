@@ -1,0 +1,182 @@
+{
+  "1": [],
+  "2": [],
+  "3": [],
+  "4": [
+    "You must read these SAP Notes before you start the installation or upgrade. These SAP Notes contain the most\nrecent information on the upgrade, as well as corrections to the upgrade documentation. Make sure that you\nhave the up-to-date version of each SAP Note, which you can find on SAP Support Portal at support.sap.com.\n\f"
+  ],
+  "5": [
+    "For the latest version of SAP Master Data Governance, SAP ERP Enhancement Package 8 or higher and\nSAP Solution Manager are mandatory components. For Master Data Governance for Material 9.2, TREX/\nEnterprise Search is optional if an SAP HANA database has been installed or another search provider has be\nimplemented. All the other components are optional.\n\f",
+    "SAP Master Data Governance (SAP MDG) is designed for a low total cost of ownership. It runs on a single ABAP\nstack. Its functionality can be enhanced by optional components.\n\f",
+    "MDG Components\n\f"
+  ],
+  "6": [
+    "In Master Data Governance 9.2, we updated the MDG software components MDG_FND, MDG_APPL,MDG_UX, and\nMDG_MDC.\n\f"
+  ],
+  "7": [
+    "The following figures show the structure packages and the main packages of SAP MDG within their respective\nsoftware components.\n\f"
+  ],
+  "8": ["Structure Packages for MDG 9.2\n\f"],
+  "9": [
+    "CA-MDG Master Data Governance\n\f",
+    "The following table includes all components of SAP Master Data Governance in the application component\nhierarchy (ACH):\n\f",
+    "CA-MDG-AF Application Framework\n\f"
+  ],
+  "10": [],
+  "11": [
+    "Proactive, automated monitoring is the basis for ensuring reliable operations for your SAP system\nenvironment. SAP provides you with the infrastructure and recommendations needed to set up your alert\nmonitoring to recognize critical situations for SAP Master Data Governance as quickly as possible.\n\f",
+    "Within the management of SAP Technology, monitoring is an essential task. A section has therefore been\ndevoted solely to this subject.\n\f",
+    "To enable the auto-alert mechanism of CCMS, see SAP Note 617547#f.\n\f",
+    "This section provides information about the monitoring installation and setup.\n\f",
+    "nw74#e | System Administration and Maintenance Information > Technical Operations for SAP NetWeaver J.\n\f",
+    "For more information about the underlying technology, see SAP Library at http://help.sap.com/\nnw74 te) System Administration and Maintenance Information > Technical Operations for SAP NetWeaver \u00b0\n\f"
+  ],
+  "12": [
+    "The following is a sample of the logs available, which can be displayed via transaction SLG1:\n\f",
+    "SAP Master Data Governance (SAP MDG) provides the following information to support you in problen\nanalysis:\n\f",
+    "This section provides information about the component-specific monitoring.\n\f",
+    "Under the Technical Expert Monitors of CCMS, there is a monitoring context for DRF. Whenever an outbound\nreplication failure occurs, an alert is written into CCMS.\n\f",
+    "3.3.1 Trace and Log Files\n\f"
+  ],
+  "13": [],
+  "14": [
+    "Data exchange includes the following data replication and data transfer logs:\n\f",
+    "To access both validation logs in transaction SLG1, enter the object FMpM and select the subobject CREQUEST\nfrom the value help.\n\f",
+    "There is also a database where the trace files are stored. These can only be accessed using the application\nlogs. The table name is DRFD_SERVOUT_LOG. The entries in the table are deleted together with the\ncorresponding application logs. The result of the filtering is stored here, and the list of replicated objects.\nThe replication status is stored for each object in the database table DRFD_OBJ_REP_STA. Entries in this\ntable can be deleted with the transaction DRFRSDEL.\n\f"
+  ],
+  "15": [
+    "The processing of the change request is already finished at this point in time. Even if function module\nMDG_BS_ACS_CR_RESPONSE returns errors, this does not influence the process. However, the messages are\nwritten to the log to make you aware of possible errors.\n\f",
+    "SAP MDG uses the bgRFC (Background Remote Function Call) to schedule background processing and to\nparallelize data processing in process steps.\n\f",
+    "SAP MDG also uses the standard workflow log that is provided by SAP Business Workflow. The workflog log can\nbe accessed from the My Change Requests UI or from the Change Requests POWL, for example.\n\f",
+    "For more information, see bgRFC (Background Remote Function Call).\n\f",
+    "During the execution of function module MDG_BS_ACS_CR_RESPONSE different errors can occur that the\nsystem writes to the application log object MbG_acs, MDG Assurance and Compliance Integration, with\nsubobject ERROR:\n\f",
+    "created beTore execuling tie export Or Inport process.\n\nFor SAP MDG for Custom Objects, the XML-based data transfer is currently not available. Here the CSV-\nbased file upload and download is used. Logs for this can be found in transaction SLG1, object FMDM,\nsubobjects UPLOAD and DOWNLOAD. File upload allows you to copy master data from a file to the database\ntables defined in the data model for SAP Master Data Governance. File download allows you to copy maste'\ndata from MDG-specific database tables to a local file in CSV format, allowing you to upload the data from\nthis file to decentralized systems. File upload and download can be used to work with single entities of a\ndata model, whereas data importing can be used for the full object comprising different entities.\n\f"
+  ],
+  "16": [
+    "For the full list of interfaces, see the section List of Interfaces.\n\f",
+    "Interfaces use monitor tools that are essential for analyzing problems occurring in RFC, |Doc, and HTTF\n\f",
+    "For more information, see the section on Workflow Monitors in the general ERP Operations Guide.\n\f",
+    "SAP MDG also uses Troubleshooting and Monitoring for problem analysis purposes.\n\f",
+    "For more information, see Troubleshooting and Monitoring.\n\f",
+    "Detailed Description\n\f"
+  ],
+  "17": [
+    "MDG supports both P2P communication and mediated communication. You can use Process Integration (PI)\nas an optional component for mediated communication. The MDG communication errors will be displayed in\nthe PI message monitor. You can solve these errors using built-in P| mechanisms. For queue monitoring, use\n\nthe transaction sMQ1.\n\f",
+    "You can use the archiving object USMD_CR to archive change requests (CR) for SAP Master Data Governance\n(MDG).\n\f",
+    "Forward error handling (FEH) is available for MDG Material, Supplier, Customer, and Financials. Any error\nmessages that occur during the processing of a message will be sent to FEH where they can be reprocess\u00a2\nagain.\n\f",
+    "For more information, see Data Archiving in MDG.\n\f"
+  ],
+  "18": [
+    "The relevant archiving objects (table AUTH_OBJ, transaction SARA) are:\n\f",
+    "You can monitor the database connection to the HANA database and you can monitor the SLT replication of\nthe MDG data in the following way:\n\f",
+    "SAP MDG for Financials does not use archiving objects. Customers can copy the data model 0G or create their\nown data model. The fastest growing entity types are ACCOUNT, ACCCDET, FSI, CCTR, and PCTR, which can\n\nbe viewed using transaction MDG_DATA_ MODEL. Enter the data model and select the checkbox for Count Data\nDammann\n\f",
+    "For reuse objects, a standard mechanism is used.\n\f",
+    "An SAP MDG customer/supplier always represents an ERP business partner (BP) and the linked ERP\ncustomer/vendor (CVI), so the existing ERP archiving objects were enhanced with MDG-specific checks.\n(Currently, only the existence of change requests for the object is checked.)\n\f",
+    "SAP MDG for Material uses the archiving object MM _MATNR.\n\f",
+    "For more information about these archiving objects, see the ERP Operations guide on the SAP Help Portal\nunder |} SAP ERP > SAP ERP 6.0 > SAP enhancement packages for SAP ERP 6.0 >\u00bb SAP enhancement package\n7 for SAP ERP 6.0 \u00a5.\n\f",
+    "SAP MDG for customer/supplier and business partner uses the ERP archiving framework and monitoring tools.\n\f",
+    "For periodic tasks required to contain data growth (that is, to reorganize temporary data), see the section on\nPeriodic Tasks.\n\f",
+    "1. Monitor the connection from the MDG tables to SAP HANA database if SAP HANA is used as a secondary\n\f"
+  ],
+  "19": [
+    "If related or identical data is stored in multiple places there may be the possibility of inconsistencies (for\nexample, after a restore of a single component). The following table describes how consistency can be verified\nand how inconsistencies may be repaired.\n\f",
+    "You can analyze change requests in the following ways:\n\f",
+    "The report ESH_TEST_SEARCH provides information about the connectors and this information can be cross-\nchecked with SE16 for the reuse and staging area.\n\f",
+    "h the transactional app MDG Track My Requests, you can display all of your master data requests.\n\f",
+    "Detailed Description\n\f"
+  ],
+  "20": [],
+  "21": [
+    "This section explains which components or scenarios used by this application are configurable and which tools\nare available for adjusting.\n\f",
+    "SAP provides you with an infrastructure to help your technical support consultants and system administrators\neffectively manage all SAP components and complete all tasks related to technical administration and\noperation.\n\f",
+    "You use this process to make all Customizing settings that are needed to run the workflow for the change\nprocess in SAP Master Data Governance.\n\f",
+    "The settings you make depend on whether you use a rule-based workflow or a different workflow (for example,\nthe standard workflow templates for business partner/supplier, customer, or financials).\n\f",
+    "For more information, see the section on Starting and Stopping under |)\u00bb SAP ERP > SAP ERP 6.0 > Operation\n> Solution Operation Guide - SAP ERP 6.0 9.\n\f",
+    "For the rule-based workflow, you integrate rules from the Business Rule Framework plus (BRFplus) with the\nworkflow.\n\f",
+    "or more information about the underlying technology, see SAP Library at http://help.sap.com/\n\f",
+    "nw74#te |) System Administration and Maintenance Information \u00bb Technical Operations for SAP NetWeaver |\n\f"
+  ],
+  "22": ["> Process Modeling > Workflow .\n\f"],
+  "23": [
+    "The following scenarios can be implemented:\n\f",
+    "To use the search function for SAP Master Data Governance for Material, you have installed and connected\neither Embedded Search or the dedicated search solution SAP NetWeaver Enterprise Search. If you are not on\nSAP NetWeaver 7.02 SPO6, implement SAP Note 15022960.\n\f",
+    "You need to back up your system landscape regularly to ensure that you can restore and recover it in case of\nfailure.\n\f",
+    "The backup and restore strategy for SAP Master Data Governance consists of two parts:\n\f",
+    "In addition, the backup and restore strategy must cover disaster recovery processes, such as the loss of a dat\ncenter through fire. It is most important in this context that you ensure that backup devices are not stored\ntogether with normal data storage (separation of storage locations).\n\f",
+    "Embedded Search is limited to indexing and searching within a single SAP system (single SAPSID). If you\nwant to extend the reach of searches across two or more systems, we recommend you use SAP NetWeaver\nEnterprise Search.\n\f",
+    "Using SAP HANA based Search for MDG, you can perform error-tolerant search for material data with the\npossibility to search for classifications.\n\f",
+    "In production scenarios with heavy data load, it is mandatory to install a separate TREX instance that is used\nexclusively by Embedded Search for performance and sizing reasons. For installation information for TREX 7.1,\nsee SAP Note 1249465 Mle.\n\f",
+    "The backup and restore strategy for your system landscape should not only consider SAP systems but should\nalso be embedded in overall business requirements and incorporate your company's entire process flow.\n\f"
+  ],
+  "24": [
+    "This section describes all automatable tasks required to run periodically in order to keep the application\nrunning smoothly over time. Such tasks may be required on component level and are therefore relevant in\neach scenario that uses the component. You can find the mapping in section Scenario/Component Matrix.\n\nOther tasks may be relevant for certain business scenarios only. It is important that you monitor the succes:\nexecution of these tasks on a regular basis.\n\f",
+    "Scheduled periodic tasks for SAP Master Data Governance\n\f",
+    "For SAP MDG, customers often plan a periodic report RBDMIDOC to trigger ALE outbound tasks based on\nchange pointers.\n\f",
+    "Detailed Description\n\f"
+  ],
+  "25": [
+    "Tools To Be Used\n\f",
+    "Detailed Description\n\f",
+    "To monitor the background processing, you can use the SBGRFCMON transaction.\n\f",
+    "MDG supports Adobe print forms. For more information about setting up print forms and troubleshooting, see\nSAP Note 944221 fle.\n\f",
+    "Data Replication with DRF using trans-\naction DRFOUT\n\f",
+    "SAP MDG also uses bgRFC Configuration for distributing the processing load in systems.\n\f"
+  ],
+  "26": [
+    "With MDG 8.0, the virus scan profile MDG_BS_FILE_UPLOAD/MDG_VSCAN is used when uploading files to the\nMDG Fiori Request applications.\n\f"
+  ],
+  "27": [
+    "You can also find information on high availability at SAP High Availability#.\n\f",
+    "SAP Master Data Governance follows the general high availability concept for all SAP NetWeaver based\nsystems. For more information about high availability, see SAP Service Marketplace at http://help.sap.com\n\nunder |)\u00bb SAP NetWeaver > SAP NetWeaver 7.4 > System Administration and Maintenance Information\n> Technical Operations for SAP NetWeaver > Solution Lifecycle Management > SAP Business Continuity J.\n\nVai can alen find infarmatian an hich ayailahilitv. at CAD Hich Availahilitv te\n\f",
+    "SAP Master Data Governance follows the general high availability concept for all SAP NetWeaver based\nsystems. For more information about high availability, see SAP Service Marketplace at http://help.sap.com\n\f"
+  ],
+  "28": [
+    "Software Change Management standardizes and automates software distribution, maintenance, and testing\nprocedures for complex software landscapes and multiple software development platforms. These functions\nsupport your project teams, development teams, and application support teams.\n\f",
+    "Note that the changes to the data model and data model-specific structures are transported to the respective\ntarget systems, including the production system. It is not necessary to manually activate the data model in the\ntarget systems as this is done automatically.\n\f",
+    "The goal of Software Change Management is to establish consistent, solution-wide change management that\nallows for specific maintenance procedures, global rollouts (including localizations), and open integration with\nthird-party products.\n\f",
+    "The topic of Transport and Change Management is covered. This enables and secures the distribution of\nsoftware changes from the development environment to the quality assurance and production environment\n\f",
+    "If you want to add fields or entities to a data model that is connected to a reuse active area (for example,\n\nthe data models BP or MM), all open change requests for this data model are locked. To unlock these\n\nchange requests and to adapt the change request data to the enhanced data models, you run the report\nUSMD_ADJUST_STAGING. You can schedule this report to run in all clients in Customizing for Master Data\nGovernance under |)\u00bb General Settings > Data Modeling >\u00bb Edit Data Model J. Choose the button Adjust Staging\nArea of Linked Change Requests. For more information, see SAP Note 1591280#r.\n\f",
+    "Before the report USMD_ADJUST_STAGING is executed, you should check that the SMT (if required) fits to the\ndata model, because not only the data model will be enhanced, but also the mapping between the changed\ndata model entities and the reuse area tables must be changed accordingly.\n\f",
+    "Note that this step must be executed in every system where the data model change has been imported.\n\f"
+  ],
+  "29": [
+    "Follow the instructions in SAP Note 1637249 to prepare your system before raising a problem message with\nSAP. The information provided by the note helps to improve the processing quality and speed by limiting the\nroot cause area and avoiding messages being sent back due to missing or incorrect information.\n\f",
+    "Support Desk Management enables you to set up an efficient internal support desk for your support\norganization that seamlessly integrates your end users, internal support employees, partners, and SAP Active\nGlobal Support specialists with an efficient problem resolution procedure.\n\f",
+    "To set up remote support the following connection types should be opened in the Service Connection\nmaintenance screen:\n\f",
+    "To send problem messages to SAP, use the relevant application component in the SAP application component\nhierarchy.\n\f",
+    "For more information, see SAP Note 592085#i.\n\f",
+    "For information on the component hierarchy names used to send tickets, see section 2.1, Scenario/\nComponent Matrix.\n\f",
+    "For support desk management, you need the methodology, management procedures, and tools infrastructure\nto run your internal support organization efficiently. The following topics are covered:\n\f",
+    ") send problem messages to SAP, use the relevant application component in the SAP application component\n\f"
+  ],
+  "30": [
+    "You can also assign the role SAP_RCA_SAT_DISP to the SAP support user to enable him to access the OS level\ntransaction in display mode that can be used in troubleshooting situations (for example, in SLG1) .\n\f",
+    "For read-only roles, use the display user authorization roles provided by Master Data Governance:\n\f",
+    "Master Data Governance for Financials: Accounting Display\n\f"
+  ],
+  "31": [
+    "The following table contains links to information relating to the Application Operations Guide\n\f",
+    "You can find more information about installation and configuration in the corresponding ERP Master Guide\nunder | SAP Help Portal > SAP ERP J.\n\f",
+    "Detailed Description\n\f",
+    "Location on SAP Service Marketplace\n\f"
+  ],
+  "32": [
+    "ChartOfAccountsReplicationRequ Replication of Chart of Accour\n\nest_In\n\f"
+  ],
+  "33": ["Detailed Description\n\f"],
+  "34": [],
+  "35": [],
+  "36": [
+    "Experimental features are not part of the officially delivered scope that SAP guarantees for future releases. This means that experimental features may be changed by\nSAP at any time for any reason without notice. Experimental features are not for productive use. You may not demonstrate, test, examine, evaluate or otherwise use\nthe experimental features in a live operating environment or with data that has not been sufficiently backed up.\n\nThe purpose of experimental features is to get feedback early on, allowing customers and partners to influence the future product accordingly. By providing your\nfeedback (eg. in the SAP Community), you accept that intellectual property rights of the contributions or derivative works shall remain the exclusive property of SAP.\n\f",
+    "Any software coding and/or code snippets are examples. They are not for productive use. The example code is only intended to better explain and visualize the syntax\nand phrasing rules. SAP does not warrant the correctness and completeness of the example code. SAP shall not be liable for errors or damages caused by the use of\nexample code unless damages have been caused by SAP's gross negligence or willful misconduct.\n\f",
+    "Some links are classified by an icon and/or a mouseover text. These links provide additional information.\nAbout the icons:\n\f",
+    "Some videos may point to third-party video hosting platforms. SAP cannot guarantee the future availability of videos stored on these platforms. Furthermore, any\nadvertisements or other content hosted on these platforms (for example, suggested videos or by navigating to other videos hosted on the same site), are not withir\nthe control or responsibility of SAP.\n\f",
+    "SAP supports a culture of diversity and inclusion. Whenever possible, we use unbiased language in our documentation to refer to people of all cultures, ethnicities,\ngenders, and abilities.\n\f"
+  ],
+  "37": [],
+  "38": [
+    "These materials are provided by SAP SE or an SAP affiliate company for\ninformational purposes only, without representation or warranty of any\nkind, and SAP or its affiliated companies shall not be liable for errors or\nomissions with respect to the materials. The only warranties for SAP or\nSAP affiliate company products and services are those that are set forth\nin the express warranty statements accompanying such products and\nservices, if any. Nothing herein should be construed as constituting an\nadditional warranty.\n\f",
+    "SAP and other SAP products and services mentioned herein as well as\ntheir respective logos are trademarks or registered trademarks of SAP\nSE (or an SAP affiliate company) in Germany and other countries. All\nother product and service names mentioned are the trademarks of their\nrespective companies.\n\f",
+    "eee te eee ee ee ee ee ee ee ee\nadditional trademark information and notices.\n\f"
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "1": [],
+  "2": ["Document Version\n\f"],
+  "3": [],
+  "4": [
+    "In addition, you place the parameter on the change request UIBB on the tab for the general data. The user can select\nfrom business areas defined in Customizing. (The relevant data element is GSBER and the relevant table is TGSB).\nWhen a user opens the change request for display, the Requesting Business Area parameter is displayed and cannot\n\nbe changed.\n\f",
+    "The processes are workflow-driven and can include several approval and revision phases, and the collaboration of all\nusers participating in the master data maintenance.\n\f",
+    "You do not model this parameter is as part of the MDG data model because it is not part of the business context.\nInstead, you store the parameter together with the change request number in a Z-table.\n\f"
+  ],
+  "5": [
+    "The Genil Attribute Structure for Business Area (ZCR_BUSINESS_AREA) structure contains a component for the\nadditional parameter Requesting Business Area and uses the existing data element GSBER. Later, you use this attribute\nstructure to enhance the Genil data model of the change request.\n\f",
+    "2.1.1. Create Structure Z_CR_BUSINESS_AREA\n\f",
+    "The following data dictionary objects will be needed in the configuration steps later on.\n\f",
+    "2.1.2. Create Database Table ZUSMD_CR_BUSAREA\n\f"
+  ],
+  "6": [
+    "'2CL_USMD_CR_GIL_ROOT_ENHANCED \u2014 Implemented / Active\n\f",
+    "Registration of subordinate transactional genil handlers\n\f",
+    "TYPES tt_tx_handler TYPE STANDARD TABLE OF REF TO if_genil_node_handler_tx.\n\f",
+    "REGISTER_TX_HANDLER\n\f"
+  ],
+  "7": [
+    " \n\nif this instance of node handler class does implement the tx interface of\nGenIL objects (IF_GENIL_NODE_HANDLER_TX) register it to its root as a tx\n\u201chandler that needs to be called whenever tx methods are called for the\n\u201croot object itself\n\n \n\f",
+    "Source code of class ZCL_CR_GIL_REQ_BUS_AREA\n\f",
+    "The handler class of the GenlL object takes care of the data operations (for example Create, Read, and Delete) of the\ncorresponding object. In our example, you must redefine the following methods:\n\f",
+    "CLASS zcl_cr_gil_req_bus_area IMPLEMENTATION.\n\f"
+  ],
+  "8": [
+    "IF crequest_id IS NOT INITIAL.\n\f",
+    "DATA(crequest_id) = CONV usmd_crequest( is_key ).\n\f",
+    "DATA(attributes) = VALUE zcr_business_area( ).\niv_cont_obj->get_attributes( IMPORTING es_attributes = attributes ).\n\f",
+    "SELECT SINGLE * FROM zusmd_cr_busarea INTO @DATA(business_area_db) WHERE crequest = @key-cr_\nDATA(business_area_ui) = VALUE zcr_business_area( ).\nMOVE-CORRESPONDING business_area_db TO business_area_ui.\niv_cont_obj->set_attributes( is_attributes = business_area_ui ).\nENDMETHOD.\n\f",
+    "iv_value = if_genil_obj_attr_properties=>changeable ye\nsoutidiciiaieedst hes\n\f"
+  ],
+  "9": [
+    "CLASS zcl_usmd_cr_guibb_req_bus_area IMPLEMENTATION.\n\f",
+    "ZCL_USMD_CR_GUIBB_REQ_BUS_AREA Implemented / Active\n\f",
+    "You must redefine methods IF_FPM_GUIBB_FORM~GET_DATA, IF_FPM_GUIBB_FORM~GET_DEFINITION and\n3ET_ATTR_VALUE_SET (for F4 help).\n\f",
+    "Source code of class ZCL_USMD_CR_GUIBB_REQ_BUS_AREA\n\f",
+    "The Feeder Class for Requesting Business Area (ZCL_USMD_CR_GUIBB_REQ_BUS_AREA) class is a redefinition of class\nCL_GUIBB_BOL_FORM.\n\f"
+  ],
+  "10": [
+    "\"Enter empty field for dropdown list box for \u201cBusiness Area\u201d\nREAD TABLE et_field_description ASSIGNING FIELD-SYMBOL(<field_description>) WITH KEY name = \u2018BUS AREA\u2018\n\nIF sy-subrc = @ AND <field_description> IS ASSIGNED.\n<field_description>-is_nullable = abap_true.\nENDIF.\n\f",
+    "The Change Request itself is represented by a Root Object (CR_Root) and several Dependent Objects:\n\f",
+    "METHOD if_fpm_guibb_form~get_definition.\nsuper->if_fpm_guibb_form~get_definition(\n\n  \n\f"
+  ],
+  "11": [
+    "Call transaction GENIL_MODEL_BROWSER, choose the radio button Enhancement, enter a corresponding name and\nchoose Create. In the dialog box, enter a suitable description, as well as the CR component for the component that\nneeds to be enhanced. Finally, enter a suitable package for the enhancement.\n\f",
+    "After completing these steps, the CR component is displayed again, this time with a new header that reflects the\ncontext of the newly-created enhancement.\n\f",
+    "In Root Object CR_ROOT, specify a Handler Class of ZCL_USMD_CR_GIL_ROOT_ENHANCED.\n\f",
+    "The following steps explain how to create as well as integrate a new Dependent Object for the CR component using a!\nenhancement. This enhancement will add the additional process control parameter Requesting Business Unit to the\nchange request.\n\f"
+  ],
+  "12": [
+    "In order to add the additional attribute to the CR component, select the dependent objects, and choose Create\nDependent Object from the shortcut menu. Enter ZCR_REQ_BUSINESS_AREA as name for the new dependent object.\n\f",
+    "GenIL Model Editor: Change Component CR - Enhancement ZMDG_CR_ADDITION\n\f",
+    " \n\nChange Component CR - Enhancei\n\f"
+  ],
+  "13": [
+    "GenIL Model Editor: Display Component CR - Enhancement ZMDG_CR_ADDITI\n\f",
+    "SEES EE Sains, See ann NTO MNE 5\n\nThis field indicates to which root object the new dependent object belongs. Note that this field is case sensitiv\n4andler Class: ZCL_CR_GIL_REQ_BUS_AREA\n\nThe handler class takes care of all data operations on the new attributes such as Create, Read, Change,\nJelete as well as additional information (for example, field properties.)\n\n \n\f"
+  ],
+  "14": [
+    "Additionally, you must maintain the assigned object CR_Root. (Later, we need the name of the relation in the Ul\nconfiguration).\n\f",
+    "To establish the connection between the root object CR_Root object and the dependent objec\nZCR_REQ_BUSINESS_AREA, open the sub-tree of CR_Root and create a new relation:\n\f",
+    "The relation defines the type of relation that is built up between the two objects as well as the corresponding\ncardinality. In our example, we create an aggregation with cardinality 0..1.\n\f"
+  ],
+  "15": [
+    "Web Dynpro Explorer: Display Web Dynpro Configuration\n\f",
+    "The configuration starts in a web browser. Copy the template FPM_FORM_UIBB_GL2_TEMPLATE to a new configuration\n(ZUSMD_CR_REQ_BUS_AREA) and assign it to an appropriate package.\n\f",
+    "Call the Web Dynpro Application FPM_FORM_UIBB_GL2 using the Object Navigator (transaction code SE8@) and start the\ncomponent configuration FPM_FORM_UIBB_GL2_TEMPLATE as shown below:\n\f"
+  ],
+  "16": [
+    "Enable editing of the new configuration by clicking the Continue in Change Mode button. In the General Settings area,\nspecify a Feeder Class and choose the Edit Parameters button.\n\f"
+  ],
+  "17": [
+    "If required, you can adjust the layout can be adjusted as shown in the screenshot.\n\f",
+    "Object Name: ZCR_REQ_BUSINESS_AREA (Dependent Object in GenIL Model)\n\f"
+  ],
+  "18": [
+    "Start the configurator in \u2018Test/Execute\u2019 mode. If the configuration is new, continue with NEW, otherwise continue with\nContinue in Change Mode. For new configurations, you must first create the customizing. Continue in Change Mode\nwith the above shown entries. Select Tab: General and add a Form Component UIBB. Enter ZUSMD_CR_REQ_BUS_AREA\nas the Configuration Name.\n\f",
+    "Web Dynpro Explorer: Display Web Dynpro Configuration\n\f",
+    "Now the CR UIBB contains the new customer specific field Requesting Business Area. When the change request is\nsaved the entered value for the Requesting Business Area together with the Change Request ID is stored to data base\ntable ZUSMD_CR_BUSAREA.\n\f",
+    "Relation Name: ZCR_ReqBusAreaRel (Attention: Relation Name is case sensitive)\n\f",
+    "The additional parameter Requesting Business Area is not relevant for all users. Its visibility shall depend on the\nchange request type. In our example the parameter is visible if change request types T1C@1 or T1C@2 are used.\n\f"
+  ],
+  "19": [
+    "Source code for class ZCL_USMD_CR_GUIBB_REQ_BUS_AREA\n\f",
+    "The above shown pattern can be used to evaluate other parameters returned by the method\nIF_USMD_APP_CONTEXT~GET_ATTRIBUTES (e.g. EV_PROCESS).\n\nAlternatively the change request type can be evaluated in a redefinition of method\nGET_ATTRIBUTE_PROPERTLIES of class ZCL_USMD_CR_GIL_ROOT_ENHANCED. This approach means that tt\nevaluation is valid for all UIBBs using this GENIL MODEL extension.\n\nIf you use one GenlL Model Extension together with different UIBBs and corresponding feeder classes, t\nevaluation of parameters can be different for different feeder classes.\n\f",
+    "Implement a redefinition of method CHECK_FIELD_USAGE_SINGLE.\n\f",
+    "Additional remarks:\n\f"
+  ],
+  "20": [
+    "No part of this publication may be reproduced or transmitted in any form or for any purpose without the express permission of SAP SE or an SAP affiliate company.\n\nThe information contained herein may be changed without prior notice. Some software products marketed by SAP SE and its distributors contain proprietary software components of other software vendors. Nat\nproduct specifications may vary.\n\nThese materials are provided by SAP SE or an SAP affiliate company for informational purposes only, without representation or warranty of any kind, and SAP or its affiliated companies shall not be liable for en\nomissions with respect to the materials. The only warranties for SAP or SAP affiliate company products and services are those that are set forth in the express warranty statements accompanying such products\nservices, if any. Nothing herein should be construed as constituting an additional warranty.\n\nIn particular, SAP SE or its affiliated companies have no obligation to pursue any course of business outlined in this document or any related presentation, or to develop or release any functionality mentioned th\nThis document, or any related presentation, and SAP SE's or its affiliated companies\u2019 strategy and possible future developments, products, and/or platform directions and functionality are all subject to change a\nbe changed by SAP SE or its affiliated companies at any time for any reason without notice. The information in this document is not a commitment, promise, or legal obligation to deliver any material, code, or\nfunctionality. All forward-looking statements are subject to various risks and uncertainties that could cause actual results to differ materially from expectations. Readers are cautioned not to place undue reliance\nthese forward-looking statements, and they should not be relied upon in making purchasing decisions.\n\nCAD and:rihar RAP Arrdiivte and waniinae aaertaniadl huinkir: dea seal ai thik ramrietthin rine: Gort a eaninticn \u2018pa tmrdeeninel trafnseryn nt 2A SE laren RAD afttlon renirmeni\\ ks Cammenga raner onawdrinan\u2019\n\f",
+    "SAP and other SAP products and services mentioned herein as well as their respective logos are trademarks or registered trademarks of SAP SE (or an SAP affiliate company) in Germany and other countrie\nother product and service names mentioned are the trademarks of their respective companies. See for additional trademark information and notices.\n\f"
+  ],
+  "21": [
+    "The structure import will also include the values in the three pre-delivered decision\ntables. For testing the standard workflow configuration you need to copy and activate\nthe two entries in the DT_USR_AGT_GRP_MATXX from user ANZEIGER to one or\ntwo existing user IDs in your system.\n\f",
+    "The users involved in the Master Data Governance process need to be included in\nable DT_USER_AGT_GRP_MAT01 so that they can receive and execute the\nvorkflow tasks. Maintain agents (for example the users or organizations in the Portal\n\f",
+    "DT_NON_USER_AGT_GRP_MAT01 and DT_SINGLE_VAL_MAT01 contain the\nautomated steps and follow-up logic used by the BRF plus. The follow-up logic can\neither result in an automated step or in a user task that will be made visible as a\n\nworkflow.\n\f",
+    "The following are the minimal settings for the relevant change request types.\n\f",
+    "If you extend the BRFplus decision tables make sure that the status of the\nfinal step is set to 05 Final Check Approved or 06 Final Check Rejected.\n\f",
+    "). To export the content from client 000, select the application in the repository\n(not the catalog entry) then choose |? Tools ? XML Export \u00ab.\n\f",
+    "For the change request types for Multiple-Record Processing there are no\nBRFplus decision tables delivered. You can use the Export To Excel and\nImport From Excel functions in BRFplus to copy the decision tables from\nother change request types.\n\f",
+    "Repeat these steps for all relevant change request types.\n\f"
+  ],
+  "22": [
+    "The following step types are pre-delivered by SAP:\n\f",
+    "Conduct this maintenance for all relevant change request types. Further details on\nthe workflow concepts can be found here [Page 41]. The following change reques\ntypes appear in the standard delivery: MAT0O1, MATO2, MATO6, MATOA, MATOB,\nMATLMRP, MATLPUR, MATLSAL, MATLUOM, MATMRP, MATPUR, MATSAL,\nMATUOM.\n\f"
+  ],
+  "23": [],
+  "24": [
+    "Data Transfer allows you to move master data between systems. These systems can be\nclients or your main Master Data Governance (MDG) system. The first step of a data transfer\nis the export of the master data to an IDoc-XML file, which you can save locally or on your\napplication server. In the second step, you import the data into your central MDG system.\nDuring the import step you can decide if you want the new master data to appear directly in\nthe active area, or if you want to work with change requests and import the data to the staging\narea.\n\f",
+    "Use transaction WE27 to create an XML-file port for IDoc processing. Ensure that you\nhave network access from your local client to the directory configured in the XML-file\nport. Enter the port name, description, and the physical directory. Enter the function\nmodule EDI_PATH CREATE CLIENT DOCNUM. On the Outbound Trigger tab enter\nthe RFC destination LOCAL_EXEC.\n\f",
+    "To be able to export material master data, you need to configure the logical system for IDoc\nXML export to the application server file system. The steps are as follows:\n\f"
+  ],
+  "25": [
+    "If you want to use parallel processing for data import it is recommended that you register your\nqueue name prefixes in the Q/N Scheduler so that they are executed automatically and do no\nhave to be manually activated each time. To register the queue name follow these\ninstructions:\n\f",
+    "Your new queue has been registered and will execute automatically. You should inform those\nworking with the /mport Master Data service of the new queue name so that they can use it\nwhen creating new imports.\n\f",
+    "Data Import into Target System (MDG Hub)\n\f"
+  ],
+  "26": [
+    "The IDoc-XML files contain the following fields in the header section:\n\f",
+    "For Master Data Governance for Material you have two options for replicating data from the\nMDG hub to the connected systems and clients:\n\f",
+    "To be able to import IDoc-XML files the following set up activities need to be carried out:\n\f"
+  ],
+  "27": [
+    "Repeat points 3 and 4 for message type CLFMAS\n\f",
+    "The following process describes briefly the minimal settings required for the two main\nmessage types MATMAS and CLFMAS.\n\f"
+  ],
+  "28": [
+    "In the Configuration activity Define Technical Settings for Business Systems\nSAP recommends that you select the checkbox Status System Filter for the\n\f",
+    "Enter the ALE-User, and the following values, and execute.\n\f",
+    "You can test the distribution using transaction BD10. Verify the results in the\nreceiving client using transaction BD87.\n\f"
+  ],
+  "29": [
+    "If you are using ALE and DRF together to replicate materials you can improve\nperformance by deselecting the change pointers for the MATMAS message type. You\ncan do this in the Activate Change Pointers for Message Types configuration activity.\nYou should only do this if all your MDG systems are integrated using ALE and DRF\ntogether. If you use ALE without DRF in one or more connected systems do not\ndisable the change pointers.\n\f",
+    "The following information should be available for this parameter:\n\f",
+    "Choose Assign Segment Filter Objects and confirm that the following settings <\nmade.\n\f",
+    "The following customizing is relevant for data replication:\n\f",
+    "Choose Assign Segment Filter Objects and confirm that the following settings are\n\f",
+    "Customizing for Data Replication Framework (DRF)\n\f",
+    "In Master Data Governance for Material the replication of material master data from MDG\nHub to connected client systems can be scheduled, triggered, and monitored using the Data\nReplication Framework (DRF) in concert with the ALE.\n\f",
+    "The following process outlines the steps required to perform the customizing for the last three\npoints above.\n\f"
+  ],
+  "30": [
+    "Define the technical settings for the business system.\n\f",
+    "9. Create the replication model and assign it to the outbound implementation as follows:\n\f"
+  ],
+  "31": [
+    "The elements for key mapping are pre-delivered. If required, you can maintain key mapping\nfor elements such as Plant, Sales Organization, and others in the Material Governance work\ncenter. To maintain the mapping in the Material Governance work center, in the Data\n\f",
+    "The elements for possible value mapping [External] are predelivered.\n\f",
+    "If you are working with multiple connected systems and did not consolidate the material ke\nduring the initial load phase, key mapping [External] may be required.\n\f",
+    "If required, you can define value mapping for elements such as, UoM, industry sector,\nmaterial type, and others in Customizing for Master Data Governance under |\u00bb General\nSettings \u00bb Value Mapping 2. Material-specific key and value mapping Customizing activities\ncan be found in Customizing for Master Data Governance under | Master Data Governance\n\nfor Material\n\f",
+    "You can define the system-specific mappings for the key value of the supplier in Customizing\nfor Master Data Governance under |\u00bb General Settings \u00bb Key Mapping 2. Material-specific\nkey and value mapping Customizing activities can be found in Customizing for Master Data\nGovernance under | Master Data Governance for Material\n\f",
+    "The mapping definitions of the key mappings are conducted by any authorized user using the\nbusiness transaction from the portal or the corresponding back-end transaction.\n\f",
+    "If you are working with multiple connected systems you may want to define or configure the\nkey mapping between the MDG Hub and the client systems. Use the following steps to\ndetermine if the client system and hub system need to be key mapped or harmonized:\n\f"
+  ],
+  "32": [
+    "You can configure your client and hub systems so that your client systems send confirmatior\nof replicated materials back to the MDG hub. Use the following steps to set up this\nconfirmation process.\n\f",
+    "5. In the detail screen, the message type, ALEAUD must appear.\n\f",
+    "In the client system make the following settings:\n\f",
+    "Enter the ALE-User (the default value is ALEREMOTE) and the following\n\f",
+    "Inb. Parameters: Processing\n\f"
+  ],
+  "33": [
+    "The inbound IDoc in the target system always accepts the material number sent in\nthe IDoc, independent of the number range settings for the material type. Without\nadditional coding it is not possible to force the target systems to create new material\n\f",
+    "In the hub system make the following settings:\n\f",
+    "Run transaction WE20 and check that the partner profile with logical name of\nthe receiver system (Hub system) exists below the Partner Type LS folder.\n\f",
+    "11. Run transaction BD64. Select the model view and select |\u00bb Edit > Model Vie\nDistribute 4. Select the Hub system and click OK.\n\f"
+  ],
+  "34": [
+    "You can run SAP Master Data Governance in either of the following environments:\n\f",
+    "The SAP NetWeaver Portal content for MDG for material is derived directly from the system\nPECG roles. To create SAP NetWeaver Portal roles for your users you must log on to your\nportal and upload the content information from your back-end system PFCG roles.\n\f",
+    "Once uploaded you must assign and personalize the MDG portal roles as follows:\n\f",
+    "If you are running SAP Master Data Governance on the SAP NetWeaver Business Client\n(and not on the SAP NetWeaver Portal), you need to create, define, and configure the roles\n\f",
+    "To upload your portal content to the portal do the following:\n\f"
+  ],
+  "35": [
+    "The data model for Master Data Governance for Material (MDG-M) is based on the SAP ERP\nmaterial master. MDG-M supports the entire scope of material classification and many of the\n\nmaterial master attributes. The MM model is ERP-specific and resides in the software layer\nMDG-APPL.\n\f",
+    "Before you can run Master Data Governance services like Display Material, you need to\nassign the data model MM to your user. Alternatively, the user administrator can update the\nfollowing Personalization Object for your user profile: R_FMDM MODEL and add the MM data\n\nmodel as your standard data model.\n\f",
+    "Repeat these steps to assign additional authorization roles to your users.\n\f",
+    "To assign and personalize the role Master Data Governance for Material: Menu\n(SAP _MDGM MENU_ 04) proceed as follows:\n\f",
+    "This role ensures that the necessary steps can be started without using the SAP\nNetWeaver Portal. This can be used for testing or if the portal is inactive.\n\f"
+  ],
+  "36": [
+    "The following are the type 4 entities describing the MATERIAL entity:\n\f"
+  ],
+  "37": [
+    "You can extend the data model (mm) for Master Data Governance for Material (MDGM) with\nnew entity types and attributes. You should extend the ERP material master data model\nbefore you extend the MM data model. This document contains information specific to\nenhancing the data model for MDGM; for more detailed information on the process, see the\noverall document on extending Master Data Governance content.\n\f",
+    "The following are the type 4 entities describing the DRADBASIC entity\n\f",
+    "There is no need to create a customer access class for the data model MM. The\nMDGM data model, MM, is preconfigured with one reuse area: MATERIAL. This reuse\n\f",
+    "The MDG-M data model does not include further process controlling objects like routing\npricing conditions, or sources list. Forecasting and other process controlling data is not\nincluded in the mM data model.\n\f"
+  ],
+  "38": [
+    "You can extend the MDGM data model by adding an SAP ERP material master database\nfield to an MDGM entity as an attribute. You can only add database fields that are part of the\nSAP ERP database tables (including customer-created fields); you cannot add customer-\ncreated tables that you added to the SAP ERP database. Use the following process to add an\nattribute to the MDGM data model:\n\f",
+    "e Extend the MDGM data model by adding attributes that already exist as database\nfields in the pre-delivered or extended SAP ERP material master.\n\f",
+    "This scenario covers the pre-delivered fields belonging to the SAP Material Master\ndatabase tables and also any customer-defined fields you have added to those tables.\n\f",
+    "1. Enhance the MDGM data model with additional entity types. You can choose the\nattributes belonging to this entity type that you wish to add to the MDGM data model.\nThe MDGM data model is called MM.\n\f",
+    "The following scenarios for enhancing the MDGM data model are possible:\n\f"
+  ],
+  "39": [
+    "You can extend the MDGM data model by adding a customer-owned material master\ndatabase table (Z table) to the MDGM data model as an entity type. Use the following process\nto add a reuse entity type to the MDGM data model:\n\f",
+    "If you have extended the material master tables with customer-defined fields (using the\nprocedure outlined in SAP Note 44410), which you want to include into the MDGM Data\nModel, you need to enhance the following data structures (corresponding to the extended\nmaterial master table) manually:\n\n \n\f",
+    "o Add table types for the data and _x structure to MDG_BS_MAT_S MAT DATA.\nUse the same design pattern as used in existing table types.\n\f",
+    "The structures of the tables in MDG_BS_MAT_S_MAT_DATA having the suffix\n\f",
+    "Enhance the following data structures (corresponding to the new, customer-ownec\nmaterial master table) manually:\n\f",
+    "\u00bb Add a table type to the structure MDG_BS_MAT_S MATERIAL _UI_PROP. Use\nthe same design pattern as used in existing table types.\n\f",
+    "This is valid for both scenarios above.\n\f",
+    "You cannot add fields from a new entity type to an existing UIBB. The new\nfields must be added to a new UIBB. Multiple UIBBs can be added to a single\nassignment block.\n\f"
+  ],
+  "40": [
+    "You can extend the MDGM data model by adding a flexible entity type to the MDGM data\nmodel. Note that flexible entity types are not supported in Enterprise Search and so attributes\nfrom these entities cannot be used as search criteria. Use the following process to add a\nflexible entity type to the MDGM data model:\n\f",
+    "You cannot add fields from a new entity type to an existing UIBB. The new\nfields must be added to a new UIBB. Multiple UIBBs can be added to a single\nassignment block.\n\f"
+  ],
+  "41": [
+    "The table has two areas: the first area lists the expected start values leading into each step\nand the second area lists the actions to be taken if those values are set. The table below\nexplains the fields:\n\f",
+    "You can use the Business Rule Framework plus (BRFplus) tool to create your own rule-based\nworkflows for material master data governance. The BRFplus tool is accessed through the\nCustomizing activity Configure Rule-Based Workflows.\n\f",
+    "This decision table contains a list of system tasks. The tasks can be referenced by\nthe DT_SINGLE_VAL_MAT01 decision table when it requires a system action.\n\f",
+    "SAP delivers a number of preconfigured workflows that you can use for your governance\nprocess. You can adapt these preconfigured workflows or choose to create your own with the\nBRF plus tool.\n\f",
+    "The following text outlines the fields and settings for the preconfigured workflow Create\nMaterial. The other workflows use similar process patterns and steps and therefore are not\nexplained here.\n\f",
+    "The Create Material workflow uses the following decision tables to direct the creation process\n\f"
+  ],
+  "42": [
+    "This table contains a list of system tasks that is referenced by the DT_SINGLE_VAL_MAT01\nworkflow table when one of the workflow steps requires a system action. The table defines\nthe action to be taken by the system. For a list of the predefined values see Configuring\nMaster Data Governance for Material [Page 4].\n\f",
+    "This table contains a list of agents (usually users) that is referenced by the\nDT_SINGLE_VAL_MAT01 workflow table when one of the workflow steps requires user\nparticipation. For a list of the predefined values see Configuring Master Data Governance for\n\n \n\f",
+    "This is a filter for BAdI execution. The BAdI Rule-Based Workflow - Call System\nMethod must be implemented for process pattern 2 to work.\n\f"
+  ],
+  "43": [
+    "This is the first step in the create material workflow. The change request has been created\nand the step tells the system to place it in the worklist for the Master Data Steward. The\nsettings in the user table determine the user interface to be displayed when opening the\nworklist item. The Master Data Steward has the choice to either approve or reject the change\nrequest.\n\f",
+    "The following steps make up the pre-delivered rule-based workflow for creating a new\nmaterial. The workflow involves two users, a business user who creates the change request,\nand a Master Data Steward who is tasked with reviewing and approving the change request.\nIf a field is not mentioned in the tables below it is not relevant for the workflow step. The order\nof the steps below is not important as the order in which they occur is based on the field\nvalues.\n\f",
+    "The intention of this workflow is to provide a simple workflow for change requests for material\ncreation. The change request is sent for review, reviewed, then is either rejected, or is\naccepted and sent for a technical check. If the technical check is successful the material is\n\ncreated and the workflow ends, if the technical check is not successful then the change\nrequest is sent back for rework.\n\f",
+    "This value points to condition alias 1 from user table\nDT_USER_AGT_GRP_MAT01. This line tells the system to put the\n\f"
+  ],
+  "44": [
+    "This step is triggered when the Master Data Steward reviews the change request and\napproves it. The step tells the system to send the change request for technical validation\nwhere the data will be checked for validity and completeness.\n\f",
+    "This step is triggered if the Master Data Steward chooses to reject the change request. The\nstep instructs the system to roll back the change request and send the change request back\nto the business user for revision.\n\f",
+    "This tells the system to check the line with step 95 as the value for\nCR Previous Step next.\n\f"
+  ],
+  "45": [
+    "This step is triggered if the Master Data Steward rejected the change request and the\nbusiness user decided to cancel the change request rather than make updates to it. This ster\ncompletes the workflow.\n\f",
+    "This step is triggered following the Master Data Steward\u2019s approval of the change request and\na failed activation. The activation failed for technical reasons and the change request is sent\nback to the Master Data Steward to resolve the issues.\n\f",
+    "This step is triggered following reviewer approval of the change request and a successful\ntechnical check. This step completes the workflow.\n\f"
+  ],
+  "46": [
+    "This step is triggered when the business user revises the change request and sends it again\nfor approval. This step instructs the system to perform a technical check on the data\ncontained within the change request.\n\f",
+    "The Master Data Steward has sent back the change request for revision and the business\nuser decides to cancel the change request rather than make changes to it.\n\f"
+  ],
+  "47": [
+    "The following placeholders can be used as part of the page title:\n\f",
+    "To change the page titles of the component configurations BS_MAT_OVP_LAYOUT_03 and\nBS_MAT_OVP_LAYOUT_03_H, open the component configuration you want to edit in the\nComponent Configuration Editor, and then enter one or more of the placeholders below into\n\nthe Page Title field.\n\f",
+    "You can adapt the page and panel titles In the material Web Dynpro applications to inciude\nextra information about a displayed material. Specifically, you can change the information\nshown in the titles of the component configurations S_MAT_OVP_LAYOUT_03 and\nS_MAT_OVP_LAYOUT_03_H. The extra information is accessed using placeholders that you\ninsert when configuring the titles. This way, descriptive texts, such as Plant ID, and value\ntexts based on screen selections such as PLT002 can be included. The value texts change\ndynamically based on user selections.\n\f",
+    "At runtime, the title is constructed from these placeholders in a two-step approach:\n\f"
+  ],
+  "48": [
+    "The following is the information available for the material and screen:\n\f",
+    "Result of Replacement:Material: New &MAT_DESCR&;\n\f",
+    "Result of Replacement: Material: New Mountain bike\n\f",
+    "Result of Replacement: Material: New 12345678\n\f",
+    "&TITLE MAT DESCR&&TITLE PLANT&&TITLE VALAREA TYPE&&TITLE DCHAIN\u00e9&\n\f",
+    "Descriptive Text: Material: New &MAT DESCR&\n\f",
+    "Descriptive Text: Material: New &MAT_DESCR&\n\f",
+    "You have maintained the following page title:\n\f",
+    "Result of Replacement:Material: New;\n\f",
+    "Placeholder: &TITLE_MAT_DESCR.\n\f",
+    "Example 1\n\f",
+    "Material Number: 12345678\n\f",
+    "Material Number: Initial\n\f"
+  ],
+  "49": [
+    "You can adjust the panel titles of the Web Dynpro component configurations\nBS_MAT_OVP_LAYOUT_03 and BS MAT OVP_LAYOUT_03_H so that the current key\ninformation is included in these texts. To do this, open the UIBB in the Component\n\nConfiguration Editor and edit the Title field in the UIBB to include one of the following\nplaceholders:\n\f",
+    "Material: Mountain bike; Plant: ZAPF; Valuation Area (Plant): ZAPF;\nDistribution Chain: 0001/01\n\f",
+    "The page title at runtime displays as follows:\n\f",
+    "At runtime, the panel titles are constructed from these placeholders. The system replaces\nthese placeholders with the current values of the related key fields. For\n\n&TITLE MAT DESCR\u00e9, this replacement depends on the existence of the material description\n\nin the logon language. For &VALUATION\u00e9 this replacement depends on the type of valuation\narea.\n\f"
+  ],
+  "50": [
+    "The process-oriented overview page is set as the default Create Material UI where you are\nmore likely to need to access all data at once. The hierarchical page is set as the default\nChange Material Ul since changes are usually made to specific parts of the material record.\nTo change the assignment of an overview page see the configuration section.\n\f",
+    "You can use the overview page to view and enter change request data. You can choose\nbetween two overview pages in MDG-M: the process-oriented view and the hierarchical view.\nThe application configurations for these pages are BS MAT OVP_03 (process-oriented) and\nBS MAT OVP_03H (hierarchical). You can find these application configurations in the Web\nDynpro application MDG_BS MAT OVP. These pages represent the entire MM data model. If\nyou reduce the governance scope, the fields removed from the data model become read-only\non the UI and should be removed if they are not required for reference purposes.\n\f",
+    "You can use this function to view context-related information for your material master data in\na side panel. You must activate the Business Context Viewer (BCV) to access the side panels\nfor the Web Dynpro applications Create Material and Change Material.\n\f",
+    "1. To enable BCV, you must activate the following business functions:\n\f",
+    "You can access the same information in both pages but the process-orientated view displays\nall material data whereas the hierarchical view compartmentalizes the data so that you see\nthe high-level data initially and can drill down for further detail.\n\f",
+    "You can determine which overview page to display for a given logical action using the\nfollowing Customizing activities:\n\f",
+    "The activities can be found in Customizing under |? Cross-Application Components\nProcesses and Tools for Enterprise Applications ? Master Data Governance ? General\nSettings # Process Modeling \u00a2 Business Activities\n\f"
+  ],
+  "51": [
+    "This BCV content provides you with a list of all purchase orders created for the current\nmaterial master data.\n\f",
+    "This BCV content provides you with a list of changes raised by the current MDG change\nrequest.\n\f",
+    "For more information about BCV, see Business Context Viewer (BCV) [External]\n\n \n\f",
+    "This BCV content provides you with a list of all sales orders created for the current material\nmaster data.\n\f",
+    "Sales Overview\n\f",
+    "This BCV content provides you with a list of all production orders created for the current\nmaterial master data.\n\f",
+    "This BCV content provides you with a picture preview in the side panel if you have linked to\ndocuments with picture files for your material master data.\n\f"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "1": ["5101 Camden Lane, Pearland, TX 77584\n\f"],
+  "2": [],
+  "3": [],
+  "4": [],
+  "5": [],
+  "6": [
+    "STEP 33: Billing Document Creation\n\f",
+    "SALES DOCUMENT, ITEM CATEGORIES & SCHEDULE LINE\nCATEGORIES\n\f"
+  ],
+  "7": [],
+  "8": [],
+  "9": [
+    "These modules are highly integrated in real-time, which means, that if information is shared\nbetween modules then the data is entered only once. This reduces the chances of error arising\nfrom repetitive entry and also reduces the man-hours. Managers and decision makers always\nhave information at their fingertips and this helps then in effective decision making.\n\f",
+    "SAP stands for Systems, Applications and Products in Data Processing. Five German Engineers\nfounded it in 1972. SAP is an ERP software which large organizations use to manage their\nbusiness. SAP has several modules, each of which represents a business-process. Modules are\nusually abbreviated for the business process they represent. For instance, HR is Human\nResources, FI for Financial Accounting and SD is Sales & Distribution and so on. All together\nthere are some nineteen modules.\n\f",
+    "LearnSAP strives to evolve with the marketplace, delivering skills-based education that is\nsensitive to market needs and convenient to students. Our goal is to help people develop into\nemployees who are equipped to meet the challenges of a marketplace where change is the one\nconstant.\n\f",
+    "LearnSAP strives to help students develop SAP skills and knowledge needed to complete in the\nemployment market and adapt to future changes. The training course combines classroom theory\nof SAP technology with hands-on practice.\n\f",
+    "SAP has been around for over three decades. Nine out of ten Fortune-500 companies have\nalready implemented SAP (not counting the thousands of to-be Fortune-500 companies that hav\nSAP). There are well over 10 million SAP users worldwide and jobs keep popping up all around\nthe world.\n\f",
+    "SAP is usually implemented in phases. The first phase is when organizational structure and\naccounting components are configured, tested and then taken live. Gradually more modules are\nturned on.\n\f",
+    "SAP is the leading ERP (Enterprise Resource Planning) software. Because of it\u2019s liberal open-\narchitecture, there are millions of programmers working around the world to provide interaction\nbetween thousands of major software and SAP.\n\f"
+  ],
+  "10": [
+    "In sales, materials are sold to customers and or services performed for them. The\ninformation about the material and or services, as well as the customer information forms\nthe master data in the system. This master data is used in the business transactions which\nare referred to as documents (e.g. Sales Order is a document).\n\f",
+    "Organizational Units of Sales & Distribution consists of:\n\f",
+    "The organizational structures form a framework of a company in which business is\nconducted. Organizational Structure is also referred to as Enterprise Structure.\n\f",
+    "SAP Sales and Distribution module is commonly termed as SD. This module manages\nthe selling, shipping and billing of products and services for an organization.\nIt is a part of Logistics Area in SAP that supports customer activities.\n\f",
+    "In SD, the organizational structures are closely integrated with those in Financial\nAccounting and Materials Management. The creation and assignment of organizational\nunits is done in Customizing of Enterprise structure.\n\f",
+    "Enterprise Structure is made up of Organizational Units and have to be defined and each\nof the unit has a relationship to one another and this relationship has to be assigned.\n\f"
+  ],
+  "11": [
+    "The division is type of product / material sold.\n\f",
+    "Customizing of SAP software to adjust to the workings of your organization is done\nthrough the Implementation Guide commonly known as IMG.\n\nIMG is where the Enterprise Structure is defined and maintained along with the othe\nsettings required for the functioning of the SAP software for the client implementing\nSAP.\n\f",
+    "Combination of Sales Organization, Distribution Channel and Division makes a Sale:\nArea.\n\f",
+    "This is the legal entity that is responsible for the sales activity of an organization and\nnegotiates terms of the sale.\nA company code can have many sales organizations, but a sales organization can be\n\nassigned to only one company code.\n\f",
+    "Reaching SAP IMG:\n\f"
+  ],
+  "12": [
+    "On the following screen, click on \u201cSAP Reference IMG\u201d se\n\f"
+  ],
+  "13": [
+    "Best advised business practice is to copy an existing sales organization and create own\nsales organization\n\f",
+    "STEP 1: CREATING SALES ORGANIZATION\n\f",
+    "On the following screen please provide the From (Source) and To (Target) company code.\n{In practice please select sales organization 3000 as source and give a target sales\norganization as your own}\n\f",
+    "Sales Organization the Sales Organization is central organizational element that controls\nthe terms of sale to the customer. Defining the Sales Organization is the foremost step in\ncustomizing SD module in SAP.\n\f"
+  ],
+  "14": [
+    "Upon creating the Sales Organization, the system issues a customizing request to save the\nconfiguration. If you do not have a request, click on create icon and then save.\n\f"
+  ],
+  "15": [],
+  "16": [],
+  "17": [],
+  "18": [
+    "Sales office: Geographical aspects of the organizational structures in business\ndevelopment and sales are defined using sales offices. A sales office can be viewed as at\nactual office or perhaps a territory or region. Sales offices are assigned to sales areas. If\nyou enter a sales order for a sales office within a particular sales area, the sale s office\nmust be permitted for that sales area. A sales office can be assigned to more than one\n\nsales area.\n\f",
+    "Save your entries. When you press enter, a new window for Address entry will pop up,\nprovide address information and then save the entries.\n\f"
+  ],
+  "19": [
+    "Employees of a sales office can be assigned to sales groups defined for each division or\ndistribution channel. Sales groups are assigned to sales offices.\n\f"
+  ],
+  "20": [
+    "In assignment of organizational units, the units are assigned to organizational structure. Ir\nthe assignment you define how the individual structures / units relate to each other.\n\f",
+    "In SD, the following assignments of the organization units have to be created:\n\f",
+    "In the previous steps we have defined individual organizational units required by Sales\nand Distribution module of SAP. This assignment is done in the Customizing\nImplementation Guide.\n\f",
+    "The assignments of the organizational units are very easy to set up once you understand\nthe structure of the overall organization.\n\f",
+    "In the next few steps we will be going over the assignment of organizational units and\nsetting up the SD Enterprise structure.\n\f"
+  ],
+  "21": ["A sales organization is assigned to exactly one company code.\n\f"],
+  "22": [
+    "Assignment Sales Organization - Distribution Channel\n\f",
+    "Creates assignment between your Distribution Channel & Sales Organization and save.\n\f"
+  ],
+  "23": [],
+  "24": [
+    "Every sales process always takes in a specific sales area.\n\f",
+    "Create assignment between your Sales organization, Distribution Channel & Division\nBy selecting new entries.\n\f",
+    "A sales area is a combination of sales organization, distribution channel and division.\nSales documents, delivery documents, and billing documents are always assigned to a\nsales area.\n\f",
+    "If the entry already exists the system will display a message. If not, then save your\nassignment.\n\f"
+  ],
+  "25": [
+    "Sales Offices are assigned to Sales Area\n\f",
+    "New Entries: Overview of Added Entries\n\f",
+    "Sales Groups are assigned to Sales Offices:\n\f",
+    "Enter created Sales office and sales group info and assign it by saving your entries.\n\f"
+  ]
+}
